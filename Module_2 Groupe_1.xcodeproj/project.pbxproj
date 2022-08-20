@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */; };
 		77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */; };
-		77A6181C28B0F50A00D6DDD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181B28B0F50A00D6DDD0 /* ViewController.swift */; };
-		77A6181F28B0F50A00D6DDD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6181D28B0F50A00D6DDD0 /* Main.storyboard */; };
 		77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6182028B0F50C00D6DDD0 /* Assets.xcassets */; };
 		77A6182428B0F50C00D6DDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6182228B0F50C00D6DDD0 /* LaunchScreen.storyboard */; };
+		77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6182B28B0F5A500D6DDD0 /* TabBarController.swift */; };
+		77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6183A28B0FD5E00D6DDD0 /* ValeryTabViewController.swift */; };
+		77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6183C28B0FD7700D6DDD0 /* DmitryTabViewController.swift */; };
+		77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6183E28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift */; };
+		77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6184128B0FDC900D6DDD0 /* DanilTabViewController.swift */; };
+		77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6184328B0FDDB00D6DDD0 /* AntonTabViewController.swift */; };
+		77A6184628B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184528B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard */; };
+		77A6184828B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184728B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard */; };
+		77A6184A28B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */; };
+		77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */; };
+		77A6184E28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		77A6181428B0F50A00D6DDD0 /* Module_2 Groupe_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module_2 Groupe_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77A6181B28B0F50A00D6DDD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77A6181E28B0F50A00D6DDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77A6182028B0F50C00D6DDD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77A6182328B0F50C00D6DDD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77A6182528B0F50C00D6DDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77A6182B28B0F5A500D6DDD0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		77A6183A28B0FD5E00D6DDD0 /* ValeryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValeryTabViewController.swift; sourceTree = "<group>"; };
+		77A6183C28B0FD7700D6DDD0 /* DmitryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmitryTabViewController.swift; sourceTree = "<group>"; };
+		77A6183E28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvgenyTabViewController.swift; sourceTree = "<group>"; };
+		77A6184128B0FDC900D6DDD0 /* DanilTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTabViewController.swift; sourceTree = "<group>"; };
+		77A6184328B0FDDB00D6DDD0 /* AntonTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonTabViewController.swift; sourceTree = "<group>"; };
+		77A6184528B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ValeryTabStoryboard.storyboard; sourceTree = "<group>"; };
+		77A6184728B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DmitryTabStoryboard.storyboard; sourceTree = "<group>"; };
+		77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EvgenyTabStoryboard.storyboard; sourceTree = "<group>"; };
+		77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DanilTabStoryboard.storyboard; sourceTree = "<group>"; };
+		77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AntonTabStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,128 @@
 		77A6181628B0F50A00D6DDD0 /* Module_2 Groupe_1 */ = {
 			isa = PBXGroup;
 			children = (
+				77A6182D28B0F6FA00D6DDD0 /* Application */,
+				77A6183928B0FD2500D6DDD0 /* Sistem */,
+				77A6183428B0FCE100D6DDD0 /* Valery */,
+				77A6183528B0FCEE00D6DDD0 /* Dmitry */,
+				77A6183628B0FCFC00D6DDD0 /* Evgeny */,
+				77A6183728B0FD0C00D6DDD0 /* Danil */,
+				77A6183828B0FD1900D6DDD0 /* Anton */,
+				77A6182F28B0F8DC00D6DDD0 /* SupportingFiles */,
+			);
+			path = "Module_2 Groupe_1";
+			sourceTree = "<group>";
+		};
+		77A6182D28B0F6FA00D6DDD0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */,
 				77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */,
-				77A6181B28B0F50A00D6DDD0 /* ViewController.swift */,
-				77A6181D28B0F50A00D6DDD0 /* Main.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		77A6182F28B0F8DC00D6DDD0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				77A6182028B0F50C00D6DDD0 /* Assets.xcassets */,
 				77A6182228B0F50C00D6DDD0 /* LaunchScreen.storyboard */,
 				77A6182528B0F50C00D6DDD0 /* Info.plist */,
 			);
-			path = "Module_2 Groupe_1";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		77A6183428B0FCE100D6DDD0 /* Valery */ = {
+			isa = PBXGroup;
+			children = (
+				77A6184F28B0FF4E00D6DDD0 /* TabController */,
+			);
+			path = Valery;
+			sourceTree = "<group>";
+		};
+		77A6183528B0FCEE00D6DDD0 /* Dmitry */ = {
+			isa = PBXGroup;
+			children = (
+				77A6185028B0FF5D00D6DDD0 /* TabController */,
+			);
+			path = Dmitry;
+			sourceTree = "<group>";
+		};
+		77A6183628B0FCFC00D6DDD0 /* Evgeny */ = {
+			isa = PBXGroup;
+			children = (
+				77A6185128B0FF6600D6DDD0 /* TabController */,
+			);
+			path = Evgeny;
+			sourceTree = "<group>";
+		};
+		77A6183728B0FD0C00D6DDD0 /* Danil */ = {
+			isa = PBXGroup;
+			children = (
+				77A6185228B0FF7100D6DDD0 /* TabController */,
+			);
+			path = Danil;
+			sourceTree = "<group>";
+		};
+		77A6183828B0FD1900D6DDD0 /* Anton */ = {
+			isa = PBXGroup;
+			children = (
+				77A6185328B0FF7B00D6DDD0 /* TabController */,
+			);
+			path = Anton;
+			sourceTree = "<group>";
+		};
+		77A6183928B0FD2500D6DDD0 /* Sistem */ = {
+			isa = PBXGroup;
+			children = (
+				77A6182B28B0F5A500D6DDD0 /* TabBarController.swift */,
+			);
+			path = Sistem;
+			sourceTree = "<group>";
+		};
+		77A6184F28B0FF4E00D6DDD0 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				77A6183A28B0FD5E00D6DDD0 /* ValeryTabViewController.swift */,
+				77A6184528B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		77A6185028B0FF5D00D6DDD0 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				77A6183C28B0FD7700D6DDD0 /* DmitryTabViewController.swift */,
+				77A6184728B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		77A6185128B0FF6600D6DDD0 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				77A6183E28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift */,
+				77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		77A6185228B0FF7100D6DDD0 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				77A6184128B0FDC900D6DDD0 /* DanilTabViewController.swift */,
+				77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		77A6185328B0FF7B00D6DDD0 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				77A6184328B0FDDB00D6DDD0 /* AntonTabViewController.swift */,
+				77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */,
+			);
+			path = TabController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A6182428B0F50C00D6DDD0 /* LaunchScreen.storyboard in Resources */,
+				77A6184628B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard in Resources */,
+				77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */,
 				77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */,
-				77A6181F28B0F50A00D6DDD0 /* Main.storyboard in Resources */,
+				77A6184E28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard in Resources */,
+				77A6184A28B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard in Resources */,
+				77A6184828B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +273,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77A6181C28B0F50A00D6DDD0 /* ViewController.swift in Sources */,
+				77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */,
+				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
+				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,
 				77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */,
+				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
+				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
+				77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		77A6181D28B0F50A00D6DDD0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77A6181E28B0F50A00D6DDD0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		77A6182228B0F50C00D6DDD0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,10 +420,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Module_2 Groupe_1/Info.plist";
+				INFOPLIST_FILE = "Module_2 Groupe_1/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,10 +446,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Module_2 Groupe_1/Info.plist";
+				INFOPLIST_FILE = "Module_2 Groupe_1/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
