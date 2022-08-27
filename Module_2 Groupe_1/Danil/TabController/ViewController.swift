@@ -9,12 +9,22 @@ import UIKit
 import SnapKit
 
 final class ViewController: UIViewController {
+    private let basicPadding: CGFloat = 16
+    private let largePadding: CGFloat = 42
+    private let tinyMultiplier = 0.32
+    private let littleMultipler = 0.38
+    private let mediumMultipler = 0.4
+    private let middleMultipler = 0.5
+    private let doubleMultiplier = 2
+    
+    private let divisor = 4
 
     private let yellowRectangle = UIView(backgroundColor: .yellow)
+    
     private let greenRectangle = UIView(backgroundColor: .green)
     
-    //top
     private let topRedBox = UIView(backgroundColor: .red)
+    
     private let topBlueBox: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBlue
@@ -33,9 +43,8 @@ final class ViewController: UIViewController {
         return view
     }()
     
-    
-    //bottom
     private let bottomRedBox = UIView(backgroundColor: .red)
+    
     private let bottomBlueBox: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBlue
@@ -81,64 +90,49 @@ final class ViewController: UIViewController {
     private func addConstrains() {
         NSLayoutConstraint.activate(
             [
-                // 16 можно вынести в константу
-                //желтый вью на белый вью
-                yellowRectangle.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
-                yellowRectangle.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
-                yellowRectangle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                yellowRectangle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                yellowRectangle.topAnchor.constraint(equalTo: view.topAnchor, constant: basicPadding),
+                yellowRectangle.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -basicPadding),
+                yellowRectangle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: basicPadding),
+                yellowRectangle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -basicPadding),
                 
-                
-                //зеленый вью на желтый
                 greenRectangle.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
                 greenRectangle.centerYAnchor.constraint(equalTo: yellowRectangle.centerYAnchor),
-                //0.38 можно вынести в константу)
-                greenRectangle.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: 0.38),
-                greenRectangle.widthAnchor.constraint(equalTo: greenRectangle.heightAnchor, multiplier: 0.5),
+                greenRectangle.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: littleMultipler),
+                greenRectangle.widthAnchor.constraint(equalTo: greenRectangle.heightAnchor, multiplier: middleMultipler),
                 
-                
-                //красный верхний вью на желтый вью
-                topRedBox.topAnchor.constraint(equalTo: yellowRectangle.topAnchor, constant: 16),
+                topRedBox.topAnchor.constraint(equalTo: yellowRectangle.topAnchor, constant: basicPadding),
                 topRedBox.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
-                //0.4 можно вынести в константу)
-                topRedBox.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: 0.4),
+                topRedBox.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: mediumMultipler),
                 topRedBox.widthAnchor.constraint(equalTo: topRedBox.heightAnchor),
                 
-                
-                //красный нижний вью на желтый вью
-                bottomRedBox.bottomAnchor.constraint(equalTo: yellowRectangle.bottomAnchor, constant: -16),
+                bottomRedBox.bottomAnchor.constraint(equalTo: yellowRectangle.bottomAnchor, constant: -basicPadding),
                 bottomRedBox.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
                 bottomRedBox.widthAnchor.constraint(equalTo: topRedBox.widthAnchor),
                 bottomRedBox.heightAnchor.constraint(equalTo: topRedBox.heightAnchor),
             ]
         )
     
-        
-        //верхний квадрат
         topBlueBox.snp.makeConstraints {
-            $0.width.height.equalToSuperview().multipliedBy(0.32)
-            
-            $0.top.leading.equalToSuperview().inset(16)
+            $0.width.height.equalToSuperview().multipliedBy(tinyMultiplier)
+            $0.top.leading.equalToSuperview().inset(basicPadding)
         }
         topOrangeRectangle.snp.makeConstraints {
-            $0.width.equalTo(topBlueBox.snp.width).multipliedBy(2)
+            $0.width.equalTo(topBlueBox).multipliedBy(doubleMultiplier)
             $0.height.equalTo(topBlueBox.snp.width)
             
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(42)
+            $0.trailing.equalToSuperview().inset(largePadding)
         }
         topTealRectangle.snp.makeConstraints {
-            $0.width.equalTo(topOrangeRectangle.snp.width)
-            $0.height.equalTo(topTealRectangle.snp.width).dividedBy(4)
-            
-            $0.trailing.equalTo(topOrangeRectangle.snp.trailing)
-            $0.top.equalTo(topOrangeRectangle.snp.bottom).offset(14)
+            $0.width.equalTo(topOrangeRectangle)
+            $0.height.equalTo(topTealRectangle.snp.width).dividedBy(divisor)
+            $0.trailing.equalTo(topOrangeRectangle)
+            $0.top.equalTo(topOrangeRectangle.snp.bottom).offset(basicPadding)
         }
         
-        //нижний квадрат
         bottomBlueBox.snp.makeConstraints {
             $0.width.height.equalTo(topBlueBox)
-            $0.bottom.trailing.equalToSuperview().inset(16)
+            $0.bottom.trailing.equalToSuperview().inset(basicPadding)
         }
         bottomOrangeRectangle.snp.makeConstraints {
             $0.width.height.equalTo(topOrangeRectangle)
@@ -147,16 +141,7 @@ final class ViewController: UIViewController {
         bottomTealRectangle.snp.makeConstraints {
             $0.width.height.equalTo(topTealRectangle)
             $0.trailing.equalTo(bottomBlueBox)
-            $0.top.equalTo(bottomOrangeRectangle.snp.top)
+            $0.top.equalTo(bottomOrangeRectangle)
         }
-    }
-}
-
-//можно закинуть в отдельный файл
-extension UIView {
-    convenience init(backgroundColor: UIColor) {
-        self.init()
-        self.backgroundColor = backgroundColor
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
