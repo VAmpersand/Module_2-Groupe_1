@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ViewController: UIViewController {
+final class ShapesController: UIViewController {
     private let basicPadding: CGFloat = 16
     private let largePadding: CGFloat = 42
     private let tinyMultiplier = 0.32
