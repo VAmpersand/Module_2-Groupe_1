@@ -62,30 +62,30 @@ final class InCodeLayoutViewController: UIViewController {
         }
             
         redViewOne.snp.makeConstraints {
-            $0.edges.top.left.right.equalTo(16)
+            $0.top.left.right.equalToSuperview().inset(16)
             $0.height.equalTo(redViewOne.snp.width)
         }
-            
+
         redViewTwo.snp.makeConstraints {
-            $0.bottom.left.right.equalTo(16)
+            $0.bottom.left.right.equalToSuperview().inset(16)
             $0.height.equalTo(redViewTwo.snp.width)
         }
-            
+
         greenview.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.height.equalTo(50)
-            $0.width.equalTo(greenview.snp.height).multipliedBy(6)
+            $0.width.equalTo(50)
+            $0.height.equalTo(greenview.snp.width).multipliedBy(6)
         }
-        
+
         blueViewOne.snp.makeConstraints {
             $0.height.equalTo(50)
             $0.width.equalTo(blueViewOne.snp.height)
-            $0.edges.equalTo(16)
+            $0.top.left.equalToSuperview().inset(16)
         }
         blueViewTwo.snp.makeConstraints {
             $0.height.equalTo(blueViewOne.snp.height)
             $0.width.equalTo(blueViewOne.snp.width)
-            $0.bottom.right.equalTo(16)
+            $0.bottom.right.equalToSuperview().inset(16)
         }
     }
         private func configureAppearance() {

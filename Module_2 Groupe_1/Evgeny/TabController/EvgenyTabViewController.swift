@@ -10,29 +10,29 @@ import SnapKit
 
 final class EvgenyTabViewController: UIViewController {
 
-    @IBOutlet weak var intefaceBulderButton: UIButton!
+    @IBOutlet weak var interfaceBulderButton: UIButton!
     
     private let inCodeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Button", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
+        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = .white
         return button
     }()
     
     private let inCodeButton2: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Button2", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
+        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = .white
         return button
     }()
     
     private let inCodeButton3: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Button3", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
+        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = .white
         return button
     }()
 
@@ -40,29 +40,33 @@ final class EvgenyTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
-        view.addSubview(intefaceBulderButton)
+        view.addSubview(inCodeButton)
+        view.addSubview(inCodeButton2)
+        view.addSubview(inCodeButton3)
         
-        inCodeButton.translatesAutoresizingMaskIntoConstraints = false
-        inCodeButton2.translatesAutoresizingMaskIntoConstraints = false
-        inCodeButton3.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .blue
+        view.addSubview(interfaceBulderButton)
+        
         
         
         inCodeButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview().offset(100)
+            $0.centerY.equalToSuperview().offset(30)
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(116)
-            $0.width.equalToSuperview().offset(-20)
+            $0.height.equalTo(50)
+            $0.width.equalTo(inCodeButton.snp.height).multipliedBy(6)
+            
         }
         
         inCodeButton2.snp.makeConstraints {
-            $0.top.centerX.equalToSuperview()
+            $0.top.equalTo(inCodeButton).offset(50)
+            $0.centerX.equalToSuperview()
             $0.height.equalTo(50)
             $0.width.equalTo(inCodeButton2.snp.height).multipliedBy(6)
         }
         
         inCodeButton3.snp.makeConstraints {
-            $0.top.centerX.equalToSuperview()
+            $0.top.centerX.equalTo(inCodeButton2).offset(50)
+            $0.centerX.equalToSuperview()
             $0.size.equalTo(inCodeButton2)
         }
         
@@ -70,13 +74,19 @@ final class EvgenyTabViewController: UIViewController {
         inCodeButton3.addTarget(self, action: #selector(buttonHundler), for: .touchUpInside)
         
         }
-        @objc func buttonHundler () {
+        @objc func buttonHundler() {
             print("buttonHundler")
             
             let controller  = InCodeLayoutViewController()
             controller.modalPresentationStyle = .fullScreen
             self.present(controller, animated: true)
             
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        interfaceBulderButton.backgroundColor = .blue
+        interfaceBulderButton.tintColor = .white
     }
 }
 

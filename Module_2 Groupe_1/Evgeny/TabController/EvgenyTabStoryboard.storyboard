@@ -33,8 +33,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="intefaceBulderButton" destination="XtL-Mt-q9F" id="nRE-DX-UDV"/>
-                        <outlet property="interfaceBilderButton" destination="XtL-Mt-q9F" id="zvW-Rd-b8a"/>
+                        <outlet property="interfaceBulderButton" destination="XtL-Mt-q9F" id="EhW-6R-fvA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
