@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtL-Mt-q9F" userLabel="Inteface Builder Button">
-                                <rect key="frame" x="126.5" y="120" width="160" height="48"/>
+                                <rect key="frame" x="124" y="437.5" width="166.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="InterfaceBulder layout" buttonSize="medium"/>
                                 <connections>
@@ -28,9 +28,8 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XtL-Mt-q9F" secondAttribute="trailing" constant="127.5" id="9Ge-K7-LSl"/>
-                            <constraint firstItem="XtL-Mt-q9F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="126.5" id="DtM-ra-4Kp"/>
-                            <constraint firstItem="XtL-Mt-q9F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="76" id="O9g-H8-06L"/>
+                            <constraint firstItem="XtL-Mt-q9F" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Chb-EH-X9Y"/>
+                            <constraint firstItem="XtL-Mt-q9F" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="ux3-7U-5Ne"/>
                         </constraints>
                     </view>
                     <connections>

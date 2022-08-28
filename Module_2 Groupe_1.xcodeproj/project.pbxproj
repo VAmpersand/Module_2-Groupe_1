@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0409F8FB28BB55680075F7E0 /* inCodeLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409F8FA28BB55680075F7E0 /* inCodeLayoutViewController.swift */; };
 		77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */; };
 		77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */; };
 		77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6182028B0F50C00D6DDD0 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0409F8FA28BB55680075F7E0 /* inCodeLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inCodeLayoutViewController.swift; sourceTree = "<group>"; };
 		6B5B3C354341972A3A9168C9 /* libPods-Module_2 Groupe_1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Module_2 Groupe_1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A6181428B0F50A00D6DDD0 /* Module_2 Groupe_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module_2 Groupe_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				77A6183E28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift */,
+				0409F8FA28BB55680075F7E0 /* inCodeLayoutViewController.swift */,
 				77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */,
 			);
 			path = TabController;
@@ -331,6 +334,7 @@
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
 				77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */,
+				0409F8FB28BB55680075F7E0 /* inCodeLayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
