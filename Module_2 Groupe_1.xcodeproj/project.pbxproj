@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C7CFC9F28BB86F300DF3D32 /* UIViewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */; };
 		2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */; };
 		2CEACB9328B9086600E264BC /* ShapesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEACB9228B9086600E264BC /* ShapesController.swift */; };
 		77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ext.swift"; sourceTree = "<group>"; };
 		2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		2CEACB9228B9086600E264BC /* ShapesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesController.swift; sourceTree = "<group>"; };
 		4B3FF6811A55F857AFF679AD /* Pods-Module_2 Groupe_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.debug.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C7CFC9D28BB86D300DF3D32 /* PersonalHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */,
+			);
+			path = PersonalHelpers;
+			sourceTree = "<group>";
+		};
 		2CE0E9BF28BA81C200987E1B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		77A6183728B0FD0C00D6DDD0 /* Danil */ = {
 			isa = PBXGroup;
 			children = (
+				2C7CFC9D28BB86D300DF3D32 /* PersonalHelpers */,
 				77A6185228B0FF7100D6DDD0 /* TabController */,
 			);
 			path = Danil;
@@ -339,6 +350,7 @@
 			files = (
 				77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */,
 				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
+				2C7CFC9F28BB86F300DF3D32 /* UIViewController + ext.swift in Sources */,
 				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,
 				2CEACB9328B9086600E264BC /* ShapesController.swift in Sources */,
 				2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */,

@@ -8,17 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ShapesController: UIViewController {
-    private let basicPadding: CGFloat = 16
-    private let largePadding: CGFloat = 42
-    private let tinyMultiplier = 0.32
-    private let littleMultipler = 0.38
-    private let mediumMultipler = 0.4
-    private let middleMultipler = 0.5
-    private let doubleMultiplier = 2
-    
-    private let divisor = 4
-
+final class InCodeLayoutController: UIViewController {
     private let yellowRectangle = UIView(backgroundColor: .yellow)
     
     private let greenRectangle = UIView(backgroundColor: .green)
@@ -90,22 +80,22 @@ final class ShapesController: UIViewController {
     private func addConstrains() {
         NSLayoutConstraint.activate(
             [
-                yellowRectangle.topAnchor.constraint(equalTo: view.topAnchor, constant: basicPadding),
-                yellowRectangle.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -basicPadding),
-                yellowRectangle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: basicPadding),
-                yellowRectangle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -basicPadding),
+                yellowRectangle.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.basicPadding),
+                yellowRectangle.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.basicPadding),
+                yellowRectangle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.basicPadding),
+                yellowRectangle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.basicPadding),
                 
                 greenRectangle.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
                 greenRectangle.centerYAnchor.constraint(equalTo: yellowRectangle.centerYAnchor),
-                greenRectangle.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: littleMultipler),
-                greenRectangle.widthAnchor.constraint(equalTo: greenRectangle.heightAnchor, multiplier: middleMultipler),
+                greenRectangle.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: Constants.littleMultipler),
+                greenRectangle.widthAnchor.constraint(equalTo: greenRectangle.heightAnchor, multiplier: Constants.middleMultipler),
                 
-                topRedBox.topAnchor.constraint(equalTo: yellowRectangle.topAnchor, constant: basicPadding),
+                topRedBox.topAnchor.constraint(equalTo: yellowRectangle.topAnchor, constant: Constants.basicPadding),
                 topRedBox.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
-                topRedBox.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: mediumMultipler),
+                topRedBox.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: Constants.mediumMultipler),
                 topRedBox.widthAnchor.constraint(equalTo: topRedBox.heightAnchor),
                 
-                bottomRedBox.bottomAnchor.constraint(equalTo: yellowRectangle.bottomAnchor, constant: -basicPadding),
+                bottomRedBox.bottomAnchor.constraint(equalTo: yellowRectangle.bottomAnchor, constant: -Constants.basicPadding),
                 bottomRedBox.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
                 bottomRedBox.widthAnchor.constraint(equalTo: topRedBox.widthAnchor),
                 bottomRedBox.heightAnchor.constraint(equalTo: topRedBox.heightAnchor),
@@ -113,26 +103,26 @@ final class ShapesController: UIViewController {
         )
     
         topBlueBox.snp.makeConstraints {
-            $0.width.height.equalToSuperview().multipliedBy(tinyMultiplier)
-            $0.top.leading.equalToSuperview().inset(basicPadding)
+            $0.width.height.equalToSuperview().multipliedBy(Constants.tinyMultiplier)
+            $0.top.leading.equalToSuperview().inset(Constants.basicPadding)
         }
         topOrangeRectangle.snp.makeConstraints {
-            $0.width.equalTo(topBlueBox).multipliedBy(doubleMultiplier)
+            $0.width.equalTo(topBlueBox).multipliedBy(Constants.doubleMultiplier)
             $0.height.equalTo(topBlueBox.snp.width)
             
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(largePadding)
+            $0.trailing.equalToSuperview().inset(Constants.largePadding)
         }
         topTealRectangle.snp.makeConstraints {
             $0.width.equalTo(topOrangeRectangle)
-            $0.height.equalTo(topTealRectangle.snp.width).dividedBy(divisor)
+            $0.height.equalTo(topTealRectangle.snp.width).dividedBy(Constants.divisor)
             $0.trailing.equalTo(topOrangeRectangle)
-            $0.top.equalTo(topOrangeRectangle.snp.bottom).offset(basicPadding)
+            $0.top.equalTo(topOrangeRectangle.snp.bottom).offset(Constants.basicPadding)
         }
         
         bottomBlueBox.snp.makeConstraints {
             $0.width.height.equalTo(topBlueBox)
-            $0.bottom.trailing.equalToSuperview().inset(basicPadding)
+            $0.bottom.trailing.equalToSuperview().inset(Constants.basicPadding)
         }
         bottomOrangeRectangle.snp.makeConstraints {
             $0.width.height.equalTo(topOrangeRectangle)

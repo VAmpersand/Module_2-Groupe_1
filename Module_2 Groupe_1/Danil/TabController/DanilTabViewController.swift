@@ -18,7 +18,7 @@ final class DanilTabViewController: UIViewController {
     }
     
     @IBAction func inCodeLayourButtonHandler(_ sender: Any) {
-        let controller = ViewController()
+        let controller = InCodeLayoutController()
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
