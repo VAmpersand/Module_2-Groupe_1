@@ -66,7 +66,6 @@
 				A35831101623C8EAECC6F3D1 /* Pods-Module_2 Groupe_1.debug.xcconfig */,
 				EDE4A6E45587427F1DF62359 /* Pods-Module_2 Groupe_1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
