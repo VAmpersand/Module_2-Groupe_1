@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-5s-CTL">
-                                <rect key="frame" x="115" y="388" width="160" height="68"/>
+                                <rect key="frame" x="45" y="397" width="300" height="50"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="a8s-lh-SND"/>
-                                    <constraint firstAttribute="width" constant="160" id="vmU-16-rvh"/>
+                                    <constraint firstAttribute="height" constant="50" id="a8s-lh-SND"/>
+                                    <constraint firstAttribute="width" constant="300" id="vmU-16-rvh"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
@@ -39,14 +39,34 @@
                                     <segue destination="RIX-5g-Yiq" kind="presentation" modalPresentationStyle="fullScreen" id="zZh-zN-tf7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8Z-FY-0HW">
+                                <rect key="frame" x="45" y="467" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="JzN-D6-K4T"/>
+                                    <constraint firstAttribute="height" constant="50" id="f3m-vX-kO1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="InCode layout">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="inCodeLayourButtonHandler:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uMj-ew-xmT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="s8Z-FY-0HW" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Dpb-U7-o2d"/>
                             <constraint firstItem="dhz-5s-CTL" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="-5" id="K4J-mJ-daO"/>
                             <constraint firstItem="dhz-5s-CTL" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Rhp-UB-jpz"/>
+                            <constraint firstItem="s8Z-FY-0HW" firstAttribute="top" secondItem="dhz-5s-CTL" secondAttribute="bottom" constant="20" id="j8u-N1-BBA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inCodeLayoutButton" destination="s8Z-FY-0HW" id="YyC-Nk-KYS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
