@@ -18,5 +18,8 @@ extension UIViewController {
         static let middleMultipler = 0.5
         static let doubleMultiplier = 2
         static let divisor = 4
+        
+        static let basicButtonWidth = 100
+        static let basicButtonHeight = 50
     }
 }
