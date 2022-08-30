@@ -28,7 +28,6 @@ final class AntonTabViewController: UIViewController {
         view.backgroundColor = .purple
         
         view.addSubview(inCodeButton)
-        
         inCodeButton.addTarget(self, action: #selector(buttonHandler), for: .touchUpInside)
         
         inCodeButton.translatesAutoresizingMaskIntoConstraints = false

@@ -80,21 +80,24 @@ final class InCodeLayoutController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(yellowView)
+        
         yellowView.addSubview(greenView)
         yellowView.addSubview(redView)
         yellowView.addSubview(redView2)
+        
         redView.addSubview(blueView)
+        redView.addSubview(orangeView)
+        redView.addSubview(cyanView)
+        
+        redView2.addSubview(orangeView2)
         redView2.addSubview(blueView2)
-        blueView.addSubview(orangeView)
-        blueView2.addSubview(orangeView2)
-        orangeView.addSubview(cyanView)
-        orangeView2.addSubview(cyanView2)
-        blueView2.addSubview(cyanView2)
+        redView2.addSubview(cyanView2)
     }
     
     private func addConstraints() {
+        
         yellowView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(16)
+            $0.top.leading.trailing.equalToSuperview().inset(16)
         }
         
         greenView.snp.makeConstraints {
@@ -104,50 +107,44 @@ final class InCodeLayoutController: UIViewController {
         }
         
         redView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(16)
-            $0.leading.equalToSuperview().inset(16)
-            $0.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(311)
+            $0.top.leading.trailing.equalToSuperview().inset(16)
             $0.width.equalTo(redView.snp.height)
         }
         
         redView2.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(16)
-            $0.leading.equalToSuperview().inset(16)
-            $0.trailing.equalToSuperview().inset(16)
+            $0.bottom.leading.trailing.equalToSuperview().inset(16)
             $0.size.equalTo(redView)
+            $0.top.equalTo(redView.snp.bottom).offset(125)
         }
         
         blueView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(19)
-            $0.top.equalToSuperview().inset(19)
+            $0.top.leading.equalToSuperview().inset(19)
             $0.height.equalTo(100)
             $0.width.equalTo(blueView.snp.height)
         }
         
         blueView2.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(19)
-            $0.trailing.equalToSuperview().inset(19)
+            $0.trailing.bottom.equalToSuperview().inset(19)
             $0.size.equalTo(blueView)
         }
         
         orangeView.snp.makeConstraints {
-            $0.bottom.equalTo(blueView.snp.bottom).offset(87)
-            $0.centerX.equalTo(blueView.snp.centerX).offset(101)
+            $0.leading.equalToSuperview().inset(69)
+            $0.trailing.equalToSuperview().inset(42)
+            $0.top.equalTo(blueView.snp.bottom).offset(-13)
             $0.width.equalTo(200)
             $0.height.equalTo(orangeView.snp.width).multipliedBy(0.5)
         }
         
         orangeView2.snp.makeConstraints {
+            $0.center.leading.equalToSuperview()
             $0.trailing.equalTo(blueView2.snp.leading).offset(8)
-            $0.centerY.equalTo(blueView2.snp.centerY).offset(-86)
-            $0.centerX.equalToSuperview()
             $0.size.equalTo(orangeView)
         }
         
         cyanView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(118)
-            $0.width.equalTo(orangeView.snp.width)
+            $0.leading.trailing.equalTo(orangeView)
+            $0.top.equalTo(orangeView.snp.bottom).offset(18)
             $0.height.equalTo(50)
         }
         
