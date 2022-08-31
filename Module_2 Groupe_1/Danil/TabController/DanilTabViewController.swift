@@ -9,10 +9,19 @@ import UIKit
 
 final class DanilTabViewController: UIViewController {
 
+    @IBOutlet weak var inCodeLayoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .orange
     }
+    
+    @IBAction func inCodeLayourButtonHandler(_ sender: Any) {
+        let controller = InCodeLayoutController()
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
+    }
+    
 }
 

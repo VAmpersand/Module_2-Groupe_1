@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45920B4C28BB8F03002FDBC5 /* InCodeLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45920B4B28BB8F03002FDBC5 /* InCodeLayoutController.swift */; };
+		2C7CFC9F28BB86F300DF3D32 /* UIViewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */; };
+		2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */; };
+		2CEACB9328B9086600E264BC /* ShapesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEACB9228B9086600E264BC /* ShapesController.swift */; };
 		77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */; };
 		77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */; };
 		77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6182028B0F50C00D6DDD0 /* Assets.xcassets */; };
@@ -23,11 +25,14 @@
 		77A6184A28B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */; };
 		77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */; };
 		77A6184E28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */; };
+		77F0525728BDF56E00839EF6 /* inCodeLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0525628BDF56E00839EF6 /* inCodeLayoutViewController.swift */; };
 		8FC07C21AE115C96ECD549B4 /* libPods-Module_2 Groupe_1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48C3051BD870DE835616C9F /* libPods-Module_2 Groupe_1.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		45920B4B28BB8F03002FDBC5 /* InCodeLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InCodeLayoutController.swift; sourceTree = "<group>"; };
+		2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ext.swift"; sourceTree = "<group>"; };
+		2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		2CEACB9228B9086600E264BC /* ShapesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesController.swift; sourceTree = "<group>"; };
 		4B3FF6811A55F857AFF679AD /* Pods-Module_2 Groupe_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.debug.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCC435BFA83489FC6F1309D /* Pods-Module_2 Groupe_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.release.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.release.xcconfig"; sourceTree = "<group>"; };
 		77A6181428B0F50A00D6DDD0 /* Module_2 Groupe_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module_2 Groupe_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +52,7 @@
 		77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EvgenyTabStoryboard.storyboard; sourceTree = "<group>"; };
 		77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DanilTabStoryboard.storyboard; sourceTree = "<group>"; };
 		77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AntonTabStoryboard.storyboard; sourceTree = "<group>"; };
+		77F0525628BDF56E00839EF6 /* inCodeLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inCodeLayoutViewController.swift; sourceTree = "<group>"; };
 		C48C3051BD870DE835616C9F /* libPods-Module_2 Groupe_1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Module_2 Groupe_1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,6 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C7CFC9D28BB86D300DF3D32 /* PersonalHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */,
+			);
+			path = PersonalHelpers;
+			sourceTree = "<group>";
+		};
+		2CE0E9BF28BA81C200987E1B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		76C937E23AA6804C1C07258B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +113,7 @@
 		77A6181628B0F50A00D6DDD0 /* Module_2 Groupe_1 */ = {
 			isa = PBXGroup;
 			children = (
+				2CE0E9BF28BA81C200987E1B /* Helpers */,
 				77A6182D28B0F6FA00D6DDD0 /* Application */,
 				77A6183928B0FD2500D6DDD0 /* Sistem */,
 				77A6183428B0FCE100D6DDD0 /* Valery */,
@@ -149,6 +172,7 @@
 		77A6183728B0FD0C00D6DDD0 /* Danil */ = {
 			isa = PBXGroup;
 			children = (
+				2C7CFC9D28BB86D300DF3D32 /* PersonalHelpers */,
 				77A6185228B0FF7100D6DDD0 /* TabController */,
 			);
 			path = Danil;
@@ -191,6 +215,7 @@
 		77A6185128B0FF6600D6DDD0 /* TabController */ = {
 			isa = PBXGroup;
 			children = (
+				77F0525628BDF56E00839EF6 /* inCodeLayoutViewController.swift */,
 				77A6183E28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift */,
 				77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */,
 			);
@@ -202,6 +227,7 @@
 			children = (
 				77A6184128B0FDC900D6DDD0 /* DanilTabViewController.swift */,
 				77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */,
+				2CEACB9228B9086600E264BC /* ShapesController.swift */,
 			);
 			path = TabController;
 			sourceTree = "<group>";
@@ -211,7 +237,6 @@
 			children = (
 				77A6184328B0FDDB00D6DDD0 /* AntonTabViewController.swift */,
 				77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */,
-				45920B4B28BB8F03002FDBC5 /* InCodeLayoutController.swift */,
 			);
 			path = TabController;
 			sourceTree = "<group>";
@@ -328,10 +353,13 @@
 			files = (
 				77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */,
 				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
+				2C7CFC9F28BB86F300DF3D32 /* UIViewController + ext.swift in Sources */,
 				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,
+				2CEACB9328B9086600E264BC /* ShapesController.swift in Sources */,
+				2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */,
 				77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */,
 				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
-				45920B4C28BB8F03002FDBC5 /* InCodeLayoutController.swift in Sources */,
+				77F0525728BDF56E00839EF6 /* inCodeLayoutViewController.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
 				77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */,
