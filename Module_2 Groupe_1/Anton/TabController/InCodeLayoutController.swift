@@ -1,5 +1,5 @@
 //
-//  InCodeLayoutController.swift
+//  AntonInCodeLayoutController.swift
 //  Module_2 Groupe_1
 //
 //  Created by air on 28.08.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class InCodeLayoutController: UIViewController {
+final class AntonInCodeLayoutController: UIViewController {
 
     private let yellowView: UIView = {
        let view = UIView()

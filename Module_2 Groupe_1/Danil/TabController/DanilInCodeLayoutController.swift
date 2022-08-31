@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DanilInCodeLayoutController.swift
 //  Module_2 Groupe_1
 //
 //  Created by Danil Demchenko on 26.08.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class InCodeLayoutController: UIViewController {
+final class DanilInCodeLayoutController: UIViewController {
     private let yellowRectangle = UIView(backgroundColor: .yellow)
     
     private let greenRectangle = UIView(backgroundColor: .green)

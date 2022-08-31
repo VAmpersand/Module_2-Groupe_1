@@ -43,7 +43,7 @@ final class AntonTabViewController: UIViewController {
     
     @objc func buttonHandler() {
         
-        let controller = InCodeLayoutController()
+        let controller = AntonInCodeLayoutController()
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
