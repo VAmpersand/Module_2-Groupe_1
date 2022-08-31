@@ -34,13 +34,13 @@ final class DanilTabViewController: UIViewController {
     }
     
     @IBAction func inCodeLayourButtonHandler(_ sender: Any) {
-        let controller = InCodeLayoutController()
+        let controller = DanilInCodeLayoutController()
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
     
     @objc func transitionDemoButtonHandler() {
-        let navController = UINavigationController(rootViewController: TransitionDemoController())
+        let navController = UINavigationController(rootViewController: DanilTransitionDemoController())
         navController.modalPresentationStyle = .overFullScreen
         present(navController, animated: true)
     }

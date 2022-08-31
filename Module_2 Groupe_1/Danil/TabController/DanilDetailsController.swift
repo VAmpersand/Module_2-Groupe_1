@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsController: UIViewController {
+class DanilDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

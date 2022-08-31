@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransitionDemoController: UIViewController {
+class DanilTransitionDemoController: UIViewController {
     
     private let seguePopoverButton = UIButton(backgroundColor: .darkGray, titleColor: .systemPink, title: "Popover")
     private let segueFullScreenButton = UIButton(backgroundColor: .systemIndigo, titleColor: .darkText, title: "FullScreen")
@@ -77,7 +77,7 @@ class TransitionDemoController: UIViewController {
     }
     
     @objc func seguePopoverButtonHandler() {
-        let detailsController = DetailsController()
+        let detailsController = DanilDetailsController()
         detailsController.modalPresentationStyle = .popover
         detailsController.modalTransitionStyle = .crossDissolve
         
@@ -85,7 +85,7 @@ class TransitionDemoController: UIViewController {
     }
     
     @objc func segueFullScreenButtonHandler() {
-        let detailsController = DetailsController()
+        let detailsController = DanilDetailsController()
         detailsController.modalPresentationStyle = .fullScreen
         detailsController.modalTransitionStyle = .flipHorizontal
         
@@ -93,17 +93,17 @@ class TransitionDemoController: UIViewController {
     }
     
     @objc func segueOverFullScreenButtonHandler() {
-        let detailsController = DetailsController()
+        let detailsController = DanilDetailsController()
         detailsController.modalPresentationStyle = .overFullScreen
     
         present(detailsController, animated: true)
     }
     
     @objc func navigationButtonHandler() {
-        self.navigationController?.pushViewController(DetailsController(), animated: true)
+        self.navigationController?.pushViewController(DanilDetailsController(), animated: true)
     }
     
     @objc func navigationRootButtonHandler() {
-        sceneDelegate?.window?.rootViewController = DetailsController()
+        sceneDelegate?.window?.rootViewController = DanilDetailsController()
     }
 }

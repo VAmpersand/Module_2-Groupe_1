@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class InCodeLayoutController: UIViewController {
+final class DanilInCodeLayoutController: UIViewController {
     private let yellowRectangle = UIView(backgroundColor: .yellow)
     
     private let greenRectangle = UIView(backgroundColor: .green)
