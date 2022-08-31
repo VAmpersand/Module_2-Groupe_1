@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class InCodeLayoutViewController: UIViewController {
+final class EvgeniyInCodeLayoutViewController: UIViewController {
     
     private let yellowView: UIView = {
         let view = UIView()
