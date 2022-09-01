@@ -16,13 +16,6 @@ class DanilTransitionDemoController: UIViewController {
     private let navigationButton = UIButton(backgroundColor: .white, titleColor: .brown, title: "Navigation Button")
     private let navigationRootButton = UIButton(backgroundColor: .systemBlue, titleColor: .white, title: "Navigation Root Button")
     
-    private var sceneDelegate: SceneDelegate? {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let sceneDelegate = windowScene.delegate as? SceneDelegate else { return nil }
-        
-        return sceneDelegate
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,41 +37,40 @@ class DanilTransitionDemoController: UIViewController {
     
     private func addConstraints() {
         seguePopoverButton.snp.makeConstraints {
-            $0.width.greaterThanOrEqualTo(Constants.basicButtonWidth)
-            $0.height.equalTo(Constants.basicButtonHeight)
-            $0.top.equalToSuperview().offset(Constants.largePadding)
-            $0.leading.equalToSuperview().offset(Constants.basicPadding)
+            $0.width.greaterThanOrEqualTo(Constants.ButtonSizes.Basics.width)
+            $0.height.equalTo(Constants.ButtonSizes.Basics.height)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.equalToSuperview().offset(Constants.Paddings.basic)
         }
         
         segueFullScreenButton.snp.makeConstraints {
             $0.size.equalTo(seguePopoverButton)
             $0.leading.equalTo(seguePopoverButton)
-            $0.top.equalTo(seguePopoverButton.snp.bottom).offset(Constants.basicPadding)
+            $0.top.equalTo(seguePopoverButton.snp.bottom).offset(Constants.Paddings.basic)
         }
         
         segueOverFullScreenButton.snp.makeConstraints {
             $0.size.equalTo(seguePopoverButton)
             $0.leading.equalTo(seguePopoverButton)
-            $0.top.equalTo(segueFullScreenButton.snp.bottom).offset(Constants.basicPadding)
+            $0.top.equalTo(segueFullScreenButton.snp.bottom).offset(Constants.Paddings.basic)
         }
         
         navigationButton.snp.makeConstraints {
-            $0.width.equalTo(seguePopoverButton).multipliedBy(Constants.doubleMultiplier)
+            $0.width.equalTo(seguePopoverButton).multipliedBy(Constants.Multipliers.double)
             $0.height.equalTo(seguePopoverButton)
-            $0.bottom.equalToSuperview().inset(Constants.largePadding)
-            $0.trailing.equalToSuperview().inset(Constants.basicPadding)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.trailing.equalToSuperview().inset(Constants.Paddings.basic)
         }
         
         navigationRootButton.snp.makeConstraints {
             $0.size.equalTo(navigationButton)
             $0.trailing.equalTo(navigationButton)
-            $0.bottom.equalTo(navigationButton.snp.top).offset(-Constants.basicPadding)
+            $0.bottom.equalTo(navigationButton.snp.top).offset(-Constants.Paddings.basic)
         }
     }
     
     @objc func seguePopoverButtonHandler() {
         let detailsController = DanilDetailsController()
-        detailsController.modalPresentationStyle = .popover
         detailsController.modalTransitionStyle = .crossDissolve
         
         present(detailsController, animated: true)

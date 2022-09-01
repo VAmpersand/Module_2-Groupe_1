@@ -15,9 +15,13 @@ final class DanilTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .orange
         addSubviews()
         addConstraints()
+        congigure()
+    }
+    
+    private func congigure() {
+        view.backgroundColor = .orange
         transitionDemoButton.addTarget(self, action: #selector(transitionDemoButtonHandler), for: .touchUpInside)
     }
     
@@ -29,7 +33,7 @@ final class DanilTabViewController: UIViewController {
         transitionDemoButton.snp.makeConstraints {
             $0.size.equalTo(inCodeLayoutButton)
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(inCodeLayoutButton.snp.bottom).offset(Constants.basicPadding)
+            $0.top.equalTo(inCodeLayoutButton.snp.bottom).offset(Constants.Paddings.basic)
         }
     }
     

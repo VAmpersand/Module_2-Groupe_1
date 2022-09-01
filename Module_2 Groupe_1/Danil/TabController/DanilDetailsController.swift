@@ -7,11 +7,51 @@
 
 import UIKit
 
-class DanilDetailsController: UIViewController {
-
+final class DanilDetailsController: UIViewController {
+    
+    private var isModal = false
+    
+    private let closeButton = UIButton(backgroundColor: .systemBlue, titleColor: .white, title: "Close")
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isBeingPresented {
+            isModal = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addSubviews()
+        addConstraints()
+        configure()
+    }
+    
+    private func configure() {
         view.backgroundColor = .systemGray5
+        closeButton.addTarget(self, action: #selector(closeButtonHandler), for: .touchUpInside)
+    }
+    
+    private func addConstraints() {
+        closeButton.snp.makeConstraints {
+            $0.width.equalTo(Constants.ButtonSizes.Basics.width)
+            $0.height.equalTo(Constants.ButtonSizes.Basics.height)
+            $0.trailing.top.equalTo(view.safeAreaLayoutGuide).inset(Constants.Paddings.basic)
+        }
+    }
+    
+    private func addSubviews() {
+        view.addSubview(closeButton)
+    }
+    
+    @objc private func closeButtonHandler() {
+        if isModal {
+            dismiss(animated: true)
+        } else if navigationController != nil {
+            navigationController?.popViewController(animated: true)
+        } else {
+            sceneDelegate?.window?.rootViewController = TabBarController()
+        }
     }
 }
