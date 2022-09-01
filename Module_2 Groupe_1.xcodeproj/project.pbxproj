@@ -28,6 +28,7 @@
 		77A6184A28B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */; };
 		77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */; };
 		77A6184E28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */; };
+		77F0525728BDF56E00839EF6 /* inCodeLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0525628BDF56E00839EF6 /* inCodeLayoutViewController.swift */; };
 		8FC07C21AE115C96ECD549B4 /* libPods-Module_2 Groupe_1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C48C3051BD870DE835616C9F /* libPods-Module_2 Groupe_1.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EvgenyTabStoryboard.storyboard; sourceTree = "<group>"; };
 		77A6184B28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DanilTabStoryboard.storyboard; sourceTree = "<group>"; };
 		77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AntonTabStoryboard.storyboard; sourceTree = "<group>"; };
+		77F0525628BDF56E00839EF6 /* inCodeLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inCodeLayoutViewController.swift; sourceTree = "<group>"; };
 		C48C3051BD870DE835616C9F /* libPods-Module_2 Groupe_1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Module_2 Groupe_1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +222,7 @@
 		77A6185128B0FF6600D6DDD0 /* TabController */ = {
 			isa = PBXGroup;
 			children = (
+				77F0525628BDF56E00839EF6 /* inCodeLayoutViewController.swift */,
 				77A6183E28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift */,
 				77A6184928B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard */,
 			);
@@ -367,6 +370,7 @@
 				2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */,
 				77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */,
 				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
+				77F0525728BDF56E00839EF6 /* inCodeLayoutViewController.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */,
 				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
