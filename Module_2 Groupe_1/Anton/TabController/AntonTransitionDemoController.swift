@@ -93,13 +93,11 @@ final class AntonTransitionDemoController: UIViewController {
     
     func popoverDefaultAction() {
         let controller = AntonTestViewController()
-        controller.view.backgroundColor = .red
         present(controller, animated: true)
     }
     
     func fullScreenCroseDesolveAction() {
         let controller = AntonTestViewController()
-        controller.view.backgroundColor = .red
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .crossDissolve
         present(controller, animated: true)
@@ -107,7 +105,6 @@ final class AntonTransitionDemoController: UIViewController {
     
     func overFullScreenFlipHorizontalAction() {
         let controller = AntonTestViewController()
-        controller.view.backgroundColor = .red
         controller.modalPresentationStyle = .overFullScreen
         controller.modalTransitionStyle = .flipHorizontal
         present(controller, animated: true)
@@ -115,7 +112,6 @@ final class AntonTransitionDemoController: UIViewController {
     
     func navigationAction() {
         let controller = AntonTestViewController()
-        controller.view.backgroundColor = .red
         navigationController?.pushViewController(controller, animated: true)
     }
     
