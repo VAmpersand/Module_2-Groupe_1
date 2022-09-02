@@ -30,12 +30,29 @@
                                     <segue destination="qdT-cl-Nso" kind="modal" modalPresentationStyle="fullScreen" id="Acw-je-zPa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="AntonTab" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L39-zH-VmI">
+                                <rect key="frame" x="57" y="558" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="VNG-LB-jXz"/>
+                                    <constraint firstAttribute="height" constant="50" id="W2n-iG-y2S"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="TransitionDemo controller"/>
+                                <connections>
+                                    <action selector="action:" destination="xi2-CY-8E4" eventType="touchUpInside" id="xCe-5z-NWf"/>
+                                    <action selector="buttonAction:" destination="xi2-CY-8E4" eventType="touchUpInside" id="m2e-zV-4Zb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WQS-ki-JNJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CkU-fY-FQb" firstAttribute="centerY" secondItem="WQS-ki-JNJ" secondAttribute="centerY" id="MkJ-mt-c7N"/>
+                            <constraint firstItem="L39-zH-VmI" firstAttribute="leading" secondItem="CkU-fY-FQb" secondAttribute="leading" id="Zqn-iB-v9D"/>
                             <constraint firstItem="CkU-fY-FQb" firstAttribute="centerX" secondItem="WQS-ki-JNJ" secondAttribute="centerX" id="dId-SV-Ako"/>
+                            <constraint firstItem="L39-zH-VmI" firstAttribute="top" secondItem="CkU-fY-FQb" secondAttribute="bottom" constant="80" id="udX-XH-eqT"/>
                         </constraints>
                     </view>
                     <connections>

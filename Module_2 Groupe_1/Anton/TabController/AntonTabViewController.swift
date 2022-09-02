@@ -47,4 +47,11 @@ final class AntonTabViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
+    
+    @IBAction func action(_ sender: Any) {
+        
+        let navController = UINavigationController(rootViewController: AntonTransitionDemoController())
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+    }
 }

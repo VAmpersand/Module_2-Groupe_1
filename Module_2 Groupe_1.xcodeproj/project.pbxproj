@@ -10,6 +10,8 @@
 		2C7CFC9F28BB86F300DF3D32 /* UIViewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */; };
 		2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */; };
 		2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */; };
+		45979E2E28C1E9F200510512 /* AntonTransitionDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45979E2D28C1E9F200510512 /* AntonTransitionDemoController.swift */; };
+		45979E3428C21B8C00510512 /* AntonTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45979E3328C21B8C00510512 /* AntonTestViewController.swift */; };
 		77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */; };
 		77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */; };
 		77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6182028B0F50C00D6DDD0 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		2C7CFC9E28BB86F300DF3D32 /* UIViewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ext.swift"; sourceTree = "<group>"; };
 		2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilInCodeLayoutController.swift; sourceTree = "<group>"; };
+		45979E2D28C1E9F200510512 /* AntonTransitionDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonTransitionDemoController.swift; sourceTree = "<group>"; };
+		45979E3328C21B8C00510512 /* AntonTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonTestViewController.swift; sourceTree = "<group>"; };
 		4B3FF6811A55F857AFF679AD /* Pods-Module_2 Groupe_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.debug.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCC435BFA83489FC6F1309D /* Pods-Module_2 Groupe_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.release.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.release.xcconfig"; sourceTree = "<group>"; };
 		77A6181428B0F50A00D6DDD0 /* Module_2 Groupe_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module_2 Groupe_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,17 +243,11 @@
 			children = (
 				77A6184328B0FDDB00D6DDD0 /* AntonTabViewController.swift */,
 				77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */,
-				77F0525828BF7A5C00839EF6 /* InCodeLayout */,
-			);
-			path = TabController;
-			sourceTree = "<group>";
-		};
-		77F0525828BF7A5C00839EF6 /* InCodeLayout */ = {
-			isa = PBXGroup;
-			children = (
+				45979E2D28C1E9F200510512 /* AntonTransitionDemoController.swift */,
+				45979E3328C21B8C00510512 /* AntonTestViewController.swift */,
 				77F0525928BF7A6700839EF6 /* InCodeLayoutController.swift */,
 			);
-			path = InCodeLayout;
+			path = TabController;
 			sourceTree = "<group>";
 		};
 		BB33AAC93F5B15E5C9FB5875 /* Pods */ = {
@@ -362,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45979E2E28C1E9F200510512 /* AntonTransitionDemoController.swift in Sources */,
 				77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */,
 				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
 				2C7CFC9F28BB86F300DF3D32 /* UIViewController + ext.swift in Sources */,
@@ -372,6 +371,7 @@
 				77F0525A28BF7A6700839EF6 /* InCodeLayoutController.swift in Sources */,
 				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
 				77F0525728BDF56E00839EF6 /* EvgenyInCodeLayoutViewController.swift in Sources */,
+				45979E3428C21B8C00510512 /* AntonTestViewController.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
 				77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */,
