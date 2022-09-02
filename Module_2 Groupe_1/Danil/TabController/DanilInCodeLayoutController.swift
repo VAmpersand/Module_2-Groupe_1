@@ -93,7 +93,7 @@ final class DanilInCodeLayoutController: UIViewController {
                 greenRectangle.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
                 greenRectangle.centerYAnchor.constraint(equalTo: yellowRectangle.centerYAnchor),
                 greenRectangle.heightAnchor.constraint(equalTo: yellowRectangle.heightAnchor, multiplier: Constants.CodeLayoutMultipliers.little),
-                greenRectangle.widthAnchor.constraint(equalTo: greenRectangle.heightAnchor, multiplier: Constants.CodeLayoutMultipliers.middle),
+                greenRectangle.widthAnchor.constraint(equalTo: greenRectangle.heightAnchor, multiplier: Constants.Multipliers.half),
                 
                 topRedBox.topAnchor.constraint(equalTo: yellowRectangle.topAnchor, constant: Constants.Paddings.basic),
                 topRedBox.centerXAnchor.constraint(equalTo: yellowRectangle.centerXAnchor),
@@ -146,7 +146,6 @@ private extension Constants {
         static let tiny = 0.32
         static let little = 0.38
         static let medium = 0.4
-        static let middle = 0.5
     }
     enum CodeLayoutPaddings {
         static let large: CGFloat = 42

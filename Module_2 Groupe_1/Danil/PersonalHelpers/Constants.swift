@@ -15,6 +15,7 @@ enum Constants {
     }
     
     enum Multipliers {
+        static let half = 0.5
         static let double = 2
     }
     

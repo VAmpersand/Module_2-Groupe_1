@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C17158C28C227D600736E72 /* DanilTransferDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17158B28C227D600736E72 /* DanilTransferDataController.swift */; };
+		2C17158E28C228F500736E72 /* DanilCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17158D28C228F500736E72 /* DanilCustomView.swift */; };
+		2C17159028C23FC200736E72 /* Notification + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17158F28C23FC200736E72 /* Notification + ext.swift */; };
 		2C1CA0EA28C0FB8C0025F7FA /* UIViewController + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CA0E928C0FB8C0025F7FA /* UIViewController + ext.swift */; };
 		2C31771928BE0D6F00127E36 /* DanilDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31771828BE0D6F00127E36 /* DanilDetailsController.swift */; };
 		2C348A0A28BD67E8006B7003 /* DanilTransitionDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C17158B28C227D600736E72 /* DanilTransferDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTransferDataController.swift; sourceTree = "<group>"; };
+		2C17158D28C228F500736E72 /* DanilCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilCustomView.swift; sourceTree = "<group>"; };
+		2C17158F28C23FC200736E72 /* Notification + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification + ext.swift"; sourceTree = "<group>"; };
 		2C1CA0E928C0FB8C0025F7FA /* UIViewController + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + ext.swift"; sourceTree = "<group>"; };
 		2C31771828BE0D6F00127E36 /* DanilDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilDetailsController.swift; sourceTree = "<group>"; };
 		2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTransitionDemoController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			children = (
 				2C7CFC9E28BB86F300DF3D32 /* Constants.swift */,
 				2C1CA0E928C0FB8C0025F7FA /* UIViewController + ext.swift */,
+				2C17158F28C23FC200736E72 /* Notification + ext.swift */,
 			);
 			path = PersonalHelpers;
 			sourceTree = "<group>";
@@ -240,6 +247,8 @@
 				2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */,
 				2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */,
 				2C31771828BE0D6F00127E36 /* DanilDetailsController.swift */,
+				2C17158B28C227D600736E72 /* DanilTransferDataController.swift */,
+				2C17158D28C228F500736E72 /* DanilCustomView.swift */,
 			);
 			path = TabController;
 			sourceTree = "<group>";
@@ -364,12 +373,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1CA0EA28C0FB8C0025F7FA /* UIViewController + ext.swift in Sources */,
+				2C17159028C23FC200736E72 /* Notification + ext.swift in Sources */,
 				2C31771928BE0D6F00127E36 /* DanilDetailsController.swift in Sources */,
 				77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */,
 				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
 				2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */,
 				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,
 				2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */,
+				2C17158C28C227D600736E72 /* DanilTransferDataController.swift in Sources */,
 				2C348A0A28BD67E8006B7003 /* DanilTransitionDemoController.swift in Sources */,
 				2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */,
 				77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */,
@@ -378,6 +389,7 @@
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */,
 				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
+				2C17158E28C228F500736E72 /* DanilCustomView.swift in Sources */,
 				77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
