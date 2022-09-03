@@ -14,6 +14,7 @@ xcuserdata
 DerivedData
 *.xcuserstate
 xcshareddata/
+.DS_Store
 
 ### Objective-C ###
 # Xcode
