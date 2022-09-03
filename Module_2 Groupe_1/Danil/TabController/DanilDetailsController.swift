@@ -50,7 +50,9 @@ final class DanilDetailsController: UIViewController {
         } else if navigationController != nil {
             navigationController?.popViewController(animated: true)
         } else {
-            sceneDelegate?.window?.rootViewController = TabBarController()
+            let tabBarController = TabBarController()
+            tabBarController.selectedIndex = Tabs.danil.rawValue
+            sceneDelegate?.window?.rootViewController = tabBarController
         }
     }
 }

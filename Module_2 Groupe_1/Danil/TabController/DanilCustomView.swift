@@ -9,9 +9,15 @@ import UIKit
 
 final class DanilCustomView: UIView {
     
-    private let callbackButton = UIButton(title: "callback")
-    private let delegateButton = UIButton(title: "delegate")
-    private let notificationButton = UIButton(title: "notification")
+    enum ButtonName {
+        static let callback = "callback"
+        static let delegate = "delegate"
+        static let notification = "notification"
+    }
+    
+    private let callbackButton = UIButton(title: ButtonName.callback)
+    private let delegateButton = UIButton(title: ButtonName.delegate)
+    private let notificationButton = UIButton(title: ButtonName.notification)
     
     var changeBackgroundColorCallback: ((UIColor) -> Void)!
     
@@ -50,9 +56,9 @@ final class DanilCustomView: UIView {
     }
     
     private func configure() {
-        callbackButton.addTarget(self, action: #selector(callbackButtonHandler), for: .touchUpInside)
-        delegateButton.addTarget(self, action: #selector(delegateButtonHandler), for: .touchUpInside)
-        notificationButton.addTarget(self, action: #selector(notificationButtonHandler), for: .touchUpInside)
+        [callbackButton, delegateButton, notificationButton].forEach {
+            $0.addTarget(self, action: #selector(buttonHandler(_:)), for: .touchUpInside)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -61,15 +67,12 @@ final class DanilCustomView: UIView {
 }
 
 @objc extension DanilCustomView {
-    private func callbackButtonHandler() {
-        changeBackgroundColorCallback(.red)
-    }
-    
-    private func delegateButtonHandler() {
-        transferDataDelegate.changeBackgroundColor(to: .green)
-    }
-    
-    private func notificationButtonHandler() {
-        NotificationCenter.default.post(name: .changeColor, object: UIColor.blue)
+    private func buttonHandler(_ sender: UIButton) {
+        switch sender.titleLabel?.text {
+        case ButtonName.callback: changeBackgroundColorCallback(.red)
+        case ButtonName.delegate: transferDataDelegate.changeBackgroundColor(to: .green)
+        case ButtonName.notification:  NotificationCenter.default.post(name: .changeColor, object: UIColor.blue)
+        default: changeBackgroundColorCallback(.systemPurple)
+        }
     }
 }
