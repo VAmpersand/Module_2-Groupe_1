@@ -1,5 +1,5 @@
 //
-//  inCodeLayoutViewController.swift
+//  EvgenyInCodeLayoutViewController.swift
 //  Module_2 Groupe_1
 //
 //  Created by mac on 28.08.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class InCodeLayoutViewController: UIViewController {
+final class EvgenyInCodeLayoutViewController: UIViewController {
     
     private let yellowView: UIView = {
         let view = UIView()
