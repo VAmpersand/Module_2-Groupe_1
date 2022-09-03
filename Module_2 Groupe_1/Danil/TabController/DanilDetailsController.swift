@@ -35,8 +35,7 @@ final class DanilDetailsController: UIViewController {
     
     private func addConstraints() {
         closeButton.snp.makeConstraints {
-            $0.width.equalTo(Constants.ButtonSizes.Basics.width)
-            $0.height.equalTo(Constants.ButtonSizes.Basics.height)
+            $0.size.equalTo(Constants.Button.basicSize)
             $0.trailing.top.equalTo(view.safeAreaLayoutGuide).inset(Constants.Paddings.basic)
         }
     }

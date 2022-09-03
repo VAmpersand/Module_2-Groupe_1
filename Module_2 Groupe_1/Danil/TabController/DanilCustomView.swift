@@ -33,8 +33,7 @@ final class DanilCustomView: UIView {
     private func addConstraints() {
         delegateButton.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.equalTo(Constants.ButtonSizes.Basics.width)
-            $0.height.equalTo(Constants.ButtonSizes.Basics.height)
+            $0.size.equalTo(Constants.Button.basicSize)
         }
         
         callbackButton.snp.makeConstraints {
@@ -67,7 +66,7 @@ final class DanilCustomView: UIView {
     }
     
     private func delegateButtonHandler() {
-        transferDataDelegate.changeBackgroundColor(backgroundColor: .green)
+        transferDataDelegate.changeBackgroundColor(to: .green)
     }
     
     private func notificationButtonHandler() {

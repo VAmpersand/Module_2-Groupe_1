@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DanilTransferDataDelegate: AnyObject {
-    func changeBackgroundColor(backgroundColor: UIColor) -> Void
+    func changeBackgroundColor(to color: UIColor) -> Void
 }
 
 class DanilTransferDataController: UIViewController {
@@ -21,6 +21,21 @@ class DanilTransferDataController: UIViewController {
         addSubviews()
         addConstraints()
         configure()
+    }
+    
+    private func addSubviews() {
+        view.addSubview(customView)
+    }
+    
+    private func addConstraints() {
+        customView.snp.makeConstraints {
+            $0.center.width.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(Constants.Multipliers.half)
+        }
+    }
+    
+    private func configure() {
+        view.backgroundColor = .systemPurple
         
         customView.changeBackgroundColorCallback =  {
             self.view.backgroundColor = $0
@@ -30,27 +45,11 @@ class DanilTransferDataController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeColor(_:)), name: .changeColor, object: nil)
     }
-    
-    private func addSubviews() {
-        view.addSubview(customView)
-    }
-    
-    private func addConstraints() {
-        customView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.height.equalToSuperview().multipliedBy(Constants.Multipliers.half)
-            $0.width.equalToSuperview()
-        }
-    }
-    
-    private func configure() {
-        view.backgroundColor = .systemPurple
-    }
 }
 
 extension DanilTransferDataController: DanilTransferDataDelegate {
-    func changeBackgroundColor(backgroundColor: UIColor) {
-        view.backgroundColor = backgroundColor
+    func changeBackgroundColor(to color: UIColor) {
+        view.backgroundColor = color
     }
 }
 

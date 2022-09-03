@@ -23,10 +23,7 @@ enum Constants {
         static let quarter = 4
     }
     
-    enum ButtonSizes {
-        enum Basics {
-            static let width = 100
-            static let height = 50
-        }
+    enum Button {
+        static let basicSize  = CGSize(width: 100, height: 50)
     }
 }
