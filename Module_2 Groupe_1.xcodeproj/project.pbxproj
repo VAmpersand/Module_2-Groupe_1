@@ -14,6 +14,9 @@
 		2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* Constants.swift */; };
 		2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */; };
 		2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */; };
+		45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6282E28C36652000A5D3A /* AntonTestViewController.swift */; };
+		45D6283128C3666C000A5D3A /* AntonTransitionDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6283028C3666C000A5D3A /* AntonTransitionDemoController.swift */; };
+		45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6283228C36684000A5D3A /* AntonInCodeLayoutController.swift */; };
 		77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181728B0F50A00D6DDD0 /* AppDelegate.swift */; };
 		77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A6181928B0F50A00D6DDD0 /* SceneDelegate.swift */; };
 		77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A6182028B0F50C00D6DDD0 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 		2C7CFC9E28BB86F300DF3D32 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilInCodeLayoutController.swift; sourceTree = "<group>"; };
+		45D6282E28C36652000A5D3A /* AntonTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonTestViewController.swift; sourceTree = "<group>"; };
+		45D6283028C3666C000A5D3A /* AntonTransitionDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonTransitionDemoController.swift; sourceTree = "<group>"; };
+		45D6283228C36684000A5D3A /* AntonInCodeLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonInCodeLayoutController.swift; sourceTree = "<group>"; };
 		4B3FF6811A55F857AFF679AD /* Pods-Module_2 Groupe_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.debug.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.debug.xcconfig"; sourceTree = "<group>"; };
 		6BCC435BFA83489FC6F1309D /* Pods-Module_2 Groupe_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module_2 Groupe_1.release.xcconfig"; path = "Target Support Files/Pods-Module_2 Groupe_1/Pods-Module_2 Groupe_1.release.xcconfig"; sourceTree = "<group>"; };
 		77A6181428B0F50A00D6DDD0 /* Module_2 Groupe_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module_2 Groupe_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +255,9 @@
 			children = (
 				77A6184328B0FDDB00D6DDD0 /* AntonTabViewController.swift */,
 				77A6184D28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard */,
+				45D6282E28C36652000A5D3A /* AntonTestViewController.swift */,
+				45D6283028C3666C000A5D3A /* AntonTransitionDemoController.swift */,
+				45D6283228C36684000A5D3A /* AntonInCodeLayoutController.swift */,
 			);
 			path = TabController;
 			sourceTree = "<group>";
@@ -373,8 +382,11 @@
 				2C348A0A28BD67E8006B7003 /* DanilTransitionDemoController.swift in Sources */,
 				2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */,
 				77A6181828B0F50A00D6DDD0 /* AppDelegate.swift in Sources */,
+				45D6283128C3666C000A5D3A /* AntonTransitionDemoController.swift in Sources */,
 				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
 				77F0525728BDF56E00839EF6 /* inCodeLayoutViewController.swift in Sources */,
+				45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */,
+				45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */,
 				77A6183D28B0FD7700D6DDD0 /* DmitryTabViewController.swift in Sources */,
