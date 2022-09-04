@@ -37,8 +37,7 @@ class DanilTransitionDemoController: UIViewController {
     
     private func addConstraints() {
         seguePopoverButton.snp.makeConstraints {
-            $0.width.greaterThanOrEqualTo(Constants.Button.basicSize.width)
-            $0.height.equalTo(Constants.Button.basicSize.height)
+            $0.size.greaterThanOrEqualTo(Constants.Button.basicSize)
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.equalToSuperview().offset(Constants.Paddings.basic)
         }
