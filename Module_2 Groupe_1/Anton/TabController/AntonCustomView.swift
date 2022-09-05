@@ -8,17 +8,17 @@
 import UIKit
 import SnapKit
 
+protocol AntonCustomViewDelegate: AnyObject {
+    func returnControllerLabel(_ color: UIColor)
+}
 
 final class AntonCustomView: UIViewController {
     
     private let antonButtonCustomView = AntonButtonCustomView()
-    weak var delegate: AntonButtonCustomViewDelegate?
-    var lable = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
-        
         
         let customViewButton = UIButton(backgroundColor: .white, title: "")
         customViewButton.addTarget(self, action: #selector(customViewAction), for: .touchUpInside)
@@ -35,26 +35,29 @@ final class AntonCustomView: UIViewController {
             }
             
             antonButtonCustomView.color = .blue
+            antonButtonCustomView.callBack = {
+                self.view.backgroundColor = $0
+            }
             
             NotificationCenter.default.addObserver(self,
-                                                   selector: #selector(notificationAction),
-                                                   name: .testName,
+                                                   selector: #selector(notificationAction(_ :)),
+                                                   name: .notificationCustomButton,
                                                    object: nil)
         }
         
-//        view.addSubview(lable)
-//
-//        lable.snp.makeConstraints {
-//            $0.center.equalToSuperview()
-//        }
+        antonButtonCustomView.delegate = self
     }
     
-    @objc func customViewAction() {
-        
-    }
+    @objc func customViewAction() {}
     
     @objc func notificationAction(_ notification: Notification) {
-//        guard let color = notification.object as? UIColor else { return }
-        
+        guard let color = notification.object as? UIColor else { return }
+        view.backgroundColor = color
+    }
+}
+
+extension AntonCustomView: AntonCustomViewDelegate {
+    func returnControllerLabel(_ color: UIColor) {
+        view.backgroundColor = .green
     }
 }
