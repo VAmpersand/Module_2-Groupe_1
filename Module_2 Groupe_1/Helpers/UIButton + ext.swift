@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIButton {
-    convenience init(backgroundColor: UIColor = .white, titleColor: UIColor = .systemBlue, title: String = "Button") {
+    convenience init(backgroundColor: UIColor = .white, titleColor: UIColor = .white, title: String = "Button") {
         self.init(type: .system)
         self.setTitle(title, for: .normal)
         self.backgroundColor = backgroundColor

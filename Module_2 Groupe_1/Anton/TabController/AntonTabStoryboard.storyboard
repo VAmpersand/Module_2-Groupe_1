@@ -18,6 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkU-fY-FQb">
                                 <rect key="frame" x="57" y="428" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.14290196999999999" green="0.14589167820000001" blue="0.92201280590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="kVn-B9-fdg"/>
                                     <constraint firstAttribute="height" constant="50" id="que-G0-AF4"/>
@@ -45,13 +46,27 @@
                                     <action selector="buttonAction:" destination="xi2-CY-8E4" eventType="touchUpInside" id="m2e-zV-4Zb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVm-RU-hgq">
+                                <rect key="frame" x="57" y="623" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="TransferData controller"/>
+                                <connections>
+                                    <action selector="costomAction:" destination="xi2-CY-8E4" eventType="touchUpInside" id="ffh-QE-8g5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WQS-ki-JNJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="TVm-RU-hgq" firstAttribute="height" secondItem="CkU-fY-FQb" secondAttribute="height" id="5sr-jb-hy6"/>
+                            <constraint firstItem="TVm-RU-hgq" firstAttribute="width" secondItem="CkU-fY-FQb" secondAttribute="width" id="6Cc-Pn-LUI"/>
                             <constraint firstItem="CkU-fY-FQb" firstAttribute="centerY" secondItem="WQS-ki-JNJ" secondAttribute="centerY" id="MkJ-mt-c7N"/>
+                            <constraint firstItem="TVm-RU-hgq" firstAttribute="leading" secondItem="CkU-fY-FQb" secondAttribute="leading" id="Sax-uB-DnU"/>
                             <constraint firstItem="L39-zH-VmI" firstAttribute="leading" secondItem="CkU-fY-FQb" secondAttribute="leading" id="Zqn-iB-v9D"/>
                             <constraint firstItem="CkU-fY-FQb" firstAttribute="centerX" secondItem="WQS-ki-JNJ" secondAttribute="centerX" id="dId-SV-Ako"/>
+                            <constraint firstItem="TVm-RU-hgq" firstAttribute="top" secondItem="CkU-fY-FQb" secondAttribute="bottom" constant="145" id="pXk-Vu-SYd"/>
                             <constraint firstItem="L39-zH-VmI" firstAttribute="top" secondItem="CkU-fY-FQb" secondAttribute="bottom" constant="80" id="udX-XH-eqT"/>
                         </constraints>
                     </view>

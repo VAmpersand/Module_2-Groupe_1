@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class AntonTabViewController: UIViewController {
-    
+   
     @IBOutlet weak var interfaceBuilderButton: UIButton!
     
     private let inCodeButton: UIButton = {
@@ -28,6 +28,7 @@ final class AntonTabViewController: UIViewController {
         view.backgroundColor = .purple
         
         view.addSubview(inCodeButton)
+    
         inCodeButton.addTarget(self, action: #selector(buttonHandler), for: .touchUpInside)
         
         inCodeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -53,5 +54,12 @@ final class AntonTabViewController: UIViewController {
         let navController = UINavigationController(rootViewController: AntonTransitionDemoController())
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
+    }
+    
+    @IBAction func costomAction(_ sender: Any) {
+        let controller = AntonCustomView()
+        view.backgroundColor = .white
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
     }
 }
