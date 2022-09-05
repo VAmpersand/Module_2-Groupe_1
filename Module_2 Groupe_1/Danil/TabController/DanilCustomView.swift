@@ -8,16 +8,10 @@
 import UIKit
 
 final class DanilCustomView: UIView {
-    
-    enum ButtonName {
-        static let callback = "callback"
-        static let delegate = "delegate"
-        static let notification = "notification"
-    }
-    
-    private let callbackButton = UIButton(title: ButtonName.callback)
-    private let delegateButton = UIButton(title: ButtonName.delegate)
-    private let notificationButton = UIButton(title: ButtonName.notification)
+
+    private let callbackButton = UIButton(title: "callback")
+    private let delegateButton = UIButton(title: "delegate")
+    private let notificationButton = UIButton(title: "notification")
     
     var changeBackgroundColorCallback: ((UIColor) -> Void)!
     
@@ -68,11 +62,11 @@ final class DanilCustomView: UIView {
 
 @objc extension DanilCustomView {
     private func buttonHandler(_ sender: UIButton) {
-        switch sender.titleLabel?.text {
-        case ButtonName.callback: changeBackgroundColorCallback(.red)
-        case ButtonName.delegate: transferDataDelegate.changeBackgroundColor(to: .green)
-        case ButtonName.notification:  NotificationCenter.default.post(name: .changeColor, object: UIColor.blue)
-        default: changeBackgroundColorCallback(.systemPurple)
+        switch sender {
+        case callbackButton: changeBackgroundColorCallback(.red)
+        case delegateButton: transferDataDelegate.changeBackgroundColor(to: .green)
+        case notificationButton:  NotificationCenter.default.post(name: .changeColor, object: UIColor.blue)
+        default: break
         }
     }
 }
