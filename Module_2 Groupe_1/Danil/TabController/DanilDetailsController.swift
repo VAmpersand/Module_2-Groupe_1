@@ -35,8 +35,7 @@ final class DanilDetailsController: UIViewController {
     
     private func addConstraints() {
         closeButton.snp.makeConstraints {
-            $0.width.equalTo(Constants.ButtonSizes.Basics.width)
-            $0.height.equalTo(Constants.ButtonSizes.Basics.height)
+            $0.size.equalTo(Constants.Button.basicSize)
             $0.trailing.top.equalTo(view.safeAreaLayoutGuide).inset(Constants.Paddings.basic)
         }
     }
@@ -51,7 +50,9 @@ final class DanilDetailsController: UIViewController {
         } else if navigationController != nil {
             navigationController?.popViewController(animated: true)
         } else {
-            sceneDelegate?.window?.rootViewController = TabBarController()
+            let tabBarController = TabBarController()
+            tabBarController.selectedIndex = Tabs.danil.rawValue
+            sceneDelegate?.window?.rootViewController = tabBarController
         }
     }
 }
