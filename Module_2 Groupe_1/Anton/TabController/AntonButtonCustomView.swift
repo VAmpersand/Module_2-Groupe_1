@@ -10,21 +10,21 @@ import SnapKit
 
 final class AntonButtonCustomView: UIView {
     
-    public var color = UIColor.blue
+    var color = UIColor.blue
     var callBack: ((UIColor) -> Void)?
     
-    weak var delegate: AntonCustomViewDelegate?
+    weak var delegate: AntonTransferDataControllerDelegate?
     
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         
-        addSubviews()
-        addConstraints()
-        configureAppearance()
+            addSubviews()
+            addConstraints()
+            configureAppearance()
     }
-    
+
     required init?(coder: NSCoder) {
-        super.init(frame: .zero)
+        fatalError("init(coder:) has not been implemented")
     }
     
     private let stackView: UIStackView = {
@@ -35,12 +35,11 @@ final class AntonButtonCustomView: UIView {
         return view
     }()
     
-    let callBackCustomButton = UIButton(backgroundColor: .darkGray, title: "callBackButton")
-    let delegateCustomButton = UIButton(backgroundColor: .darkGray, title: "delegateButton")
-    let notificationCustomButton = UIButton(backgroundColor: .darkGray, title: "notificationButton")
+    let callBackCustomButton = UIButton(backgroundColor: .white, title: "callBackButton")
+    let delegateCustomButton = UIButton(backgroundColor: .white, title: "delegateButton")
+    let notificationCustomButton = UIButton(backgroundColor: .white, title: "notificationButton")
     
     private func configureAppearance() {
-        backgroundColor = .white
         
         callBackCustomButton.addTarget(self,
                                        action: #selector(callBackCustomAction),
@@ -54,6 +53,7 @@ final class AntonButtonCustomView: UIView {
     }
     
     private func addSubviews() {
+        
         addSubview(stackView)
         
         [
@@ -68,7 +68,7 @@ final class AntonButtonCustomView: UIView {
             $0.center.equalToSuperview()
             $0.width.equalToSuperview().inset(16)
         }
-        
+
         [
             callBackCustomButton,
             delegateCustomButton,
@@ -85,7 +85,7 @@ final class AntonButtonCustomView: UIView {
     }
     
     @objc func delegateCustomAction() {
-        delegate?.returnControllerLabel(.green)
+        delegate?.get(color: .green)
     }
     
     @objc func notificationCustomAction() {
