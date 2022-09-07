@@ -25,5 +25,24 @@ enum Constants {
     
     enum Button {
         static let basicSize  = CGSize(width: 100, height: 50)
+        static let mediumSize = CGSize(width: 314, height: 49)
+    }
+    
+    enum Color {
+        static let white = "#FFFFFF"
+        static let black = "#000000"
+        static let mainBackground = "#F5F5F8"
+        static let mainButtonBackround = "#F8774A"
+        static let mainButtonTitle = "#F6F6F9"
+    }
+    
+    enum BorderRadius {
+        static let low: CGFloat = 10
+        static let medium: CGFloat = 20
+        static let large: CGFloat = 30
+    }
+    
+    enum FontSize {
+        static let medium: CGFloat = 17
     }
 }
