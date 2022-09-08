@@ -25,7 +25,7 @@ final class DanilCategoryView: DanilBaseView {
     }
     
     private func configure() {
-        categoryImageView.tintColor = UIColor(hexString: Constants.Color.black)
+        categoryImageView.tintColor = .black
         layer.cornerRadius = Constants.BorderRadius.low
     }
     

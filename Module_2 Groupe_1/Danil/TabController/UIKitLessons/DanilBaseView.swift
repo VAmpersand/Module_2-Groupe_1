@@ -19,6 +19,6 @@ class DanilBaseView: UIView {
     }
     
     private func configure() {
-        backgroundColor = UIColor(hexString: Constants.Color.white)
+        backgroundColor = .white
     }
 }

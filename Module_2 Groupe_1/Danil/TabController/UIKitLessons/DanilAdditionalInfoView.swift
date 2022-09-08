@@ -9,19 +9,17 @@ import UIKit
 
 final class DanilAdditionalInfoView: DanilBaseView {
     
-    private let containerView: UIView = {
-        let view = UIView(backgroundColor: UIColor(hexString: Constants.Color.mainBackground))
-        return view
-    }()
+    private let containerView = UIView(backgroundColor: Constants.Color.mainBackground)
     
     private let additionalInfoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "info.circle"))
-        imageView.tintColor = UIColor(hexString: Constants.Color.black)
+        imageView.tintColor = .black
         return imageView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSubviews()
         addConstraints()
     }
@@ -44,7 +42,7 @@ final class DanilAdditionalInfoView: DanilBaseView {
         
         additionalInfoImageView.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalToSuperview().dividedBy(1.5)
+            $0.size.equalToSuperview().multipliedBy(0.66)
         }
     }
     

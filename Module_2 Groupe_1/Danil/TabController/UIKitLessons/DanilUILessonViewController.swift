@@ -11,7 +11,7 @@ final class DanilUILessonViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     
-    private let contentView = UIView(backgroundColor: UIColor(hexString: Constants.Color.mainBackground))
+    private let contentView = UIView(backgroundColor: Constants.Color.mainBackground)
     
     private let personalInfoView: DanilBaseView = {
         let baseView = DanilPersonalInfoView()
@@ -30,7 +30,6 @@ final class DanilUILessonViewController: UIViewController {
     private let notificationsCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "bell")))
     private let settingsCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "gearshape")))
     private let paymentsCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "creditcard")))
-    
     
     private let menuStackView: UIStackView = {
         let stackView = UIStackView()
@@ -52,8 +51,8 @@ final class DanilUILessonViewController: UIViewController {
     
     private let updateButton: UIButton = {
         let button = UIButton(
-            backgroundColor: UIColor(hexString: Constants.Color.mainButtonBackround),
-            titleColor: UIColor(hexString: Constants.Color.mainButtonTitle),
+            backgroundColor: Constants.Color.mainButtonBackround,
+            titleColor: Constants.Color.mainButtonTitle,
             title: "Update"
         )
         button.layer.cornerRadius = Constants.BorderRadius.large
@@ -69,7 +68,7 @@ final class DanilUILessonViewController: UIViewController {
     }
     
     private func configure() {
-        view.backgroundColor = UIColor(hexString: Constants.Color.mainBackground)
+        view.backgroundColor = Constants.Color.mainBackground
         [bookmarksCategory, notificationsCategory, settingsCategory, paymentsCategory]
             .forEach {
                 $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(categoriesHandler(_:))))
@@ -87,12 +86,26 @@ final class DanilUILessonViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        [personalInfoView, categoriesStackView, menuStackView, additionalInfoView, updateButton]
-            .forEach { contentView.addSubview($0) }
-        [bookmarksCategory, notificationsCategory, settingsCategory, paymentsCategory]
-            .forEach { categoriesStackView.addArrangedSubview($0) }
-        [orderMenuItemView, feedbackMenuItemView, preferencesMenuItemView, helpMenuItemView]
-            .forEach { menuStackView.addArrangedSubview($0) }
+        [
+            personalInfoView,
+            categoriesStackView,
+            menuStackView,
+            additionalInfoView,
+            updateButton
+        ].forEach(contentView.addSubview)
+        
+        [bookmarksCategory,
+         notificationsCategory,
+         settingsCategory,
+         paymentsCategory
+        ].forEach(categoriesStackView.addArrangedSubview)
+        
+        [
+            orderMenuItemView,
+            feedbackMenuItemView,
+            preferencesMenuItemView,
+            helpMenuItemView
+        ].forEach(menuStackView.addArrangedSubview)
     }
     
     private func addConstraints() {
@@ -140,49 +153,27 @@ final class DanilUILessonViewController: UIViewController {
 
 @objc extension DanilUILessonViewController {
     private func categoriesHandler(_ gestureRecognizer: UITapGestureRecognizer) {
+        let controller = UIViewController()
         switch gestureRecognizer.view {
-        case bookmarksCategory:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .white
-            present(controller, animated: true)
-        case notificationsCategory:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .blue
-            present(controller, animated: true)
-        case settingsCategory:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .red
-            present(controller, animated: true)
-        case paymentsCategory:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .brown
-            present(controller, animated: true)
-        default:
-            break
+        case bookmarksCategory: controller.view.backgroundColor = .white
+        case notificationsCategory: controller.view.backgroundColor = .blue
+        case settingsCategory: controller.view.backgroundColor = .red
+        case paymentsCategory: controller.view.backgroundColor = .brown
+        default: return
         }
+        present(controller, animated: true)
     }
     
     private func menuHandler(_ gestureRecognizer: UITapGestureRecognizer) {
+        let controller = UIViewController()
         switch gestureRecognizer.view {
-        case orderMenuItemView:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .white
-            present(controller, animated: true)
-        case feedbackMenuItemView:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .blue
-            present(controller, animated: true)
-        case preferencesMenuItemView:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .red
-            present(controller, animated: true)
-        case helpMenuItemView:
-            let controller = UIViewController()
-            controller.view.backgroundColor = .brown
-            present(controller, animated: true)
-        default:
-            break
+        case orderMenuItemView: controller.view.backgroundColor = .white
+        case feedbackMenuItemView: controller.view.backgroundColor = .blue
+        case preferencesMenuItemView: controller.view.backgroundColor = .red
+        case helpMenuItemView: controller.view.backgroundColor = .brown
+        default: break
         }
+        present(controller, animated: true)
     }
     
     private func additionalInfoHandler() {

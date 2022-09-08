@@ -29,11 +29,9 @@ enum Constants {
     }
     
     enum Color {
-        static let white = "#FFFFFF"
-        static let black = "#000000"
-        static let mainBackground = "#F5F5F8"
-        static let mainButtonBackround = "#F8774A"
-        static let mainButtonTitle = "#F6F6F9"
+        static let mainBackground = UIColor(hexString: "#F5F5F8")
+        static let mainButtonBackround = UIColor(hexString: "#F8774A")
+        static let mainButtonTitle = UIColor(hexString: "#F6F6F9")
     }
     
     enum BorderRadius {
