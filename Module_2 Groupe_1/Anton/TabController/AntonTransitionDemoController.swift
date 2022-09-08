@@ -75,6 +75,7 @@ final class AntonTransitionDemoController: UIViewController {
             $0.center.equalToSuperview()
             $0.width.equalToSuperview().inset(16)
         }
+        
         [
             popoverDefaultButton,
             fullScreenCroseDesolveButton,
