@@ -13,11 +13,7 @@ final class DanilUILessonViewController: UIViewController {
     
     private let contentView = UIView(backgroundColor: Constants.Color.mainBackground)
     
-    private let personalInfoView: DanilBaseView = {
-        let baseView = DanilPersonalInfoView()
-        baseView.layer.cornerRadius = Constants.BorderRadius.medium
-        return baseView
-    }()
+    private let personalInfoView = DanilPersonalInfoView()
     
     private let categoriesStackView: UIStackView = {
         let stackView = UIStackView()
@@ -61,31 +57,25 @@ final class DanilUILessonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        configureAppearance()
         addSubviews()
         addConstraints()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
-        print("viewDidLayoutSubviews")
-        print(updateButton.frame)
-
-        updateButton.layer.cornerRadius = updateButton.frame.height / 2
+        
+        DispatchQueue.main.async {
+            self.updateButton.layer.cornerRadius = self.updateButton.frame.height / 2
+        }
+        
     }
-
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        print("viewDidAppear")
-//
-//        updateButton.layer.cornerRadius = updateButton.frame.height / 2
-//    }
-//
-    private func configure() {
+    private func configureAppearance() {
         view.backgroundColor = Constants.Color.mainBackground
+        
+        let personalInfoViewModel = DanilPersonalInfoView.ViewModel(avatarUrlString: "danilAvatar")
+        personalInfoView.configure(with: personalInfoViewModel)
         
         [bookmarksCategory, notificationsCategory, settingsCategory, paymentsCategory]
             .forEach {
@@ -165,6 +155,7 @@ final class DanilUILessonViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.size.equalTo(Constants.Button.mediumSize)
         }
+        
     }
 }
 
