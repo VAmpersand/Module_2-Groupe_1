@@ -32,6 +32,7 @@ final class DanilPersonalInfoView: DanilBaseView {
         personalAvatar.snp.makeConstraints {
             $0.top.equalToSuperview().offset(Constants.Paddings.basic)
             $0.leading.equalToSuperview().offset(Constants.PersonalInfoPadding.medium)
+            $0.bottom.equalToSuperview().inset(45)
             $0.size.equalTo(Constants.PersonalInfoImageView.size)
         }
     }

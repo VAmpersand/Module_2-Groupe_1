@@ -55,7 +55,6 @@ final class DanilUILessonViewController: UIViewController {
             titleColor: Constants.Color.mainButtonTitle,
             title: "Update"
         )
-        button.layer.cornerRadius = Constants.BorderRadius.large
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: Constants.FontSize.medium)
         return button
     }()
@@ -67,8 +66,27 @@ final class DanilUILessonViewController: UIViewController {
         addConstraints()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        print("viewDidLayoutSubviews")
+        print(updateButton.frame)
+
+        updateButton.layer.cornerRadius = updateButton.frame.height / 2
+    }
+
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        print("viewDidAppear")
+//
+//        updateButton.layer.cornerRadius = updateButton.frame.height / 2
+//    }
+//
     private func configure() {
         view.backgroundColor = Constants.Color.mainBackground
+        
         [bookmarksCategory, notificationsCategory, settingsCategory, paymentsCategory]
             .forEach {
                 $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(categoriesHandler(_:))))
@@ -121,7 +139,6 @@ final class DanilUILessonViewController: UIViewController {
         personalInfoView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(95)
             $0.leading.trailing.equalToSuperview().inset(Constants.UILessonPadding.basic)
-            $0.height.equalTo(155)
         }
         
         categoriesStackView.snp.makeConstraints {
