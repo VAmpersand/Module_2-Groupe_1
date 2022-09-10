@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseTextView: UITextField {
+class BaseTextField: UITextField {
     
     init(placeholderText: String) {
         super.init(frame: .zero)

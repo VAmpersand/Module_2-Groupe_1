@@ -19,9 +19,9 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
-    private let loginTextField = BaseTextView(placeholderText: "Username, Mobile Number")
+    private let loginTextField = BaseTextField(placeholderText: "Username, Mobile Number")
     private let passwordTextField: UITextField = {
-        let textField = BaseTextView(placeholderText: "Password")
+        let textField = BaseTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
         return textField
     }()

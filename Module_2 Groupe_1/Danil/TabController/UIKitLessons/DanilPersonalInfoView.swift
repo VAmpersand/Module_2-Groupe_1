@@ -41,8 +41,6 @@ final class DanilPersonalInfoView: DanilBaseView {
         addSubviews()
         addConstraints()
         configureAppearance()
-        
-        
     }
      
     required init?(coder: NSCoder) {
