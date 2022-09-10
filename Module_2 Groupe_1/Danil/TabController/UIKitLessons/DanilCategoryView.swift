@@ -10,10 +10,11 @@ import UIKit
 final class DanilCategoryView: DanilBaseView {
     
     private var categoryImageView: UIImageView
+    private let categoryLabel = UILabel(font: .metropolisRegular10)
    
-    //add label then
-    init(categoryImageView: UIImageView) {
+    init(categoryImageView: UIImageView, labelText: String) {
         self.categoryImageView = categoryImageView
+        self.categoryLabel.text = labelText
         super.init(frame: .zero)
         configure()
         addSubviews()
@@ -31,13 +32,19 @@ final class DanilCategoryView: DanilBaseView {
     
     private func addSubviews() {
         addSubview(categoryImageView)
+        addSubview(categoryLabel)
     }
     
-    private func addConstraints() {
+    private func addConstraints() {        
         categoryImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(5)
             $0.size.equalTo(22)
+        }
+        
+        categoryLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(categoryImageView.snp.bottom).offset(5)
         }
     }
 }
