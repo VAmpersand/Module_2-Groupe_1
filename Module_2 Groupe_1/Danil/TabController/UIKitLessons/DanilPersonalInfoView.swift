@@ -38,6 +38,7 @@ final class DanilPersonalInfoView: DanilBaseView {
         
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSubviews()
         addConstraints()
         configureAppearance()

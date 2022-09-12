@@ -19,9 +19,9 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
-    private let loginTextField = BaseTextField(placeholderText: "Username, Mobile Number")
+    private let loginTextField = PrimaryTextField(placeholderText: "Username, Mobile Number")
     private let passwordTextField: UITextField = {
-        let textField = BaseTextField(placeholderText: "Password")
+        let textField = PrimaryTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -57,6 +57,14 @@ final class DanilAuthViewController: UIViewController {
         stackView.snp.makeConstraints {
             $0.top.equalTo(topView.snp.bottom).offset(Constants.Paddings.large)
             $0.leading.trailing.equalToSuperview().inset(Constants.Paddings.large)
+        }
+        
+        loginTextField.snp.makeConstraints {
+            $0.height.equalTo(58)
+        }
+        
+        passwordTextField.snp.makeConstraints {
+            $0.height.equalTo(loginTextField)
         }
     }
     

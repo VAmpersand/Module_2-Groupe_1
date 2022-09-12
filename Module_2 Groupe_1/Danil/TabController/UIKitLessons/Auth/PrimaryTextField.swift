@@ -7,34 +7,33 @@
 
 import UIKit
 
-class BaseTextField: UITextField {
+final class PrimaryTextField: UITextField {
     
     init(placeholderText: String) {
         super.init(frame: .zero)
 
         configureAppearance(with: placeholderText)
-        addConstraints()
     }
     
     private func configureAppearance(with placeholderText: String) {
         font = .nunitoRegular16
         backgroundColor = .white
         layer.cornerRadius = Constants.BorderRadius.low
-        attributedPlaceholder = NSAttributedString(string: placeholderText, attributes:[NSAttributedString.Key.foregroundColor: Constants.Color.placeholder])
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 5))
-        leftViewMode = .always
-        rightViewMode = .always
-        leftView = paddingView
-        rightView = paddingView
-    }
-    
-    private func addConstraints() {
-        snp.makeConstraints {
-            $0.height.equalTo(58)
-        }
+        attributedPlaceholder = NSAttributedString(
+            string: placeholderText,
+            attributes:[NSAttributedString.Key.foregroundColor: Constants.Color.placeholder]
+        )
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: Constants.Paddings.basic, dy: 0)
+    }
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: Constants.Paddings.basic, dy: 0)
     }
 }

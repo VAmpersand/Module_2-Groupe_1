@@ -14,7 +14,7 @@
 		2C0BCD6328CBB87A00BFC536 /* UILabel + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BCD6228CBB87A00BFC536 /* UILabel + ext.swift */; };
 		2C0BCD6528CC9FD100BFC536 /* DanilAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BCD6428CC9FD100BFC536 /* DanilAuthViewController.swift */; };
 		2C0BCD6828CCA2BB00BFC536 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BCD6728CCA2BB00BFC536 /* TopView.swift */; };
-		2C0BCD6A28CCB61100BFC536 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BCD6928CCB61100BFC536 /* BaseTextField.swift */; };
+		2C0BCD6A28CCB61100BFC536 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BCD6928CCB61100BFC536 /* PrimaryTextField.swift */; };
 		2C0BCD6D28CCB87B00BFC536 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BCD6C28CCB87B00BFC536 /* Nunito-Regular.ttf */; };
 		2C17158C28C227D600736E72 /* DanilTransferDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17158B28C227D600736E72 /* DanilTransferDataController.swift */; };
 		2C17158E28C228F500736E72 /* DanilCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17158D28C228F500736E72 /* DanilCustomView.swift */; };
@@ -63,7 +63,7 @@
 		2C0BCD6228CBB87A00BFC536 /* UILabel + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + ext.swift"; sourceTree = "<group>"; };
 		2C0BCD6428CC9FD100BFC536 /* DanilAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilAuthViewController.swift; sourceTree = "<group>"; };
 		2C0BCD6728CCA2BB00BFC536 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
-		2C0BCD6928CCB61100BFC536 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		2C0BCD6928CCB61100BFC536 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		2C0BCD6C28CCB87B00BFC536 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		2C17158B28C227D600736E72 /* DanilTransferDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTransferDataController.swift; sourceTree = "<group>"; };
 		2C17158D28C228F500736E72 /* DanilCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilCustomView.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			children = (
 				2C0BCD6428CC9FD100BFC536 /* DanilAuthViewController.swift */,
 				2C0BCD6728CCA2BB00BFC536 /* TopView.swift */,
-				2C0BCD6928CCB61100BFC536 /* BaseTextField.swift */,
+				2C0BCD6928CCB61100BFC536 /* PrimaryTextField.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
 				2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */,
 				2C0BCD6828CCA2BB00BFC536 /* TopView.swift in Sources */,
-				2C0BCD6A28CCB61100BFC536 /* BaseTextField.swift in Sources */,
+				2C0BCD6A28CCB61100BFC536 /* PrimaryTextField.swift in Sources */,
 				2C0BCD6328CBB87A00BFC536 /* UILabel + ext.swift in Sources */,
 				2CCFF26628C760DB008DDB72 /* DanilPersonalInfoView.swift in Sources */,
 				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,

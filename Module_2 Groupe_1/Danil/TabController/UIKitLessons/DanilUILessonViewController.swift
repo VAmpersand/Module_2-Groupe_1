@@ -30,10 +30,22 @@ final class DanilUILessonViewController: UIViewController {
         return stackView
     }()
     
-    private let bookmarksCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "bookmark")), labelText: "Bookmarks")
-    private let notificationsCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "bell")), labelText: "Notifications")
-    private let settingsCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "gearshape")), labelText: "Settings")
-    private let paymentsCategory = DanilCategoryView(categoryImageView: UIImageView(image: UIImage(systemName: "creditcard")), labelText: "Payments")
+    private let bookmarksCategory = DanilCategoryView(
+        categoryImageView: UIImageView(image: UIImage(systemName: "bookmark")),
+        labelText: "Bookmarks"
+    )
+    private let notificationsCategory = DanilCategoryView(
+        categoryImageView: UIImageView(image: UIImage(systemName: "bell")),
+        labelText: "Notifications"
+    )
+    private let settingsCategory = DanilCategoryView(
+        categoryImageView: UIImageView(image: UIImage(systemName: "gearshape")),
+        labelText: "Settings"
+    )
+    private let paymentsCategory = DanilCategoryView(
+        categoryImageView: UIImageView(image: UIImage(systemName: "creditcard")),
+        labelText: "Payments"
+    )
     
     private let menuStackView: UIStackView = {
         let stackView = UIStackView()
@@ -106,7 +118,13 @@ final class DanilUILessonViewController: UIViewController {
     private func configureAppearance() {
         view.backgroundColor = Constants.Color.primary
         
-        let personalInfoViewModel = DanilPersonalInfoView.ViewModel(avatarUrlString: "danilAvatar", name: "Sumanya K.", email: "sumanyak@gmail.com", phone: "+91 xxxxxxxxxxx", address: "#21-22-31, Masab Tank, Hyderabad.")
+        let personalInfoViewModel = DanilPersonalInfoView.ViewModel(
+            avatarUrlString: "danilAvatar",
+            name: "Sumanya K.",
+            email: "sumanyak@gmail.com",
+            phone: "+91 xxxxxxxxxxx",
+            address: "#21-22-31, Masab Tank, Hyderabad."
+        )
         personalInfoView.configure(with: personalInfoViewModel)
         
         [bookmarksCategory, notificationsCategory, settingsCategory, paymentsCategory]
@@ -120,7 +138,6 @@ final class DanilUILessonViewController: UIViewController {
             }
         
         additionalInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(additionalInfoHandler)))
-        
         personalInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(personalInfoHandler)))
     }
     

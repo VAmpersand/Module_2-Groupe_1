@@ -38,13 +38,13 @@ final class DanilCategoryView: DanilBaseView {
     private func addConstraints() {        
         categoryImageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(5)
+            $0.top.equalToSuperview().offset(10)
             $0.size.equalTo(22)
         }
         
         categoryLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(categoryImageView.snp.bottom).offset(5)
+            $0.top.equalTo(categoryImageView.snp.bottom).offset(4)
         }
     }
 }
