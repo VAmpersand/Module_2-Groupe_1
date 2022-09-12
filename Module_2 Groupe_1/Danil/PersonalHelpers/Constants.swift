@@ -12,6 +12,7 @@ import UIKit
 enum Constants {
     enum Paddings {
         static let basic: CGFloat = 16
+        static let large: CGFloat = 48
     }
     
     enum Multipliers {
@@ -29,18 +30,15 @@ enum Constants {
     }
     
     enum Color {
-        static let mainBackground = UIColor(hexString: "#F5F5F8")
-        static let mainButtonBackround = UIColor(hexString: "#F8774A")
-        static let mainButtonTitle = UIColor(hexString: "#F6F6F9")
+        static let primary = UIColor(hexString: "#F5F5F8")
+        static let secondary = UIColor(hexString: "#F8774A")
+        static let buttonTitle = UIColor(hexString: "#F6F6F9")
+        static let placeholder = UIColor(hexString: "#BFBFBF")
     }
     
     enum BorderRadius {
         static let low: CGFloat = 10
         static let medium: CGFloat = 20
         static let large: CGFloat = 30
-    }
-    
-    enum FontSize {
-        static let medium: CGFloat = 17
     }
 }
