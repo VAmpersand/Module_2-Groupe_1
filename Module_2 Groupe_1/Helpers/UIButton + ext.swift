@@ -15,4 +15,32 @@ extension UIButton {
         self.setTitleColor(titleColor, for: .normal)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func danilMakeSystem() {
+        addTarget(self, action: #selector(handleIn), for: [
+            .touchDown,
+            .touchDragInside
+        ])
+        addTarget(self, action: #selector(handleOut), for: [
+            .touchUpInside,
+            .touchUpOutside,
+            .touchDragOutside,
+            .touchDragExit,
+            .touchCancel
+        ])
+    }
+}
+
+@objc extension UIButton {
+    private func handleIn() {
+        UIView.animate(withDuration: 0.15) {
+            self.alpha = 0.55
+        }
+    }
+    
+    private func handleOut() {
+        UIView.animate(withDuration: 0.15) {
+            self.alpha = 1
+        }
+    }
 }

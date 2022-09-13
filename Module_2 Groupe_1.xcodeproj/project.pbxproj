@@ -24,9 +24,9 @@
 		2C348A0A28BD67E8006B7003 /* DanilTransitionDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */; };
 		2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C348A0B28BE05F5006B7003 /* UIButton + ext.swift */; };
 		2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */; };
-		2C4E8D4D28C79765005DE286 /* DanilAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4C28C79765005DE286 /* DanilAdditionalInfoView.swift */; };
 		2C4E8D4F28C86D2C005DE286 /* DanilBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */; };
 		2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* Constants.swift */; };
+		2C8D8C8528D07F9B008B4030 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D8C8428D07F9B008B4030 /* InfoButton.swift */; };
 		2CCFF26128C74AC1008DDB72 /* DanilUILessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFF26028C74AC1008DDB72 /* DanilUILessonViewController.swift */; };
 		2CCFF26328C74EE7008DDB72 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFF26228C74EE7008DDB72 /* UIColor + ext.swift */; };
 		2CCFF26628C760DB008DDB72 /* DanilPersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFF26528C760DB008DDB72 /* DanilPersonalInfoView.swift */; };
@@ -73,9 +73,9 @@
 		2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTransitionDemoController.swift; sourceTree = "<group>"; };
 		2C348A0B28BE05F5006B7003 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilMenuItemView.swift; sourceTree = "<group>"; };
-		2C4E8D4C28C79765005DE286 /* DanilAdditionalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilAdditionalInfoView.swift; sourceTree = "<group>"; };
 		2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilBaseView.swift; sourceTree = "<group>"; };
 		2C7CFC9E28BB86F300DF3D32 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C8D8C8428D07F9B008B4030 /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
 		2CCFF26028C74AC1008DDB72 /* DanilUILessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilUILessonViewController.swift; sourceTree = "<group>"; };
 		2CCFF26228C74EE7008DDB72 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		2CCFF26528C760DB008DDB72 /* DanilPersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPersonalInfoView.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				2CCFF26528C760DB008DDB72 /* DanilPersonalInfoView.swift */,
 				2CCFF26728C76B38008DDB72 /* DanilCategoryView.swift */,
 				2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */,
-				2C4E8D4C28C79765005DE286 /* DanilAdditionalInfoView.swift */,
 				2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */,
+				2C8D8C8428D07F9B008B4030 /* InfoButton.swift */,
 			);
 			path = UIKitLessons;
 			sourceTree = "<group>";
@@ -481,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8D8C8528D07F9B008B4030 /* InfoButton.swift in Sources */,
 				2C1CA0EA28C0FB8C0025F7FA /* UIViewController + ext.swift in Sources */,
 				2C17159028C23FC200736E72 /* Notification + ext.swift in Sources */,
 				2CCFF26128C74AC1008DDB72 /* DanilUILessonViewController.swift in Sources */,
@@ -506,7 +507,6 @@
 				2CCFF26328C74EE7008DDB72 /* UIColor + ext.swift in Sources */,
 				2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */,
 				45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */,
-				2C4E8D4D28C79765005DE286 /* DanilAdditionalInfoView.swift in Sources */,
 				45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */,

@@ -79,10 +79,10 @@ final class DanilUILessonViewController: UIViewController {
         return textView
     }()
     
-    private let additionalInfoView: DanilBaseView = {
-        let baseView = DanilAdditionalInfoView()
-        baseView.layer.cornerRadius = Constants.BorderRadius.medium
-        return baseView
+    private let infoButton: InfoButton = {
+        let button = InfoButton()
+        button.layer.cornerRadius = Constants.BorderRadius.medium
+        return button
     }()
     
     private let updateButton: UIButton = {
@@ -97,6 +97,7 @@ final class DanilUILessonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureAppearance()
         addSubviews()
         addConstraints()
@@ -122,17 +123,24 @@ final class DanilUILessonViewController: UIViewController {
         )
         personalInfoView.configure(with: personalInfoViewModel)
         
-        [bookmarksCategory, notificationsCategory, settingsCategory, paymentsCategory]
-            .forEach {
-                $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(categoriesHandler(_:))))
-            }
+        [
+            bookmarksCategory,
+            notificationsCategory,
+            settingsCategory,
+            paymentsCategory
+        ].forEach {
+            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(categoriesHandler(_:))))
+        }
         
-        [orderMenuItemView, feedbackMenuItemView, preferencesMenuItemView, helpMenuItemView]
-            .forEach {
+        [
+            orderMenuItemView,
+            feedbackMenuItemView,
+            preferencesMenuItemView,
+            helpMenuItemView].forEach {
                 $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(menuHandler(_:))))
             }
         
-        additionalInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(additionalInfoHandler)))
+        infoButton.addTarget(self, action: #selector(additionalInfoHandler), for: .touchUpInside)
         personalInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(personalInfoHandler)))
     }
     
@@ -147,7 +155,7 @@ final class DanilUILessonViewController: UIViewController {
             categoriesStackView,
             menuStackView,
             textView,
-            additionalInfoView,
+            infoButton,
             updateButton
         ].forEach(contentView.addSubview)
         
@@ -205,14 +213,14 @@ final class DanilUILessonViewController: UIViewController {
             $0.leading.equalToSuperview().offset(44)
         }
         
-        additionalInfoView.snp.makeConstraints {
+        infoButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(Constants.UILessonPadding.medium)
             $0.top.equalTo(textView.snp.bottom).offset(31)
             $0.size.equalTo(Constants.additionalInfoSize)
         }
         
         updateButton.snp.makeConstraints {
-            $0.top.equalTo(additionalInfoView.snp.bottom).offset(62)
+            $0.top.equalTo(infoButton.snp.bottom).offset(62)
             $0.bottom.equalToSuperview().inset(121)
             $0.centerX.equalToSuperview()
             $0.size.equalTo(Constants.Button.mediumSize)
