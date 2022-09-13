@@ -10,18 +10,35 @@ import UIKit
 final class DanilUILessonViewController: UIViewController {
     
     private let scrollView = UIScrollView()
-    
     private let contentView = UIView(backgroundColor: Constants.Color.primary)
-    
     private let personalDetailsLabel = UILabel(font: .poppinsSemiBold18, text: "Personal details")
+    private let personalInfoView = DanilPersonalInfoView()
+    private let bookmarksCategory = DanilCategoryView(
+        categoryImage: UIImage(systemName: "bookmark")!,
+        labelText: "Bookmarks"
+    )
+    private let notificationsCategory = DanilCategoryView(
+        categoryImage: UIImage(systemName: "bell")!,
+        labelText: "Notifications"
+    )
+    private let settingsCategory = DanilCategoryView(
+        categoryImage: UIImage(systemName: "gearshape")!,
+        labelText: "Settings"
+    )
+    private let paymentsCategory = DanilCategoryView(
+        categoryImage: UIImage(systemName: "creditcard")!,
+        labelText: "Payments"
+    )
+    private let orderMenuItemView = DanilMenuItemView(textLabel: "Your Orders")
+    private let feedbackMenuItemView = DanilMenuItemView(textLabel: "Feedback & Refunds")
+    private let preferencesMenuItemView = DanilMenuItemView(textLabel: "My Preferences")
+    private let helpMenuItemView = DanilMenuItemView(textLabel: "Help")
     
     private let editButton: UIButton = {
         let button = UIButton(backgroundColor: .clear, titleColor: Constants.Color.secondary, title: "Edit")
         button.titleLabel?.font = UIFont.metropolisRegular15
         return button
     }()
-    
-    private let personalInfoView = DanilPersonalInfoView()
     
     private let categoriesStackView: UIStackView = {
         let stackView = UIStackView()
@@ -30,34 +47,12 @@ final class DanilUILessonViewController: UIViewController {
         return stackView
     }()
     
-    private let bookmarksCategory = DanilCategoryView(
-        categoryImageView: UIImageView(image: UIImage(systemName: "bookmark")),
-        labelText: "Bookmarks"
-    )
-    private let notificationsCategory = DanilCategoryView(
-        categoryImageView: UIImageView(image: UIImage(systemName: "bell")),
-        labelText: "Notifications"
-    )
-    private let settingsCategory = DanilCategoryView(
-        categoryImageView: UIImageView(image: UIImage(systemName: "gearshape")),
-        labelText: "Settings"
-    )
-    private let paymentsCategory = DanilCategoryView(
-        categoryImageView: UIImageView(image: UIImage(systemName: "creditcard")),
-        labelText: "Payments"
-    )
-    
     private let menuStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.spacing = Constants.UILessonSpacing.medium
         stackView.axis = .vertical
         return stackView
     }()
-    
-    private let orderMenuItemView = DanilMenuItemView(textLabel: "Your Orders")
-    private let feedbackMenuItemView = DanilMenuItemView(textLabel: "Feedback & Refunds")
-    private let preferencesMenuItemView = DanilMenuItemView(textLabel: "My Preferences")
-    private let helpMenuItemView = DanilMenuItemView(textLabel: "Help")
     
     private let textView: UITextView = {
         let textView = UITextView()
@@ -156,10 +151,11 @@ final class DanilUILessonViewController: UIViewController {
             updateButton
         ].forEach(contentView.addSubview)
         
-        [bookmarksCategory,
-         notificationsCategory,
-         settingsCategory,
-         paymentsCategory
+        [
+            bookmarksCategory,
+            notificationsCategory,
+            settingsCategory,
+            paymentsCategory
         ].forEach(categoriesStackView.addArrangedSubview)
         
         [

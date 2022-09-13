@@ -9,11 +9,11 @@ import UIKit
 
 final class DanilCategoryView: DanilBaseView {
     
-    private var categoryImageView: UIImageView
+    private let categoryImageView = UIImageView()
     private let categoryLabel = UILabel(font: .metropolisRegular10)
    
-    init(categoryImageView: UIImageView, labelText: String) {
-        self.categoryImageView = categoryImageView
+    init(categoryImage: UIImage, labelText: String) {
+        categoryImageView.image = categoryImage
         self.categoryLabel.text = labelText
         super.init(frame: .zero)
         configure()
