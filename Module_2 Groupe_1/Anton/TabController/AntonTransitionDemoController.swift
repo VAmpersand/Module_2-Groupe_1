@@ -34,8 +34,8 @@ final class AntonTransitionDemoController: UIViewController {
         super.viewDidLoad()
         
         addSubviews()
-        addConstraints()
         configureAppearance()
+        addConstraints()
     }
     
     private func configureAppearance() {

@@ -74,13 +74,10 @@ final class AntonInCodeLayoutController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
-        view.addSubview(closeButton)
         
         addSubviews()
-        addConstraints()
         configureAppearance()
+        addConstraints()
     }
     
     private func addSubviews() {
@@ -97,6 +94,13 @@ final class AntonInCodeLayoutController: UIViewController {
         redView2.addSubview(blueView2)
         redView2.addSubview(cyanView2)
         view.addSubview(closeButton)
+    }
+    
+    private func configureAppearance() {
+        
+        view.backgroundColor = .white
+        
+        closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
     }
     
     private func addConstraints() {
@@ -164,10 +168,6 @@ final class AntonInCodeLayoutController: UIViewController {
             $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(32)
             $0.size.equalTo(45)
         }
-    }
-    
-    private func configureAppearance() {
-        view.backgroundColor = .white
     }
     
     @objc func closeAction() {

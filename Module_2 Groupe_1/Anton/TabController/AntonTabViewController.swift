@@ -26,15 +26,25 @@ final class AntonTabViewController: UIViewController {
         return button
     }()
     
+    private let lessonButton = UIButton(backgroundColor: .red, titleColor: .black, title: "Lesson controller")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         addSubviews()
-        addConstraints()
         configureAppearance()
+        addConstraints()
+    }
+    
+    private func addSubviews() {
+        
+        view.addSubview(inCodeButton)
+        view.addSubview(tranferButton)
+        view.addSubview(lessonButton)
     }
     
     private func configureAppearance() {
+        
         view.backgroundColor = .purple
         
         interfaceBuilderButton.backgroundColor = .blue
@@ -42,20 +52,20 @@ final class AntonTabViewController: UIViewController {
         
         tranferButton.backgroundColor = .green
         tranferButton.tintColor = .black
+        tranferButton.alpha = 0.9
+        lessonButton.alpha = 0.8
         
         inCodeButton.addTarget(self, action: #selector(buttonHandler), for: .touchUpInside)
         tranferButton.addTarget(self, action: #selector(tranferButtonAction), for: .touchUpInside)
         
         inCodeButton.translatesAutoresizingMaskIntoConstraints = false
         tranferButton.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private func addSubviews() {
-        view.addSubview(inCodeButton)
-        view.addSubview(tranferButton)
+        
+        lessonButton.addTarget(self, action: #selector(lessonButtonAction), for: .touchUpInside)
     }
     
     private func addConstraints() {
+        
         inCodeButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(interfaceBuilderButton)
@@ -66,6 +76,12 @@ final class AntonTabViewController: UIViewController {
             $0.center.equalToSuperview()
             $0.size.equalTo(inCodeButton)
             $0.bottom.equalTo(inCodeButton).offset(130)
+        }
+        
+        lessonButton.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalTo(tranferButton)
+            $0.bottom.equalTo(tranferButton).offset(65)
         }
     }
 
@@ -85,6 +101,12 @@ final class AntonTabViewController: UIViewController {
     
     @objc func tranferButtonAction() {
         let controller = AntonTransferDataController()
+        present(controller, animated: true)
+    }
+    
+    @objc func lessonButtonAction() {
+        let controller = AntonUILessonViewController()
+        controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
 }
