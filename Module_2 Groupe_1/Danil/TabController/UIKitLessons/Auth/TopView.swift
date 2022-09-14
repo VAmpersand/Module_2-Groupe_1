@@ -11,21 +11,8 @@ import SnapKit
 class TopView: UIView {
     
     private let logoImageView = UIImageView(image: UIImage(named: "danilAuthLogo"))
-    
-    private let loginLabel: UILabel = {
-        let label = UILabel(font: .poppinsSemiBold18, text: "Login")
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let signUpLabel: UILabel = {
-        let label = UILabel(font: .poppinsSemiBold18, text: "Sign-Up")
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let border = UIView(backgroundColor: Constants.Color.secondary)
-    
+    private let customSegmentedControl = CustomSegmentedControl(items: ["Login", "Sign-Up"])
+        
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -41,16 +28,14 @@ class TopView: UIView {
     private func configureAppearance() {
         backgroundColor = .white
         layer.cornerRadius = Constants.BorderRadius.large
+        customSegmentedControl.addTarget(self, action: #selector(segmentHandler(_:)), for: .valueChanged)
     }
     
     private func addSubviews() {
         [
             logoImageView,
-            loginLabel,
-            signUpLabel,
-            border
+            customSegmentedControl
         ].forEach(addSubview)
-        
     }
     
     private func addConstraints() {
@@ -58,22 +43,16 @@ class TopView: UIView {
             $0.center.equalTo(safeAreaLayoutGuide)
         }
         
-        loginLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(Constants.Paddings.large)
-            $0.bottom.equalToSuperview().inset(12)
-            $0.width.equalTo(134)
-        }
-        
-        signUpLabel.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(Constants.Paddings.large)
-            $0.width.bottom.equalTo(loginLabel)
-        }
-        
-        border.snp.makeConstraints {
+        customSegmentedControl.snp.makeConstraints {
             $0.bottom.equalToSuperview()
-            $0.width.equalTo(loginLabel)
-            $0.height.equalTo(3)
-            $0.leading.equalTo(loginLabel)
+            $0.leading.trailing.equalToSuperview().inset(Constants.Paddings.large)
+            $0.height.equalTo(55)
         }
+    }
+}
+
+@objc extension TopView {
+    private func segmentHandler(_ sender: CustomSegmentedControl) {
+        print(sender.selectedSegmentIndex)
     }
 }

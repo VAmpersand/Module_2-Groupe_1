@@ -11,6 +11,7 @@ import SnapKit
 final class DanilAuthViewController: UIViewController {
     
     private let topView = TopView()
+    private let loginTextField = PrimaryTextField(placeholderText: "Username, Mobile Number")
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -19,7 +20,6 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
-    private let loginTextField = PrimaryTextField(placeholderText: "Username, Mobile Number")
     private let passwordTextField: UITextField = {
         let textField = PrimaryTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
@@ -36,15 +36,15 @@ final class DanilAuthViewController: UIViewController {
     
     private func configureAppearance() {
         view.backgroundColor = Constants.Color.primary
-        
     }
     
     private func addSubviews() {
         view.addSubview(topView)
         view.addSubview(stackView)
+
         [
             loginTextField,
-            passwordTextField
+            passwordTextField,
         ].forEach(stackView.addArrangedSubview)
     }
     
@@ -72,5 +72,9 @@ final class DanilAuthViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         
         view.endEditing(true)
+    }
+    
+    @objc func testtest(_ sender: CustomSegmentedControl) {
+        print(sender.selectedSegmentIndex)
     }
 }
