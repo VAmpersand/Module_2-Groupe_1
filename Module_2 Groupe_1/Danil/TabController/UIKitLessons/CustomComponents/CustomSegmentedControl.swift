@@ -10,7 +10,7 @@ import SnapKit
 
 class CustomSegmentedControl: UIControl {
     
-    var selectedSegmentIndex = 0
+    private (set) var selectedSegmentIndex = 0
     
     private var items: [String]
     private var buttons = [UIButton]()
@@ -26,9 +26,6 @@ class CustomSegmentedControl: UIControl {
         self.items = items
         super.init(frame: .zero)
         
-        guard items.count > 0 else {
-            return
-        }
         configureAppearance()
         addSubviews()
         addConstraints()
@@ -45,6 +42,10 @@ class CustomSegmentedControl: UIControl {
     }
     
     private func configureAppearance() {
+        guard items.count > 0 else {
+            return
+        }
+        
         setButtons()
         
         if let firstBtn = buttons.first {

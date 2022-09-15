@@ -32,6 +32,8 @@
 		2CCFF26328C74EE7008DDB72 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFF26228C74EE7008DDB72 /* UIColor + ext.swift */; };
 		2CCFF26628C760DB008DDB72 /* DanilPersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFF26528C760DB008DDB72 /* DanilPersonalInfoView.swift */; };
 		2CCFF26828C76B38008DDB72 /* DanilCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFF26728C76B38008DDB72 /* DanilCategoryView.swift */; };
+		2CD3372328D200CB00FF3D6D /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3372228D200CB00FF3D6D /* CustomStepper.swift */; };
+		2CD3372528D2055500FF3D6D /* Metropolis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CD3372428D2055500FF3D6D /* Metropolis-Medium.ttf */; };
 		2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */; };
 		2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */; };
 		45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6282E28C36652000A5D3A /* AntonTestViewController.swift */; };
@@ -82,6 +84,8 @@
 		2CCFF26228C74EE7008DDB72 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		2CCFF26528C760DB008DDB72 /* DanilPersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPersonalInfoView.swift; sourceTree = "<group>"; };
 		2CCFF26728C76B38008DDB72 /* DanilCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilCategoryView.swift; sourceTree = "<group>"; };
+		2CD3372228D200CB00FF3D6D /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
+		2CD3372428D2055500FF3D6D /* Metropolis-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.ttf"; sourceTree = "<group>"; };
 		2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilInCodeLayoutController.swift; sourceTree = "<group>"; };
 		45D6282E28C36652000A5D3A /* AntonTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonTestViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0BCD5D28CBAF9000BFC536 /* Metropolis-Regular.ttf */,
+				2CD3372428D2055500FF3D6D /* Metropolis-Medium.ttf */,
 			);
 			path = Metropolis;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 		2CCFF26428C75FFE008DDB72 /* UIKitLessons */ = {
 			isa = PBXGroup;
 			children = (
+				2CD3372128D200B700FF3D6D /* CustomComponents */,
 				2C0BCD6628CCA2A200BFC536 /* Auth */,
 				2CCFF26028C74AC1008DDB72 /* DanilUILessonViewController.swift */,
 				2CCFF26528C760DB008DDB72 /* DanilPersonalInfoView.swift */,
@@ -189,9 +195,17 @@
 				2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */,
 				2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */,
 				2C8D8C8428D07F9B008B4030 /* InfoButton.swift */,
-				2C31099528D0E510002DD565 /* CustomSegmentedControl.swift */,
 			);
 			path = UIKitLessons;
+			sourceTree = "<group>";
+		};
+		2CD3372128D200B700FF3D6D /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2C31099528D0E510002DD565 /* CustomSegmentedControl.swift */,
+				2CD3372228D200CB00FF3D6D /* CustomStepper.swift */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		2CE0E9BF28BA81C200987E1B /* Helpers */ = {
@@ -439,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C0BCD6D28CCB87B00BFC536 /* Nunito-Regular.ttf in Resources */,
+				2CD3372528D2055500FF3D6D /* Metropolis-Medium.ttf in Resources */,
 				77A6182428B0F50C00D6DDD0 /* LaunchScreen.storyboard in Resources */,
 				77A6184628B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard in Resources */,
 				77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */,
@@ -492,6 +507,7 @@
 				77A6183B28B0FD5E00D6DDD0 /* ValeryTabViewController.swift in Sources */,
 				77A6183F28B0FD8F00D6DDD0 /* EvgenyTabViewController.swift in Sources */,
 				2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */,
+				2CD3372328D200CB00FF3D6D /* CustomStepper.swift in Sources */,
 				2C0BCD6828CCA2BB00BFC536 /* TopView.swift in Sources */,
 				2C0BCD6A28CCB61100BFC536 /* PrimaryTextField.swift in Sources */,
 				2C0BCD6328CBB87A00BFC536 /* UILabel + ext.swift in Sources */,

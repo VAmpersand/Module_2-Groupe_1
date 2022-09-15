@@ -20,6 +20,8 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
+    private let stepper = CustomStepper(startValue: -23, minValue: -25, maxValue: 223, step: 22)
+    
     private let passwordTextField: UITextField = {
         let textField = PrimaryTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
@@ -36,12 +38,17 @@ final class DanilAuthViewController: UIViewController {
     
     private func configureAppearance() {
         view.backgroundColor = Constants.Color.primary
+        
+        stepper.addTarget(self, action: #selector(stepperHandler), for: .valueChanged)
     }
     
     private func addSubviews() {
-        view.addSubview(topView)
-        view.addSubview(stackView)
-
+        [
+            topView,
+            stackView,
+            stepper
+        ].forEach(view.addSubview)
+        
         [
             loginTextField,
             passwordTextField,
@@ -66,6 +73,11 @@ final class DanilAuthViewController: UIViewController {
         passwordTextField.snp.makeConstraints {
             $0.height.equalTo(loginTextField)
         }
+        
+        stepper.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(50)
+            $0.leading.equalToSuperview().inset(Constants.Paddings.large)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -73,8 +85,10 @@ final class DanilAuthViewController: UIViewController {
         
         view.endEditing(true)
     }
-    
-    @objc func testtest(_ sender: CustomSegmentedControl) {
-        print(sender.selectedSegmentIndex)
+}
+
+@objc extension DanilAuthViewController {
+    private func stepperHandler() {
+        print(stepper.currentValue)
     }
 }
