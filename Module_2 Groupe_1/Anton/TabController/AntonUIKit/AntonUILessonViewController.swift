@@ -67,7 +67,7 @@ final class AntonUILessonViewController: UIViewController {
         gearshape.configure(with: gearshapeSettings)
         let creditcardSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "creditcard"))
         creditcard.configure(with: creditcardSettings)
-
+        
         [
             bookmark,
             bell,
@@ -116,6 +116,7 @@ final class AntonUILessonViewController: UIViewController {
     }
     
     private func addConstraints() {
+        
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -133,58 +134,57 @@ final class AntonUILessonViewController: UIViewController {
         stackViewSetting.snp.makeConstraints {
             $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(25)
             $0.right.left.equalToSuperview().inset(40)
-            
-            stackViewSetting.subviews.forEach {
-                ($0 as? UIView)?.backgroundColor = .white
+        }
+        
+        stackViewSetting.subviews.forEach {
+            ($0 as? UIView)?.backgroundColor = .white
+        }
+        
+        [
+            bookmark,
+            bell,
+            gearshape,
+            creditcard
+        ].forEach { view in
+            view.snp.makeConstraints {
+                $0.height.equalTo(54)
+                $0.width.equalTo(75)
             }
-            
-            [
-                bookmark,
-                bell,
-                gearshape,
-                creditcard
-            ].forEach { view in
-                view.snp.makeConstraints {
-                    $0.height.equalTo(54)
-                    $0.width.equalTo(75)
-                }
+        }
+        
+        stackViewConnection.snp.makeConstraints {
+            $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(115)
+            $0.right.left.equalToSuperview().inset(25)
+        }
+        stackViewConnection.subviews.forEach {
+            ($0 as? UIView)?.backgroundColor = .white
+        }
+        
+        [
+            chevronTop,
+            chevronMiddleTop,
+            chevronMiddleBottom,
+            chevronBottom
+        ].forEach { view in
+            view.snp.makeConstraints {
+                $0.height.equalTo(60)
             }
-            
-            stackViewConnection.snp.makeConstraints {
-                $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(115)
-                $0.right.left.equalToSuperview().inset(25)
-                
-                stackViewConnection.subviews.forEach {
-                    ($0 as? UIView)?.backgroundColor = .white
-                }
-                
-                [
-                    chevronTop,
-                    chevronMiddleTop,
-                    chevronMiddleBottom,
-                    chevronBottom
-                ].forEach { view in
-                    view.snp.makeConstraints {
-                        $0.height.equalTo(60)
-                    }
-                }
-                
-                infoCircle.snp.makeConstraints {
-                    $0.width.equalTo(143)
-                    $0.height.equalTo(40)
-                    $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(614)
-                    $0.left.equalToSuperview().inset(33)
-                    $0.right.equalToSuperview().inset(238)
-                    infoCircle.backgroundColor = .white
-                }
-                
-                buttonUpdate.snp.makeConstraints {
-                    $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(716)
-                    $0.left.right.equalToSuperview().inset(50)
-                    $0.height.equalTo(50)
-                    $0.bottom.equalToSuperview().inset(120)
-                }
-            }
+        }
+        
+        infoCircle.snp.makeConstraints {
+            $0.width.equalTo(143)
+            $0.height.equalTo(40)
+            $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(614)
+            $0.left.equalToSuperview().inset(33)
+            $0.right.equalToSuperview().inset(238)
+            infoCircle.backgroundColor = .white
+        }
+        
+        buttonUpdate.snp.makeConstraints {
+            $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(716)
+            $0.left.right.equalToSuperview().inset(50)
+            $0.height.equalTo(50)
+            $0.bottom.equalToSuperview().inset(120)
         }
     }
 }
