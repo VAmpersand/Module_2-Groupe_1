@@ -19,26 +19,26 @@ final class AntonTransferDataController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .orange
         addSubviews()
         addConstraints()
         configureAppearance()
     }
     
     private  func addSubviews() {
-
+        
         view.addSubview(antonButtonCustomView)
     }
 
     private func addConstraints() {
-
             antonButtonCustomView.snp.makeConstraints {
                 $0.center.equalToSuperview()
-                $0.size.equalTo(antonButtonCustomView.snp.width)
+                $0.size.equalToSuperview()
             }
         }
     
     private func configureAppearance() {
+        
+        view.backgroundColor = .orange
 
         antonButtonCustomView.delegate = self
         
@@ -47,7 +47,6 @@ final class AntonTransferDataController: UIViewController {
                                                name: .notificationCustomButton,
                                                object: nil)
      
-        antonButtonCustomView.color = .blue
         antonButtonCustomView.callBack = {
             self.view.backgroundColor = $0
         }
