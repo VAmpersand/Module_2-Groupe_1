@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CustomStepper: UIControl {
+final class CustomStepper: UIControl {
     
     private var step: Int
     private var minValue: Int

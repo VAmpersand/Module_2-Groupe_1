@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CustomSegmentedControl: UIControl {
+final class CustomSegmentedControl: UIControl {
     
     private (set) var selectedSegmentIndex = 0
     

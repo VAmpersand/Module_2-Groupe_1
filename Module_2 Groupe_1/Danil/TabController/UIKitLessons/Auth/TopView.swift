@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TopView: UIView {
+final class TopView: UIView {
     
     private let logoImageView = UIImageView(image: UIImage(named: "danilAuthLogo"))
     private let customSegmentedControl = CustomSegmentedControl(items: ["Login", "Sign-Up"])
