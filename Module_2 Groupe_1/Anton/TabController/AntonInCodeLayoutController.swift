@@ -76,8 +76,8 @@ final class AntonInCodeLayoutController: UIViewController {
         super.viewDidLoad()
         
         addSubviews()
-        configureAppearance()
         addConstraints()
+        configureAppearance()
     }
     
     private func addSubviews() {

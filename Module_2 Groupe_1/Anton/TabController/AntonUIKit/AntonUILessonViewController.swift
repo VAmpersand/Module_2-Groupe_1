@@ -45,9 +45,9 @@ final class AntonUILessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureAppearance()
         addSubviews()
         addConstraints()
+        configureAppearance()
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,6 +77,10 @@ final class AntonUILessonViewController: UIViewController {
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingsHandler(_ :))))
         }
         
+        stackViewSetting.subviews.forEach {
+            ($0 as? UIView)?.backgroundColor = .white
+        }
+        
         [
             chevronTop,
             chevronMiddleTop,
@@ -84,6 +88,10 @@ final class AntonUILessonViewController: UIViewController {
             chevronBottom
         ].forEach {
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(connectionHandler(_ :))))
+        }
+        
+        stackViewConnection.subviews.forEach {
+            ($0 as? UIView)?.backgroundColor = .white
         }
         
         infoCircle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(aboutHandler)))
@@ -136,10 +144,6 @@ final class AntonUILessonViewController: UIViewController {
             $0.right.left.equalToSuperview().inset(40)
         }
         
-        stackViewSetting.subviews.forEach {
-            ($0 as? UIView)?.backgroundColor = .white
-        }
-        
         [
             bookmark,
             bell,
@@ -155,9 +159,6 @@ final class AntonUILessonViewController: UIViewController {
         stackViewConnection.snp.makeConstraints {
             $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(115)
             $0.right.left.equalToSuperview().inset(25)
-        }
-        stackViewConnection.subviews.forEach {
-            ($0 as? UIView)?.backgroundColor = .white
         }
         
         [

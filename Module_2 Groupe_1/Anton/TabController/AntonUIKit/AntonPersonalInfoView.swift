@@ -21,17 +21,17 @@ final class AntonPersonalInfoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureAppearance()
         addSubviews()
         addConstraints()
+        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
         super.init(frame: .zero)
         
-        configureAppearance()
         addSubviews()
         addConstraints()
+        configureAppearance()
     }
     
     func configure(with viewModel: ViewModel) {

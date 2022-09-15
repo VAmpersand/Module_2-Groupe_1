@@ -17,8 +17,8 @@ final class AntonTestViewController: UIViewController {
         super.viewDidLoad()
         
         addSubviews()
-        configureAppearance()
         addConstraints()
+        configureAppearance()
     }
     
     private func addSubviews() {

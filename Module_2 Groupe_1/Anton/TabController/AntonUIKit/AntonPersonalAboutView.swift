@@ -16,9 +16,9 @@ final class AntonPersonalAboutView: UIView {
         super.init(frame: .zero)
        imageView.image = UIImage(systemName: "info.circle")
         
-        configureAppearance()
         addSubviews()
         addConstraints()
+        configureAppearance()
     }
     
     required init?(coder: NSCoder) {

@@ -32,8 +32,8 @@ final class AntonTabViewController: UIViewController {
         super.viewDidLoad()
         
         addSubviews()
-        configureAppearance()
         addConstraints()
+        configureAppearance()
     }
     
     private func addSubviews() {

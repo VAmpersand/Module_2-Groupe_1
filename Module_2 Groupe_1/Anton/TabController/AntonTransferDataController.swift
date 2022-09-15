@@ -20,8 +20,8 @@ final class AntonTransferDataController: UIViewController {
         super.viewDidLoad()
         
         addSubviews()
-        configureAppearance()
         addConstraints()
+        configureAppearance()
     }
     
     private  func addSubviews() {

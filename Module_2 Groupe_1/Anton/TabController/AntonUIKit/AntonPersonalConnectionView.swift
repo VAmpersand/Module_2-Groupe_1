@@ -24,9 +24,9 @@ final class AntonPersonalConnectionView: UIView {
         super.init(frame: .zero)
         imageView.image = UIImage(systemName: "chevron.right")
         
-        configureAppearance()
         addSubviews()
         addConstraints()
+        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
