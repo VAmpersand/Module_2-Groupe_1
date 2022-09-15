@@ -26,14 +26,12 @@ final class AntonTestViewController: UIViewController {
     }
     
     private func configureAppearance() {
-        
         view.backgroundColor = .red
         
         button.addTarget(self, action: #selector(testAction), for: .touchUpInside)
     }
     
     private func addConstraints() {
-        
         button.snp.makeConstraints {
             $0.top.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.size.equalTo(45)

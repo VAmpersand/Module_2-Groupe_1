@@ -1,25 +1,20 @@
 //
-//  AntonPersonalSettings.swift
+//  AntonPersonalAboutView.swift
 //  Module_2 Groupe_1
 //
-//  Created by air on 11.09.2022.
+//  Created by air on 13.09.2022.
 //
 
 import UIKit
 import SnapKit
 
-extension AntonPersonalSettings {
-    struct ViewModel {
-        let image: UIImage?
-    }
-}
-
-class AntonPersonalSettings: UIView {
+final class AntonPersonalAboutView: UIView {
     
     private let imageView = UIImageView()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
+       imageView.image = UIImage(systemName: "info.circle")
         
         configureAppearance()
         addSubviews()
@@ -30,12 +25,8 @@ class AntonPersonalSettings: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with viewModel: ViewModel) {
-        imageView.image = viewModel.image
-    }
-    
     private func configureAppearance() {
-        layer.cornerRadius = 10
+        layer.cornerRadius = 20
     }
     
     private func addSubviews() {
@@ -43,10 +34,10 @@ class AntonPersonalSettings: UIView {
     }
     
     private func addConstraints() {
-        
         imageView.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(25)
-            $0.top.equalToSuperview().inset(5)
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().inset(10)
+            $0.size.equalTo(20)
         }
     }
 }

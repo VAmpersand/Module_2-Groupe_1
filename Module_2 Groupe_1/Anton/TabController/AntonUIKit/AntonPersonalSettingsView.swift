@@ -1,20 +1,20 @@
 //
-//  AntonPersonalInfoView.swift
+//  AntonPersonalSettingsView.swift
 //  Module_2 Groupe_1
 //
-//  Created by air on 10.09.2022.
+//  Created by air on 11.09.2022.
 //
 
 import UIKit
 import SnapKit
 
-extension AntonPersonalInfo {
+extension AntonPersonalSettingsView {
     struct ViewModel {
         let image: UIImage?
     }
 }
 
-final class AntonPersonalInfo: UIView {
+final class AntonPersonalSettingsView: UIView {
     
     private let imageView = UIImageView()
     
@@ -39,8 +39,8 @@ final class AntonPersonalInfo: UIView {
     }
     
     private func configureAppearance() {
-        backgroundColor = .white
         layer.cornerRadius = 10
+        imageView.contentMode = .scaleAspectFit
     }
     
     private func addSubviews() {
@@ -49,11 +49,9 @@ final class AntonPersonalInfo: UIView {
     
     private func addConstraints() {
         imageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(17)
-            $0.left.equalToSuperview().inset(31)
-            $0.right.equalToSuperview().inset(242)
-            $0.bottom.equalToSuperview().inset(45)
-            $0.size.equalTo(93)
+            $0.size.equalTo(20)
+            $0.top.equalToSuperview().inset(5)
+            $0.left.right.equalToSuperview().inset(17)
         }
     }
 }

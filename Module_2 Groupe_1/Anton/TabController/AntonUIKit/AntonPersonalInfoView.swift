@@ -1,20 +1,20 @@
 //
-//  AntonPersonalAbout.swift
+//  AntonPersonalInfoView.swift
 //  Module_2 Groupe_1
 //
-//  Created by air on 13.09.2022.
+//  Created by air on 10.09.2022.
 //
 
 import UIKit
 import SnapKit
 
-extension AntonPersonalAbout {
+extension AntonPersonalInfoView {
     struct ViewModel {
         let image: UIImage?
     }
 }
 
-class AntonPersonalAbout: UIView {
+final class AntonPersonalInfoView: UIView {
     
     private let imageView = UIImageView()
     
@@ -27,7 +27,11 @@ class AntonPersonalAbout: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
+        
+        configureAppearance()
+        addSubviews()
+        addConstraints()
     }
     
     func configure(with viewModel: ViewModel) {
@@ -35,8 +39,8 @@ class AntonPersonalAbout: UIView {
     }
     
     private func configureAppearance() {
-        layer.cornerRadius = 20
-        imageView.contentMode = .scaleAspectFit
+        backgroundColor = .white
+        layer.cornerRadius = 10
     }
     
     private func addSubviews() {
@@ -44,10 +48,11 @@ class AntonPersonalAbout: UIView {
     }
     
     private func addConstraints() {
-
         imageView.snp.makeConstraints {
-            $0.top.bottom.left.equalToSuperview().inset(10)
-            $0.right.equalToSuperview().inset(120)
+            $0.top.equalToSuperview().inset(17)
+            $0.left.equalToSuperview().inset(31)
+            $0.bottom.equalToSuperview().inset(45)
+            $0.size.equalTo(93)
         }
     }
 }

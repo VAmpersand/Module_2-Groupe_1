@@ -37,14 +37,12 @@ final class AntonTabViewController: UIViewController {
     }
     
     private func addSubviews() {
-        
         view.addSubview(inCodeButton)
         view.addSubview(tranferButton)
         view.addSubview(lessonButton)
     }
     
     private func configureAppearance() {
-        
         view.backgroundColor = .purple
         
         interfaceBuilderButton.backgroundColor = .blue
@@ -65,7 +63,6 @@ final class AntonTabViewController: UIViewController {
     }
     
     private func addConstraints() {
-        
         inCodeButton.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(interfaceBuilderButton)

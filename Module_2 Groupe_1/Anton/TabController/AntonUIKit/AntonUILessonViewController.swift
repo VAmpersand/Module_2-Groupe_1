@@ -12,12 +12,12 @@ final class AntonUILessonViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView(backgroundColor: UIColor(hexString: "F5F5F8"))
+    private let antonPersonalInfo = AntonPersonalInfoView()
+    private let bookmark = AntonPersonalSettingsView()
+    private let bell = AntonPersonalSettingsView()
+    private let gearshape = AntonPersonalSettingsView()
+    private let creditcard = AntonPersonalSettingsView()
     
-    private let antonPersonalInfo = AntonPersonalInfo()
-    private let bookmark = AntonPersonalSettings()
-    private let bell = AntonPersonalSettings()
-    private let gearshape = AntonPersonalSettings()
-    private let creditcard = AntonPersonalSettings()
     private let stackViewSetting: UIStackView = {
         let view = UIStackView()
         view.spacing = 14
@@ -26,10 +26,11 @@ final class AntonUILessonViewController: UIViewController {
         return view
     }()
     
-    private let chevronTop = AntonPersonalConnection()
-    private let chevronMiddleTop = AntonPersonalConnection()
-    private let chevronMiddleBottom = AntonPersonalConnection()
-    private let chevronBottom = AntonPersonalConnection()
+    private let chevronTop = AntonPersonalConnectionView()
+    private let chevronMiddleTop = AntonPersonalConnectionView()
+    private let chevronMiddleBottom = AntonPersonalConnectionView()
+    private let chevronBottom = AntonPersonalConnectionView()
+    
     private let stackViewConnection: UIStackView = {
         let view = UIStackView()
         view.spacing = 19
@@ -38,7 +39,7 @@ final class AntonUILessonViewController: UIViewController {
         return view
     }()
     
-    private let infoCircle = AntonPersonalAbout()
+    private let infoCircle = AntonPersonalAboutView()
     private let buttonUpdate = UIButton(backgroundColor: UIColor(hexString: "F8774A"), titleColor: .white, title: "Update")
     
     override func viewDidLoad() {
@@ -51,36 +52,22 @@ final class AntonUILessonViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         buttonUpdate.layer.cornerRadius = buttonUpdate.frame.height / 2
     }
     
     private func configureAppearance() {
         
-        let antonPersonalInfoViewModel = AntonPersonalInfo.ViewModel(image: UIImage(named: "antonAvatar"))
+        let antonPersonalInfoViewModel = AntonPersonalInfoView.ViewModel(image: UIImage(named: "antonAvatar"))
         antonPersonalInfo.configure(with: antonPersonalInfoViewModel)
-        
-        let bookmarksSettings = AntonPersonalSettings.ViewModel(image: UIImage(systemName: "bookmark"))
+        let bookmarksSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "bookmark"))
         bookmark.configure(with: bookmarksSettings)
-        let bellSettings = AntonPersonalSettings.ViewModel(image: UIImage(systemName: "bell"))
+        let bellSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "bell"))
         bell.configure(with: bellSettings)
-        let gearshapeSettings = AntonPersonalSettings.ViewModel(image: UIImage(systemName: "gearshape"))
+        let gearshapeSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "gearshape"))
         gearshape.configure(with: gearshapeSettings)
-        let creditcardSettings = AntonPersonalSettings.ViewModel(image: UIImage(systemName: "creditcard"))
+        let creditcardSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "creditcard"))
         creditcard.configure(with: creditcardSettings)
-        
-        let chevronTopConnection = AntonPersonalConnection.ViewModel(image: UIImage(systemName: "chevron.right"))
-        chevronTop.configure(with: chevronTopConnection)
-        let chevronMiddleTopConnection = AntonPersonalConnection.ViewModel(image: UIImage(systemName: "chevron.right"))
-        chevronMiddleTop.configure(with: chevronMiddleTopConnection)
-        let chevronMiddleBottomConnection = AntonPersonalConnection.ViewModel(image: UIImage(systemName: "chevron.right"))
-        chevronMiddleBottom.configure(with: chevronMiddleBottomConnection)
-        let chevronBottomConnection = AntonPersonalConnection.ViewModel(image: UIImage(systemName: "chevron.right"))
-        chevronBottom.configure(with: chevronBottomConnection)
-        
-        let infoCircleImage = AntonPersonalAbout.ViewModel(image: UIImage(systemName: "info.circle"))
-        infoCircle.configure(with: infoCircleImage)
-        
+
         [
             bookmark,
             bell,
@@ -129,7 +116,6 @@ final class AntonUILessonViewController: UIViewController {
     }
     
     private func addConstraints() {
-        
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -147,7 +133,7 @@ final class AntonUILessonViewController: UIViewController {
         stackViewSetting.snp.makeConstraints {
             $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(25)
             $0.right.left.equalToSuperview().inset(40)
-        
+            
             stackViewSetting.subviews.forEach {
                 ($0 as? UIView)?.backgroundColor = .white
             }
@@ -162,42 +148,41 @@ final class AntonUILessonViewController: UIViewController {
                     $0.height.equalTo(54)
                     $0.width.equalTo(75)
                 }
+            }
+            
+            stackViewConnection.snp.makeConstraints {
+                $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(115)
+                $0.right.left.equalToSuperview().inset(25)
                 
+                stackViewConnection.subviews.forEach {
+                    ($0 as? UIView)?.backgroundColor = .white
+                }
                 
-                stackViewConnection.snp.makeConstraints {
-                    $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(115)
-                    $0.right.left.equalToSuperview().inset(25)
-                    
-                    stackViewConnection.subviews.forEach {
-                        ($0 as? UIView)?.backgroundColor = .white
+                [
+                    chevronTop,
+                    chevronMiddleTop,
+                    chevronMiddleBottom,
+                    chevronBottom
+                ].forEach { view in
+                    view.snp.makeConstraints {
+                        $0.height.equalTo(60)
                     }
-                    
-                    [
-                        chevronTop,
-                        chevronMiddleTop,
-                        chevronMiddleBottom,
-                        chevronBottom
-                    ].forEach { view in
-                        view.snp.makeConstraints {
-                            $0.height.equalTo(60)
-                        }
-                        
-                        infoCircle.snp.makeConstraints {
-                            $0.width.equalTo(143)
-                            $0.height.equalTo(40)
-                            $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(614)
-                            $0.left.equalToSuperview().inset(33)
-                            $0.right.equalToSuperview().inset(238)
-                            infoCircle.backgroundColor = .white
-                        }
-                        
-                        buttonUpdate.snp.makeConstraints {
-                            $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(716)
-                            $0.left.right.equalToSuperview().inset(50)
-                            $0.height.equalTo(50)
-                            $0.bottom.equalToSuperview().inset(120)
-                        }
-                    }
+                }
+                
+                infoCircle.snp.makeConstraints {
+                    $0.width.equalTo(143)
+                    $0.height.equalTo(40)
+                    $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(614)
+                    $0.left.equalToSuperview().inset(33)
+                    $0.right.equalToSuperview().inset(238)
+                    infoCircle.backgroundColor = .white
+                }
+                
+                buttonUpdate.snp.makeConstraints {
+                    $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(716)
+                    $0.left.right.equalToSuperview().inset(50)
+                    $0.height.equalTo(50)
+                    $0.bottom.equalToSuperview().inset(120)
                 }
             }
         }
@@ -206,7 +191,7 @@ final class AntonUILessonViewController: UIViewController {
 
 @objc extension AntonUILessonViewController {
     
-   private func settingsHandler(_ gestureRecognizer: UITapGestureRecognizer) {
+    private func settingsHandler(_ gestureRecognizer: UITapGestureRecognizer) {
         let controller = UIViewController()
         switch gestureRecognizer.view {
         case bookmark: controller.view.backgroundColor = .blue
@@ -215,18 +200,18 @@ final class AntonUILessonViewController: UIViewController {
         case creditcard: controller.view.backgroundColor = .green
         default: break
         }
-       present(controller, animated: true)
-   }
+        present(controller, animated: true)
+    }
     
     private func connectionHandler(_ gestureRecognizer: UITapGestureRecognizer) {
-         let controller = UIViewController()
-         switch gestureRecognizer.view {
-         case chevronTop: controller.view.backgroundColor = .green
-         case chevronMiddleTop: controller.view.backgroundColor = .gray
-         case chevronMiddleBottom: controller.view.backgroundColor = .red
-         case chevronBottom: controller.view.backgroundColor = .blue
-         default: break
-         }
+        let controller = UIViewController()
+        switch gestureRecognizer.view {
+        case chevronTop: controller.view.backgroundColor = .green
+        case chevronMiddleTop: controller.view.backgroundColor = .gray
+        case chevronMiddleBottom: controller.view.backgroundColor = .red
+        case chevronBottom: controller.view.backgroundColor = .blue
+        default: break
+        }
         present(controller, animated: true)
     }
     

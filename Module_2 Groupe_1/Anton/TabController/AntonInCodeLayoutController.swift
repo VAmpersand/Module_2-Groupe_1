@@ -97,14 +97,12 @@ final class AntonInCodeLayoutController: UIViewController {
     }
     
     private func configureAppearance() {
-        
         view.backgroundColor = .white
         
         closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
     }
     
     private func addConstraints() {
-        
         yellowView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview().inset(16)
         }

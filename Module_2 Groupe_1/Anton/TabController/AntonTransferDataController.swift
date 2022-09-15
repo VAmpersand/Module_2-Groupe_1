@@ -30,7 +30,6 @@ final class AntonTransferDataController: UIViewController {
     }
 
     private func addConstraints() {
-
             antonButtonCustomView.snp.makeConstraints {
                 $0.center.equalToSuperview()
                 $0.size.equalToSuperview()

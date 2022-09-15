@@ -1,5 +1,5 @@
 //
-//  AntonPersonalConnection.swift
+//  AntonPersonalConnectionView.swift
 //  Module_2 Groupe_1
 //
 //  Created by air on 12.09.2022.
@@ -11,18 +11,18 @@ import SnapKit
 import UIKit
 import SnapKit
 
-extension AntonPersonalConnection {
+extension AntonPersonalConnectionView {
     struct ViewModel {
-        let image: UIImage?
     }
 }
 
-class AntonPersonalConnection: UIView {
+final class AntonPersonalConnectionView: UIView {
     
     private let imageView = UIImageView()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
+        imageView.image = UIImage(systemName: "chevron.right")
         
         configureAppearance()
         addSubviews()
@@ -34,7 +34,7 @@ class AntonPersonalConnection: UIView {
     }
     
     func configure(with viewModel: ViewModel) {
-        imageView.image = viewModel.image
+        
     }
     
     private func configureAppearance() {
@@ -48,9 +48,8 @@ class AntonPersonalConnection: UIView {
     private func addConstraints() {
         imageView.snp.makeConstraints {
             $0.width.equalTo(15)
-            $0.height.equalTo(50)
-            $0.top.bottom.equalToSuperview().inset(20)
-            $0.left.equalToSuperview().inset(315)
+            $0.height.equalTo(20)
+            $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().inset(42)
         }
     }
