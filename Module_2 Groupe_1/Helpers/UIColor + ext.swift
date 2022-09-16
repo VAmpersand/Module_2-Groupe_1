@@ -1,8 +1,8 @@
 //
-//  AntonUIColor.swift
+//  UIColor + ext.swift
 //  Module_2 Groupe_1
 //
-//  Created by air on 10.09.2022.
+//  Created by Danil Demchenko on 16.09.2022.
 //
 
 import UIKit

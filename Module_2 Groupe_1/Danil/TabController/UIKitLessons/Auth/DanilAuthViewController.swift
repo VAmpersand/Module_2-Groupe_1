@@ -11,6 +11,7 @@ import SnapKit
 final class DanilAuthViewController: UIViewController {
     
     private let topView = TopView()
+    private let loginTextField = PrimaryTextField(placeholderText: "Username, Mobile Number")
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -19,7 +20,8 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
-    private let loginTextField = PrimaryTextField(placeholderText: "Username, Mobile Number")
+    private let stepper = CustomStepper()
+    
     private let passwordTextField: UITextField = {
         let textField = PrimaryTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
@@ -37,14 +39,19 @@ final class DanilAuthViewController: UIViewController {
     private func configureAppearance() {
         view.backgroundColor = Constants.Color.primary
         
+        stepper.addTarget(self, action: #selector(stepperHandler), for: .valueChanged)
     }
     
     private func addSubviews() {
-        view.addSubview(topView)
-        view.addSubview(stackView)
+        [
+            topView,
+            stackView,
+            stepper
+        ].forEach(view.addSubview)
+        
         [
             loginTextField,
-            passwordTextField
+            passwordTextField,
         ].forEach(stackView.addArrangedSubview)
     }
     
@@ -66,11 +73,22 @@ final class DanilAuthViewController: UIViewController {
         passwordTextField.snp.makeConstraints {
             $0.height.equalTo(loginTextField)
         }
+        
+        stepper.snp.makeConstraints {
+            $0.top.equalTo(passwordTextField.snp.bottom).offset(50)
+            $0.leading.equalToSuperview().inset(Constants.Paddings.large)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
         view.endEditing(true)
+    }
+}
+
+@objc extension DanilAuthViewController {
+    private func stepperHandler() {
+        print(stepper.currentValue)
     }
 }
