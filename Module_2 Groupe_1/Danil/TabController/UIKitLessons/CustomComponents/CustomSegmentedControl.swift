@@ -42,9 +42,7 @@ final class CustomSegmentedControl: UIControl {
     }
     
     private func configureAppearance() {
-        guard items.count > 0 else {
-            return
-        }
+        guard items.count > 0 else { return }
         
         setButtons()
         
@@ -82,27 +80,23 @@ final class CustomSegmentedControl: UIControl {
         }
     }
     
-    private func moveView(_ view: UIView, duration: Double = 0.5, toX: CGFloat) {
-        view.transform = CGAffineTransform(translationX: view.frame.origin.x, y: 0.0)
+    private func moveView(duration: Double = 0.5, toX: CGFloat) {
+        border.transform = CGAffineTransform(translationX: border.frame.origin.x, y: 0.0)
         UIView.animate(withDuration: duration,
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 0.1,
                        options: .curveEaseOut,
                        animations: {
-            view.transform = CGAffineTransform(translationX: toX, y: 0.0)
+            self.border.transform = CGAffineTransform(translationX: toX, y: 0.0)
         })
     }
 }
 
 @objc extension CustomSegmentedControl {
     private func buttonHandler(_ sender: UIButton) {
-        for i in 0..<buttons.count {
-            if buttons[i].tag == sender.tag {
-                selectedSegmentIndex = i
-                moveView(border, toX: buttons[i].frame.origin.x)
-            }
-        }
+        selectedSegmentIndex = sender.tag
+        moveView(toX: sender.frame.origin.x)
         sendActions(for: .valueChanged)
     }
 }

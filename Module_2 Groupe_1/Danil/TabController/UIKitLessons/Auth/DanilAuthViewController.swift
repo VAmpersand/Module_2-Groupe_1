@@ -20,7 +20,7 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
-    private let stepper = CustomStepper(startValue: -23, minValue: -25, maxValue: 223, step: 22)
+    private let stepper = CustomStepper()
     
     private let passwordTextField: UITextField = {
         let textField = PrimaryTextField(placeholderText: "Password")

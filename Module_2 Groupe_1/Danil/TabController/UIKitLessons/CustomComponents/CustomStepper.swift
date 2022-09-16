@@ -10,15 +10,35 @@ import SnapKit
 
 final class CustomStepper: UIControl {
     
-    private var step: Int
-    private var minValue: Int
-    private var maxValue: Int
-    
-    private (set) var currentValue: Int {
-        willSet {
-            valueLabel.text = String(newValue)
+    var currentValue: Int = 0 {
+        didSet {
+            let value = currentValue < minValue
+            ? minValue
+            : currentValue > maxValue ? maxValue : currentValue
+            currentValue = value
+            valueLabel.text = String(value)
         }
     }
+    
+    var minValue: Int = 0 {
+        didSet {
+            if minValue >= maxValue {
+                minValue = maxValue - step
+            }
+            currentValue = { self.currentValue }()
+        }
+    }
+    
+    var maxValue: Int = 100 {
+        didSet {
+            if maxValue <= minValue {
+                maxValue = minValue + step
+            }
+            currentValue = { self.currentValue }()
+        }
+    }
+    
+    var step: Int = 1
     
     private let valueLabel: UILabel = {
         let label = UILabel(font: .metropolisMedium21)
@@ -49,11 +69,7 @@ final class CustomStepper: UIControl {
         return button
     }()
     
-    init(startValue: Int, minValue: Int, maxValue: Int, step: Int) {
-        self.currentValue = startValue
-        self.minValue = minValue
-        self.maxValue = maxValue
-        self.step = step
+    init() {
         super.init(frame: .zero)
         
         configureAppearance()
@@ -72,13 +88,7 @@ final class CustomStepper: UIControl {
     }
     
     private func configureAppearance() {
-        if currentValue < minValue {
-            currentValue = minValue
-        } else if currentValue > maxValue {
-            currentValue = maxValue
-        } else {
-            valueLabel.text = String(currentValue)
-        }
+        currentValue = { self.currentValue }()
         
         backgroundColor = .clear
         layer.borderWidth = 1
@@ -104,7 +114,7 @@ final class CustomStepper: UIControl {
     private func addConstraints() {
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.width.width.equalTo(100)
+            $0.width.equalTo(100)
             $0.height.equalTo(30)
         }
     }
@@ -113,19 +123,9 @@ final class CustomStepper: UIControl {
 @objc extension CustomStepper {
     private func buttonHandler(_ button: UIButton) {
         switch button {
-        case minusButton:
-            if currentValue - step < minValue {
-                currentValue = minValue
-            } else {
-                currentValue = currentValue - step
-            }
-        case plusButton:
-            if currentValue + step > maxValue {
-                currentValue = maxValue
-            } else {
-                currentValue = currentValue + step
-            }
-        default: return
+        case minusButton: currentValue -= step
+        case plusButton: currentValue += step
+        default: break
         }
         sendActions(for: .valueChanged)
     }
