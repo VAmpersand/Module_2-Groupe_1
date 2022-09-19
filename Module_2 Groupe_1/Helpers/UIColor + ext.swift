@@ -2,7 +2,7 @@
 //  UIColor + ext.swift
 //  Module_2 Groupe_1
 //
-//  Created by Danil Demchenko on 06.09.2022.
+//  Created by Danil Demchenko on 16.09.2022.
 //
 
 import UIKit

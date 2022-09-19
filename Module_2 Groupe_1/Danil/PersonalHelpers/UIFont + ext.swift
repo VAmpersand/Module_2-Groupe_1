@@ -19,5 +19,7 @@ extension UIFont {
     static let metropolisRegular14 = UIFont(name: "Metropolis-Regular", size: 14)
     static let metropolisRegular15 = UIFont(name: "Metropolis-Regular", size: 15)
     
+    static let metropolisMedium21 = UIFont(name: "Metropolis-Regular", size: 21)
+    
     static let nunitoRegular16 = UIFont(name: "Nunito-Regular", size: 16)
 }

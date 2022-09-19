@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class PrimaryTextField: UITextField {
+class BaseTextField: UITextField {
     
     init(placeholderText: String) {
         super.init(frame: .zero)
-
+        
         configureAppearance(with: placeholderText)
     }
     
@@ -32,7 +32,7 @@ final class PrimaryTextField: UITextField {
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: Constants.Paddings.basic, dy: 0)
     }
-
+    
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: Constants.Paddings.basic, dy: 0)
     }
