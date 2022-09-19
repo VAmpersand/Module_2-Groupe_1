@@ -11,11 +11,19 @@ import SnapKit
 final class AntonAuthViewController: UIViewController {
     
     private let antonAuthLogoView = AntonAuthLogoView()
-    private let loginText = AntonTextField(placeholderText: "Username, Mobile Number")
+    
+    private let loginText: UITextField = {
+        let textField = AntonTextField(placeholderText: "Username, Mobile Number")
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
+        textField.leftViewMode = .always
+        return textField
+    }()
     
     private let passwordText: UITextField = {
         let textField = AntonTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
+        textField.leftViewMode = .always
         return textField
     }()
     
@@ -32,13 +40,10 @@ final class AntonAuthViewController: UIViewController {
         configureAppearance()
         addSubviews()
         addConstraints()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        loginText.becomeFirstResponder()
     }
     
     private func configureAppearance() {
@@ -56,6 +61,7 @@ final class AntonAuthViewController: UIViewController {
     }
     
     private func addConstraints() {
+        
         antonAuthLogoView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.4)

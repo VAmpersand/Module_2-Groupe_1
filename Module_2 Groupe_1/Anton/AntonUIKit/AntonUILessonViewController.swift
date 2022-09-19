@@ -19,6 +19,10 @@ final class AntonUILessonViewController: UIViewController {
     private let bell = AntonPersonalSettingsView()
     private let gearshape = AntonPersonalSettingsView()
     private let creditcard = AntonPersonalSettingsView()
+    private let chevronTop = AntonPersonalConnectionView()
+    private let chevronMiddleTop = AntonPersonalConnectionView()
+    private let chevronMiddleBottom = AntonPersonalConnectionView()
+    private let chevronBottom = AntonPersonalConnectionView()
 
     private let stackViewSetting: UIStackView = {
         let view = UIStackView()
@@ -27,11 +31,6 @@ final class AntonUILessonViewController: UIViewController {
         view.distribution = .fillEqually
         return view
     }()
-    
-    private let chevronTop = AntonPersonalConnectionView()
-    private let chevronMiddleTop = AntonPersonalConnectionView()
-    private let chevronMiddleBottom = AntonPersonalConnectionView()
-    private let chevronBottom = AntonPersonalConnectionView()
     
     private let stackViewConnection: UIStackView = {
         let view = UIStackView()
@@ -56,23 +55,13 @@ final class AntonUILessonViewController: UIViewController {
         textView.isScrollEnabled = false
         textView.isSelectable = false
         textView.backgroundColor = .clear
-        
-        let strText = """
+        textView.text = """
                     Send Feedback
                     Report an Emergency
                     Rate us on the Play Store
                     Log Out
                     """
-        let indent = NSMutableParagraphStyle()
-        indent.lineSpacing = 11
-        let attributedStr = NSMutableAttributedString(string: strText)
-        attributedStr.addAttribute(
-            NSAttributedString.Key.paragraphStyle,
-            value: indent,
-            range: NSMakeRange(0, attributedStr.length)
-        )
-        
-        textView.attributedText = attributedStr
+
         textView.font = UIFont(name: "Poppins-Regular", size: 17)
         return textView
     }()
@@ -122,18 +111,12 @@ final class AntonUILessonViewController: UIViewController {
         let creditcardSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "creditcard"),
                                                                      title: "Payments")
         creditcard.configure(with: creditcardSettings)
-        
-        let chevronTopConnection = AntonPersonalConnectionView.ViewModel(title: "Your Orders")
-        chevronTop.configure(with: chevronTopConnection)
-        let chevronMiddleTopConnection = AntonPersonalConnectionView.ViewModel(title: "Feedback & Refunds")
-        chevronMiddleTop.configure(with: chevronMiddleTopConnection)
-        let chevronMiddleBottomConnection = AntonPersonalConnectionView.ViewModel(title: "My Preferences")
-        chevronMiddleBottom.configure(with: chevronMiddleBottomConnection)
-        let chevronBottomConnection = AntonPersonalConnectionView.ViewModel(title: "Help")
-        chevronBottom.configure(with: chevronBottomConnection)
-        let infoCircleAbout = AntonPersonalAboutView.ViewModel(title: "About")
-        infoCircle.configure(with: infoCircleAbout)
-        
+                                                                                
+        chevronTop.configure(with: AntonPersonalConnectionView.ViewModel(title: "Your Orders"))
+        chevronMiddleTop.configure(with: AntonPersonalConnectionView.ViewModel(title: "Feedback & Refunds"))
+        chevronMiddleBottom.configure(with: AntonPersonalConnectionView.ViewModel(title: "My Preferences"))
+        chevronBottom.configure(with: AntonPersonalConnectionView.ViewModel(title: "Help"))
+
         [
             bookmark,
             bell,
@@ -167,6 +150,7 @@ final class AntonUILessonViewController: UIViewController {
             target: self,
             action: #selector(personalInfoHandler
                              )))
+        scrollView.backgroundColor = UIColor(hexString: "F5F5F8")
     }
     
     private func addSubviews() {
@@ -201,6 +185,7 @@ final class AntonUILessonViewController: UIViewController {
     }
     
     private func addConstraints() {
+        
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

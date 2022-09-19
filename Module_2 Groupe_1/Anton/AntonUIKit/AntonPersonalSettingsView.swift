@@ -54,6 +54,7 @@ final class AntonPersonalSettingsView: UIView {
     }
     
     private func addConstraints() {
+        
         imageView.snp.makeConstraints {
             $0.size.equalTo(20)
             $0.top.equalToSuperview().inset(8)

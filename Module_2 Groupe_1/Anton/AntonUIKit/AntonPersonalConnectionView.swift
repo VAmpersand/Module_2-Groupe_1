@@ -55,6 +55,7 @@ final class AntonPersonalConnectionView: UIView {
     }
     
     private func addConstraints() {
+        
         imageView.snp.makeConstraints {
             $0.width.equalTo(15)
             $0.height.equalTo(20)
@@ -64,6 +65,7 @@ final class AntonPersonalConnectionView: UIView {
         
         label.snp.makeConstraints { 
             $0.leading.equalToSuperview().inset(27)
+            $0.trailing.equalToSuperview().inset(98)
             $0.centerY.equalToSuperview()
         }
     }

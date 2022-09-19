@@ -20,16 +20,30 @@ extension AntonPersonalInfoView {
 
 final class AntonPersonalInfoView: UIView {
     
+    private let antonAuthViewController = AntonAuthViewController()
     private let container = UIView()
     private let imageView = UIImageView()
-    private let antonAuthViewController = AntonAuthViewController()
+    private let nameLabel = UILabel(font: UIFont(name: "Poppins-Regular", size: 18), numberOfLines: 0)
+    private let lineEmail = UIView(backgroundColor: .black.withAlphaComponent(0.5))
+    private let linePhone = UIView(backgroundColor: .black.withAlphaComponent(0.5))
     
-    let nameLabel = UILabel(font: UIFont(name: "Poppins-Regular", size: 18), numberOfLines: 0)
-    let emailLabel = UILabel(font: UIFont(name: "Metropolis-Regular", size: 15), numberOfLines: 0)
-    let phoneLabel = UILabel(font: UIFont(name: "Metropolis-Regular", size: 15), numberOfLines: 0)
-    let addressLabel = UILabel(font: UIFont(name: "Metropolis-Regular", size: 15), numberOfLines: 3)
-    let lineEmail = UIView(backgroundColor: .black.withAlphaComponent(0.5))
-    let linePhone = UIView(backgroundColor: .black.withAlphaComponent(0.5))
+    private let emailLabel: UILabel = {
+        let label = UILabel(font: UIFont(name: "Metropolis-Regular", size: 15), numberOfLines: 0)
+        label.textColor = .black.withAlphaComponent(0.5)
+        return label
+    }()
+    
+    private let phoneLabel: UILabel = {
+        let label = UILabel(font: UIFont(name: "Metropolis-Regular", size: 15), numberOfLines: 0)
+        label.textColor = .black.withAlphaComponent(0.5)
+        return label
+    }()
+    
+    private let addressLabel: UILabel = {
+        let label = UILabel(font: UIFont(name: "Metropolis-Regular", size: 15), numberOfLines: 0)
+        label.textColor = .black.withAlphaComponent(0.5)
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,15 +71,7 @@ final class AntonPersonalInfoView: UIView {
     
     private func configureAppearance() {
         backgroundColor = .white
-        layer.cornerRadius = 10
-        
-        [
-            emailLabel,
-            phoneLabel,
-            addressLabel
-        ].forEach {
-            $0.textColor = .black.withAlphaComponent(0.5)
-        }
+        layer.cornerRadius = 20
     }
     
     private func addSubviews() {
@@ -83,6 +89,7 @@ final class AntonPersonalInfoView: UIView {
     }
     
     private func addConstraints() {
+        
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(17)
             $0.leading.equalToSuperview().inset(31)

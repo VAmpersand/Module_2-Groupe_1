@@ -34,7 +34,7 @@ class AntonAuthLogoView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
     }
     
     private func configureAppearance() {
@@ -43,7 +43,7 @@ class AntonAuthLogoView: UIView {
     }
     
     private func addSubviews() {
-       
+        
         [
             imageLogoView,
             border,
@@ -53,6 +53,7 @@ class AntonAuthLogoView: UIView {
     }
     
     private func addConstraints() {
+        
         imageLogoView.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
@@ -60,7 +61,7 @@ class AntonAuthLogoView: UIView {
         loginLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(50)
             $0.bottom.equalToSuperview().inset(12)
-            $0.width.equalTo(130)
+            $0.trailing.equalTo(snp.centerX).offset(-5)
         }
         
         singUpLabel.snp.makeConstraints {

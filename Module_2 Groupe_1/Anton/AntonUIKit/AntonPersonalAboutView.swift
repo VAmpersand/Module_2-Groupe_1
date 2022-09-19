@@ -8,21 +8,24 @@
 import UIKit
 import SnapKit
 
-extension AntonPersonalAboutView {
-    struct ViewModel {
-        let title: String
-    }
-}
-
 final class AntonPersonalAboutView: UIView {
     
-    private let imageSimbol = UIImageView(backgroundColor: UIColor(hexString: "F5F5F8"))
-    private let imageView = UIImageView()
-    private let label = UILabel(font: UIFont(name: "Poppins-Regular", size: 14))
+    private let colorView = UIView(backgroundColor: UIColor(hexString: "F5F5F8"))
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "info.circle"))
+        imageView.tintColor = .black
+        return imageView
+    }()
+    
+    private let label: UILabel = {
+        let label = UILabel(font: UIFont(name: "Poppins-Regular", size: 14), text: "About")
+        label.tintColor = .black
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-       imageView.image = UIImage(systemName: "info.circle")
         
         addSubviews()
         addConstraints()
@@ -37,25 +40,19 @@ final class AntonPersonalAboutView: UIView {
         configureAppearance()
     }
     
-    func configure(with viewModel: ViewModel) {
-        label.text = viewModel.title
-    }
-    
     private func configureAppearance() {
         layer.cornerRadius = 20
-        imageView.tintColor = .black
-        label.tintColor = .black
     }
     
     private func addSubviews() {
-        addSubview(imageSimbol)
+        addSubview(colorView)
         addSubview(label)
-        imageSimbol.addSubview(imageView)
+        colorView.addSubview(imageView)
     }
     
     private func addConstraints() {
         
-        imageSimbol.snp.makeConstraints {
+        colorView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(10)
             $0.size.equalTo(25)
@@ -75,6 +72,6 @@ final class AntonPersonalAboutView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageSimbol.layer.cornerRadius = 0.5 * imageSimbol.bounds.size.width
+        colorView.layer.cornerRadius = 0.5 * colorView.bounds.size.width
     }
 }
