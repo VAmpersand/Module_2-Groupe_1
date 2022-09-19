@@ -56,7 +56,7 @@ final class DanilAuthViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var dateFormatter: DateFormatter = {
+    private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
@@ -121,8 +121,8 @@ final class DanilAuthViewController: UIViewController {
     private func setupEventPicker() {
         picker.delegate = self
         picker.dataSource = self
-        (0..<dataSource.count).forEach {
-            picker.selectRow((pickerDataSize / 2) * dataSource[$0].count, inComponent: $0, animated: false)
+        dataSource.enumerated().forEach { (idx, subarr) in
+            picker.selectRow((pickerDataSize / 2) * subarr.count, inComponent: idx, animated: false)
         }
         eventTextField.inputView = picker
     }
@@ -150,7 +150,7 @@ extension DanilAuthViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pickerDataSize * dataSource[component].count
+        pickerDataSize
     }
 }
 
@@ -160,12 +160,9 @@ extension DanilAuthViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let currentIndex = row % dataSource[component].count
-        picker.selectRow(
-            (pickerDataSize / 2) * dataSource[component].count + currentIndex, inComponent: component, animated: false
-        )
-        let arr = (0..<dataSource.count).map {
-            dataSource[$0][pickerView.selectedRow(inComponent: $0) % dataSource[$0].count]
+        let arr = dataSource.enumerated().map { (idx, subarr) in
+            let selectedRow = pickerView.selectedRow(inComponent: idx)
+            return subarr[selectedRow % subarr.count]
         }
         eventTextField.text = arr.joined(separator: ", ")
     }
