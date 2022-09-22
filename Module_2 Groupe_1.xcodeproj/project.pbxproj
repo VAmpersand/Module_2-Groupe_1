@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C001A4228D9A29300295EBC /* NavigationDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C001A4128D9A29300295EBC /* NavigationDesignController.swift */; };
+		2C001A4728D9A7AF00295EBC /* NavigationLeftBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C001A4628D9A7AF00295EBC /* NavigationLeftBarItem.swift */; };
+		2C001A4928D9ACD400295EBC /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C001A4828D9ACD400295EBC /* Poppins-Medium.ttf */; };
+		2C001A4B28DBA02A00295EBC /* DanilSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C001A4A28DBA02A00295EBC /* DanilSearchTextField.swift */; };
+		2C001A4E28DBA10300295EBC /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C001A4D28DBA10300295EBC /* Roboto-Medium.ttf */; };
 		2C0BCD5428CB97CD00BFC536 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BCD4128CB97CD00BFC536 /* Poppins-Regular.ttf */; };
 		2C0BCD5928CB97CD00BFC536 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BCD4628CB97CD00BFC536 /* Poppins-SemiBold.ttf */; };
 		2C0BCD5E28CBAF9000BFC536 /* Metropolis-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C0BCD5D28CBAF9000BFC536 /* Metropolis-Regular.ttf */; };
@@ -67,6 +72,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C001A4128D9A29300295EBC /* NavigationDesignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDesignController.swift; sourceTree = "<group>"; };
+		2C001A4628D9A7AF00295EBC /* NavigationLeftBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLeftBarItem.swift; sourceTree = "<group>"; };
+		2C001A4828D9ACD400295EBC /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../../../../../../Downloads/Poppins/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		2C001A4A28DBA02A00295EBC /* DanilSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilSearchTextField.swift; sourceTree = "<group>"; };
+		2C001A4D28DBA10300295EBC /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../../Downloads/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2C0BCD4128CB97CD00BFC536 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		2C0BCD4628CB97CD00BFC536 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		2C0BCD5D28CBAF9000BFC536 /* Metropolis-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.ttf"; sourceTree = "<group>"; };
@@ -142,10 +152,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C001A4528D9A78600295EBC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2C001A4128D9A29300295EBC /* NavigationDesignController.swift */,
+				2C001A4628D9A7AF00295EBC /* NavigationLeftBarItem.swift */,
+				2C001A4A28DBA02A00295EBC /* DanilSearchTextField.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		2C001A4C28DBA0F600295EBC /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				2C001A4D28DBA10300295EBC /* Roboto-Medium.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
 		2C0BCD3528CB97CD00BFC536 /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
 				2C0BCD4128CB97CD00BFC536 /* Poppins-Regular.ttf */,
+				2C001A4828D9ACD400295EBC /* Poppins-Medium.ttf */,
 				2C0BCD4628CB97CD00BFC536 /* Poppins-SemiBold.ttf */,
 			);
 			path = Poppins;
@@ -154,6 +183,7 @@
 		2C0BCD5C28CBAF2700BFC536 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2C001A4C28DBA0F600295EBC /* Roboto */,
 				2C0BCD6B28CCB86D00BFC536 /* Nunito */,
 				2C0BCD5F28CBAF9600BFC536 /* Metropolis */,
 				2C0BCD3528CB97CD00BFC536 /* Poppins */,
@@ -212,6 +242,7 @@
 		2CCFF26428C75FFE008DDB72 /* UIKitLessons */ = {
 			isa = PBXGroup;
 			children = (
+				2C001A4528D9A78600295EBC /* Navigation */,
 				2C0BCD6628CCA2A200BFC536 /* Auth */,
 				2CAFD0E328D4B2580012F666 /* CustomComponents */,
 				2CAFD0E828D4B2840012F666 /* InfoButton.swift */,
@@ -495,12 +526,14 @@
 				2C0BCD6D28CCB87B00BFC536 /* Nunito-Regular.ttf in Resources */,
 				2CAFD0EB28D4B2A30012F666 /* Metropolis-Medium.ttf in Resources */,
 				77A6182428B0F50C00D6DDD0 /* LaunchScreen.storyboard in Resources */,
+				2C001A4928D9ACD400295EBC /* Poppins-Medium.ttf in Resources */,
 				77A6184628B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard in Resources */,
 				77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */,
 				77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */,
 				77A6184E28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard in Resources */,
 				2C0BCD5E28CBAF9000BFC536 /* Metropolis-Regular.ttf in Resources */,
 				77A6184A28B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard in Resources */,
+				2C001A4E28DBA10300295EBC /* Roboto-Medium.ttf in Resources */,
 				2C0BCD5928CB97CD00BFC536 /* Poppins-SemiBold.ttf in Resources */,
 				2C0BCD5428CB97CD00BFC536 /* Poppins-Regular.ttf in Resources */,
 				77A6184828B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard in Resources */,
@@ -571,9 +604,11 @@
 				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
 				2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */,
 				45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */,
+				2C001A4B28DBA02A00295EBC /* DanilSearchTextField.swift in Sources */,
 				45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */,
 				457B1E2928C4DFE200AEDC90 /* AntonTransferDataController.swift in Sources */,
 				2CAFD0E928D4B2840012F666 /* InfoButton.swift in Sources */,
+				2C001A4228D9A29300295EBC /* NavigationDesignController.swift in Sources */,
 				451C761728CF8D3A0053EB74 /* AntonPersonalConnectionView.swift in Sources */,
 				77A6181A28B0F50A00D6DDD0 /* SceneDelegate.swift in Sources */,
 				2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */,
@@ -581,6 +616,7 @@
 				2C17158E28C228F500736E72 /* DanilCustomView.swift in Sources */,
 				77F0528D28C36BC400839EF6 /* EvgenyInCodeLayoutViewController.swift in Sources */,
 				2C0BCD6128CBB04B00BFC536 /* UIFont + ext.swift in Sources */,
+				2C001A4728D9A7AF00295EBC /* NavigationLeftBarItem.swift in Sources */,
 				77A6184428B0FDDB00D6DDD0 /* AntonTabViewController.swift in Sources */,
 				4574037E28D0D6C700D96AD6 /* AntonPersonalAboutView.swift in Sources */,
 			);

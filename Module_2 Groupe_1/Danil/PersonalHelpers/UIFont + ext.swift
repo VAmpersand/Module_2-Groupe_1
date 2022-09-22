@@ -12,6 +12,9 @@ extension UIFont {
     static let poppinsRegular17 = UIFont(name: "Poppins-Regular", size: 17)
     static let poppinsRegular18 = UIFont(name: "Poppins-Regular", size: 18)
     
+    static let poppinsMedium15 = UIFont(name: "Poppins-Medium", size: 15)
+    
+    static let poppinsSemiBold16 = UIFont(name: "Poppins-SemiBold", size: 16)
     static let poppinsSemiBold17 = UIFont(name: "Poppins-SemiBold", size: 17)
     static let poppinsSemiBold18 = UIFont(name: "Poppins-SemiBold", size: 18)
     
@@ -22,4 +25,6 @@ extension UIFont {
     static let metropolisMedium21 = UIFont(name: "Metropolis-Regular", size: 21)
     
     static let nunitoRegular16 = UIFont(name: "Nunito-Regular", size: 16)
+    
+    static let robotoMedium17 = UIFont(name: "Roboto-Medium", size: 17)
 }

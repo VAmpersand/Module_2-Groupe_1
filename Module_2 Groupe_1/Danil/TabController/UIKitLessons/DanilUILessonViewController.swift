@@ -255,9 +255,9 @@ final class DanilUILessonViewController: UIViewController {
     }
     
     private func additionalInfoHandler() {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .white
-        present(controller, animated: true)
+        let navigationDesignController = UINavigationController(rootViewController: NavigationDesignController())
+        navigationDesignController.modalPresentationStyle = .fullScreen
+        present(navigationDesignController, animated: true)
     }
     
     private func personalInfoHandler() {
