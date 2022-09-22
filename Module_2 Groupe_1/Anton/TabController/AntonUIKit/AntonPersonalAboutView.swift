@@ -10,11 +10,22 @@ import SnapKit
 
 final class AntonPersonalAboutView: UIView {
     
-    private let imageView = UIImageView()
+    private let colorView = UIView(backgroundColor: UIColor(hexString: "F5F5F8"))
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "info.circle"))
+        imageView.tintColor = .black
+        return imageView
+    }()
+    
+    private let label: UILabel = {
+        let label = UILabel(font: UIFont(name: "Poppins-Regular", size: 14), text: "About")
+        label.tintColor = .black
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-       imageView.image = UIImage(systemName: "info.circle")
         
         addSubviews()
         addConstraints()
@@ -22,7 +33,11 @@ final class AntonPersonalAboutView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
+        
+        addSubviews()
+        addConstraints()
+        configureAppearance()
     }
     
     private func configureAppearance() {
@@ -30,14 +45,33 @@ final class AntonPersonalAboutView: UIView {
     }
     
     private func addSubviews() {
-        addSubview(imageView)
+        addSubview(colorView)
+        addSubview(label)
+        colorView.addSubview(imageView)
     }
     
     private func addConstraints() {
-        imageView.snp.makeConstraints {
+        
+        colorView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().offset(10)
+            $0.size.equalTo(25)
+        }
+        
+        imageView.snp.makeConstraints {
+            $0.center.equalToSuperview()
             $0.size.equalTo(20)
         }
+        
+        label.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(40)
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        colorView.layer.cornerRadius = 0.5 * colorView.bounds.size.width
     }
 }

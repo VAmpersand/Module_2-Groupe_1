@@ -13,12 +13,14 @@ import SnapKit
 
 extension AntonPersonalConnectionView {
     struct ViewModel {
+        let title: String
     }
 }
 
 final class AntonPersonalConnectionView: UIView {
     
     private let imageView = UIImageView()
+    private let label = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 18))
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -30,27 +32,41 @@ final class AntonPersonalConnectionView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(frame: .zero)
+        
+        addSubviews()
+        addConstraints()
+        configureAppearance()
     }
     
     func configure(with viewModel: ViewModel) {
-        
+        label.text = viewModel.title
     }
     
     private func configureAppearance() {
         layer.cornerRadius = 20
+        imageView.tintColor = .black
+        label.textColor = .black
     }
     
     private func addSubviews() {
         addSubview(imageView)
+        addSubview(label)
     }
     
     private func addConstraints() {
+        
         imageView.snp.makeConstraints {
             $0.width.equalTo(15)
             $0.height.equalTo(20)
             $0.centerY.equalToSuperview()
-            $0.right.equalToSuperview().inset(42)
+            $0.trailing.equalToSuperview().inset(42)
+        }
+        
+        label.snp.makeConstraints { 
+            $0.leading.equalToSuperview().inset(27)
+            $0.trailing.equalToSuperview().inset(98)
+            $0.centerY.equalToSuperview()
         }
     }
 }
