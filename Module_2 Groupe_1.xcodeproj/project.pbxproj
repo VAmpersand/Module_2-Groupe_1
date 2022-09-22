@@ -23,6 +23,10 @@
 		2C31771928BE0D6F00127E36 /* DanilDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C31771828BE0D6F00127E36 /* DanilDetailsController.swift */; };
 		2C348A0A28BD67E8006B7003 /* DanilTransitionDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */; };
 		2C348A0C28BE05F5006B7003 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C348A0B28BE05F5006B7003 /* UIButton + ext.swift */; };
+		2C4B1BE728DC8AD000B0E23C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B1BE628DC8AD000B0E23C /* Roboto-Medium.ttf */; };
+		2C4B1BED28DC8E0200B0E23C /* NavigationDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B1BEC28DC8E0200B0E23C /* NavigationDesignController.swift */; };
+		2C4B1BEF28DC8E1E00B0E23C /* DanilSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B1BEE28DC8E1E00B0E23C /* DanilSearchTextField.swift */; };
+		2C4B1BF128DC8E2500B0E23C /* NavigationLeftBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B1BF028DC8E2500B0E23C /* NavigationLeftBarItem.swift */; };
 		2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */; };
 		2C4E8D4F28C86D2C005DE286 /* DanilBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */; };
 		2C67F75128D4BAA6005A3400 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F75028D4BAA6005A3400 /* UIColor + ext.swift */; };
@@ -86,6 +90,13 @@
 		2C31771828BE0D6F00127E36 /* DanilDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilDetailsController.swift; sourceTree = "<group>"; };
 		2C348A0928BD67E8006B7003 /* DanilTransitionDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTransitionDemoController.swift; sourceTree = "<group>"; };
 		2C348A0B28BE05F5006B7003 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
+		2C4B1BE628DC8AD000B0E23C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../../Downloads/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2C4B1BEC28DC8E0200B0E23C /* NavigationDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationDesignController.swift; path = ../../../../../../.Trash/NavigationDesignController.swift; sourceTree = "<group>"; };
+		2C4B1BEE28DC8E1E00B0E23C /* DanilSearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanilSearchTextField.swift; path = ../../../../../../.Trash/DanilSearchTextField.swift; sourceTree = "<group>"; };
+		2C4B1BF028DC8E2500B0E23C /* NavigationLeftBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationLeftBarItem.swift; path = ../../../../../../.Trash/NavigationLeftBarItem.swift; sourceTree = "<group>"; };
+		2C4B1BF328DC8E3100B0E23C /* DanilSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilSearchTextField.swift; sourceTree = "<group>"; };
+		2C4B1BF428DC8E3100B0E23C /* NavigationDesignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDesignController.swift; sourceTree = "<group>"; };
+		2C4B1BF528DC8E3100B0E23C /* NavigationLeftBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLeftBarItem.swift; sourceTree = "<group>"; };
 		2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilMenuItemView.swift; sourceTree = "<group>"; };
 		2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilBaseView.swift; sourceTree = "<group>"; };
 		2C67F75028D4BAA6005A3400 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
@@ -160,6 +171,7 @@
 		2C0BCD5C28CBAF2700BFC536 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2C4B1BE528DC8ABC00B0E23C /* Roboto */,
 				2C0BCD6B28CCB86D00BFC536 /* Nunito */,
 				2C0BCD5F28CBAF9600BFC536 /* Metropolis */,
 				2C0BCD3528CB97CD00BFC536 /* Poppins */,
@@ -195,6 +207,24 @@
 			path = Nunito;
 			sourceTree = "<group>";
 		};
+		2C4B1BE528DC8ABC00B0E23C /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				2C4B1BE628DC8AD000B0E23C /* Roboto-Medium.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		2C4B1BF228DC8E2B00B0E23C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2C4B1BF528DC8E3100B0E23C /* NavigationLeftBarItem.swift */,
+				2C4B1BF328DC8E3100B0E23C /* DanilSearchTextField.swift */,
+				2C4B1BF428DC8E3100B0E23C /* NavigationDesignController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		2C7CFC9D28BB86D300DF3D32 /* PersonalHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +248,10 @@
 		2CCFF26428C75FFE008DDB72 /* UIKitLessons */ = {
 			isa = PBXGroup;
 			children = (
+				2C4B1BF228DC8E2B00B0E23C /* Navigation */,
+				2C4B1BF028DC8E2500B0E23C /* NavigationLeftBarItem.swift */,
+				2C4B1BEE28DC8E1E00B0E23C /* DanilSearchTextField.swift */,
+				2C4B1BEC28DC8E0200B0E23C /* NavigationDesignController.swift */,
 				2C0BCD6628CCA2A200BFC536 /* Auth */,
 				2CAFD0E328D4B2580012F666 /* CustomComponents */,
 				2CAFD0E828D4B2840012F666 /* InfoButton.swift */,
@@ -501,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4B1BE728DC8AD000B0E23C /* Roboto-Medium.ttf in Resources */,
 				2C0BCD6D28CCB87B00BFC536 /* Nunito-Regular.ttf in Resources */,
 				2CAFD0EB28D4B2A30012F666 /* Metropolis-Medium.ttf in Resources */,
 				77A6182428B0F50C00D6DDD0 /* LaunchScreen.storyboard in Resources */,
@@ -550,6 +585,7 @@
 			files = (
 				2C1CA0EA28C0FB8C0025F7FA /* UIViewController + ext.swift in Sources */,
 				45B7DABA28D9C9610067F391 /* AntonPersonalConnectionView.swift in Sources */,
+				2C4B1BED28DC8E0200B0E23C /* NavigationDesignController.swift in Sources */,
 				2C67F75128D4BAA6005A3400 /* UIColor + ext.swift in Sources */,
 				2C17159028C23FC200736E72 /* Notification + ext.swift in Sources */,
 				2CCFF26128C74AC1008DDB72 /* DanilUILessonViewController.swift in Sources */,
@@ -560,11 +596,13 @@
 				2CADB0F828D5D449007EB8D5 /* PickerTextField.swift in Sources */,
 				457B1E2728C4B02500AEDC90 /* AntonButtonCustomView.swift in Sources */,
 				2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */,
+				2C4B1BF128DC8E2500B0E23C /* NavigationLeftBarItem.swift in Sources */,
 				45A77C0828D9E438004181A8 /* AntonAuthViewController.swift in Sources */,
 				2C0BCD6828CCA2BB00BFC536 /* TopView.swift in Sources */,
 				2C0BCD6A28CCB61100BFC536 /* BaseTextField.swift in Sources */,
 				2C0BCD6328CBB87A00BFC536 /* UILabel + ext.swift in Sources */,
 				2CCFF26628C760DB008DDB72 /* DanilPersonalInfoView.swift in Sources */,
+				2C4B1BEF28DC8E1E00B0E23C /* DanilSearchTextField.swift in Sources */,
 				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,
 				45B7DAB828D9C95E0067F391 /* AntonPersonalSettingsView.swift in Sources */,
 				2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */,
