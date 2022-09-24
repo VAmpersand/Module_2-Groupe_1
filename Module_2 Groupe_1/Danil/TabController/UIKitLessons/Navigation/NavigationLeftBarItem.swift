@@ -15,7 +15,7 @@ final class NavigationLeftBarItem: UIStackView {
         return imageView
     }()
     
-    private let titleLabel = UILabel(font: .poppinsSemiBold16, text: "Home")
+    private let titleLabel = UILabel(font: .getPoppinsSemiBold(with: 16), text: "Home")
     
     private let addressLabel: UILabel = {
         let label = UILabel(font: .poppinsMedium15)
@@ -42,7 +42,11 @@ final class NavigationLeftBarItem: UIStackView {
     }
     
     required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        
+        configureAppearance()
+        addSubviews()
+        addConstraints()
     }
     
     private func configureAppearance() {
@@ -78,10 +82,9 @@ final class NavigationLeftBarItem: UIStackView {
 }
 
 
-private  extension Constants {
+private extension Constants {
     enum LeftBarItemColors {
         static let logo = UIColor(hexString: "#2E3A59")
         static let description = UIColor(hexString: "#B2B2B2")
     }
 }
-

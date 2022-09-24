@@ -11,7 +11,7 @@ import SnapKit
 class InfoButton: UIButton {
     
     private let containerView = UIView(backgroundColor: Constants.Color.primary)
-    private let aboutLabel = UILabel(font: .poppinsRegular14, text: "About")
+    private let aboutLabel = UILabel(font: .getPoppinsRegular(with: 14), text: "About")
     
     private let infoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "info.circle"))

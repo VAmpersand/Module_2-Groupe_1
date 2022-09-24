@@ -122,7 +122,7 @@ final class DanilAuthViewController: UIViewController {
         picker.delegate = self
         picker.dataSource = self
         eventTextField.inputView = picker
-        dataSource.enumerated().forEach { (idx, subarr) in
+        dataSource.enumerated().forEach { idx, subarr in
             picker.selectRow(
                 (pickerDataSize / 2) / subarr.count * subarr.count, inComponent: idx, animated: false
             )
@@ -162,7 +162,7 @@ extension DanilAuthViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let arr = dataSource.enumerated().map { (idx, subarr) in
+        let arr = dataSource.enumerated().map { idx, subarr in
             let selectedRow = pickerView.selectedRow(inComponent: idx)
             return subarr[selectedRow % subarr.count]
         }

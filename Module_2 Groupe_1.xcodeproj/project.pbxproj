@@ -27,6 +27,7 @@
 		2C4E8D4F28C86D2C005DE286 /* DanilBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */; };
 		2C67F75128D4BAA6005A3400 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F75028D4BAA6005A3400 /* UIColor + ext.swift */; };
 		2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* Constants.swift */; };
+		2CA8869928DF48650081FCC4 /* DanilToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8869828DF48650081FCC4 /* DanilToolBar.swift */; };
 		2CADB0F828D5D449007EB8D5 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADB0F728D5D449007EB8D5 /* PickerTextField.swift */; };
 		2CAFD0E628D4B2580012F666 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAFD0E428D4B2580012F666 /* CustomSegmentedControl.swift */; };
 		2CAFD0E728D4B2580012F666 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAFD0E528D4B2580012F666 /* CustomStepper.swift */; };
@@ -96,6 +97,7 @@
 		2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilBaseView.swift; sourceTree = "<group>"; };
 		2C67F75028D4BAA6005A3400 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		2C7CFC9E28BB86F300DF3D32 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2CA8869828DF48650081FCC4 /* DanilToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilToolBar.swift; sourceTree = "<group>"; };
 		2CADB0F728D5D449007EB8D5 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		2CAFD0E428D4B2580012F666 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2CAFD0E528D4B2580012F666 /* CustomStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				2C4B1BF528DC8E3100B0E23C /* NavigationLeftBarItem.swift */,
 				2C4B1BF328DC8E3100B0E23C /* DanilSearchTextField.swift */,
 				2C4B1BF428DC8E3100B0E23C /* NavigationDesignController.swift */,
+				2CA8869828DF48650081FCC4 /* DanilToolBar.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */,
 				45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */,
 				45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */,
+				2CA8869928DF48650081FCC4 /* DanilToolBar.swift in Sources */,
 				457B1E2928C4DFE200AEDC90 /* AntonTransferDataController.swift in Sources */,
 				45B7DABC28D9C9640067F391 /* AntonPersonalAboutView.swift in Sources */,
 				45A77C0A28D9E438004181A8 /* AntonAuthLogoView.swift in Sources */,
