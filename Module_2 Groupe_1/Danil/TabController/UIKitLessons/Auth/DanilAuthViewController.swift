@@ -121,10 +121,12 @@ final class DanilAuthViewController: UIViewController {
     private func setupEventPicker() {
         picker.delegate = self
         picker.dataSource = self
-        dataSource.enumerated().forEach { (idx, subarr) in
-            picker.selectRow((pickerDataSize / 2) * subarr.count, inComponent: idx, animated: false)
-        }
         eventTextField.inputView = picker
+        dataSource.enumerated().forEach { idx, subarr in
+            picker.selectRow(
+                (pickerDataSize / 2) / subarr.count * subarr.count, inComponent: idx, animated: false
+            )
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -160,7 +162,7 @@ extension DanilAuthViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let arr = dataSource.enumerated().map { (idx, subarr) in
+        let arr = dataSource.enumerated().map { idx, subarr in
             let selectedRow = pickerView.selectedRow(inComponent: idx)
             return subarr[selectedRow % subarr.count]
         }

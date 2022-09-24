@@ -11,7 +11,7 @@ final class DanilUILessonViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView(backgroundColor: Constants.Color.primary)
-    private let personalDetailsLabel = UILabel(font: .poppinsSemiBold18, text: "Personal details")
+    private let personalDetailsLabel = UILabel(font: .getPoppinsSemiBold(with: 18), text: "Personal details")
     private let personalInfoView = DanilPersonalInfoView()
     private let bookmarksCategory = DanilCategoryView(
         categoryImage: UIImage(systemName: "bookmark")!,
@@ -36,7 +36,7 @@ final class DanilUILessonViewController: UIViewController {
     
     private let editButton: UIButton = {
         let button = UIButton(backgroundColor: .clear, titleColor: Constants.Color.secondary, title: "Edit")
-        button.titleLabel?.font = UIFont.metropolisRegular15
+        button.titleLabel?.font = .getMetropolisRegular(with: 15)
         return button
     }()
     
@@ -75,7 +75,7 @@ final class DanilUILessonViewController: UIViewController {
             range: NSMakeRange(0, attributedString.length)
         )
         textView.attributedText = attributedString
-        textView.font = .poppinsRegular17
+        textView.font = .getPoppinsRegular(with: 17)
         return textView
     }()
     
@@ -91,7 +91,7 @@ final class DanilUILessonViewController: UIViewController {
             titleColor: Constants.Color.buttonTitle,
             title: "Update"
         )
-        button.titleLabel?.font = UIFont.poppinsSemiBold17
+        button.titleLabel?.font = .getPoppinsSemiBold(with: 17)
         return button
     }()
     
@@ -255,9 +255,9 @@ final class DanilUILessonViewController: UIViewController {
     }
     
     private func additionalInfoHandler() {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .white
-        present(controller, animated: true)
+        let navigationDesignController = UINavigationController(rootViewController: NavigationDesignController())
+        navigationDesignController.modalPresentationStyle = .fullScreen
+        present(navigationDesignController, animated: true)
     }
     
     private func personalInfoHandler() {

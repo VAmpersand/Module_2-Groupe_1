@@ -9,7 +9,7 @@ import UIKit
 
 final class DanilMenuItemView: DanilBaseView {
  
-    private let menuLabel = UILabel(font: .poppinsSemiBold18)
+    private let menuLabel = UILabel(font: .getPoppinsSemiBold(with: 18))
     
     private let arrowImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "danilArrowRight"))
