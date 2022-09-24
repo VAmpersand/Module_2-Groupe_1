@@ -14,7 +14,6 @@ final class AntonUILessonViewController: UIViewController {
     private let contentView = UIView(backgroundColor: UIColor(hexString: "F5F5F8"))
     private let personalDetails = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 18), text: "Personal details")
     private let antonPersonalInfo = AntonPersonalInfoView()
-    private let infoCircle = AntonPersonalAboutView()
     private let bookmark = AntonPersonalSettingsView()
     private let bell = AntonPersonalSettingsView()
     private let gearshape = AntonPersonalSettingsView()
@@ -72,6 +71,11 @@ final class AntonUILessonViewController: UIViewController {
         return button
     }()
     
+    private let aboutButton: AntonAboutButton = {
+        let button = AntonAboutButton()
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,18 +103,25 @@ final class AntonUILessonViewController: UIViewController {
         )
         antonPersonalInfo.configure(with: antonPersonalInfoViewModel)
         
-        let bookmarksSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "bookmark"),
-                                                                    title: "Bookmarks")
-        bookmark.configure(with: bookmarksSettings)
-        let bellSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "bell"),
-                                                               title: "Notifications")
-        bell.configure(with: bellSettings)
-        let gearshapeSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "gearshape"),
-                                                                    title: "Settings")
-        gearshape.configure(with: gearshapeSettings)
-        let creditcardSettings = AntonPersonalSettingsView.ViewModel(image: UIImage(systemName: "creditcard"),
-                                                                     title: "Payments")
-        creditcard.configure(with: creditcardSettings)
+        bookmark.configure(with: AntonPersonalSettingsView.ViewModel(
+            image: UIImage(systemName: "bookmark"),
+            title: "Bookmarks"
+        ))
+
+        bell.configure(with: AntonPersonalSettingsView.ViewModel(
+            image: UIImage(systemName: "bell"),
+            title: "Notifications"
+        ))
+                       
+        gearshape.configure(with: AntonPersonalSettingsView.ViewModel(
+            image: UIImage(systemName: "gearshape"),
+            title: "Settings"
+        ))
+                            
+        creditcard.configure(with: AntonPersonalSettingsView.ViewModel(
+            image: UIImage(systemName: "creditcard"),
+            title: "Payments"
+        ))
                                                                                 
         chevronTop.configure(with: AntonPersonalConnectionView.ViewModel(title: "Your Orders"))
         chevronMiddleTop.configure(with: AntonPersonalConnectionView.ViewModel(title: "Feedback & Refunds"))
@@ -134,8 +145,7 @@ final class AntonUILessonViewController: UIViewController {
             chevronTop,
             chevronMiddleTop,
             chevronMiddleBottom,
-            chevronBottom,
-            infoCircle
+            chevronBottom
         ].forEach {
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(connectionHandler(_ :))))
         }
@@ -151,6 +161,8 @@ final class AntonUILessonViewController: UIViewController {
             action: #selector(personalInfoHandler
                              )))
         scrollView.backgroundColor = UIColor(hexString: "F5F5F8")
+        aboutButton.addTarget(self, action: #selector(aboutAction), for: .touchUpInside)
+        
     }
     
     private func addSubviews() {
@@ -162,7 +174,7 @@ final class AntonUILessonViewController: UIViewController {
             stackViewSetting,
             stackViewConnection,
             antonPersonalInfo,
-            infoCircle,
+            aboutButton,
             buttonUpdate,
             textView,
             personalDetails,
@@ -232,12 +244,12 @@ final class AntonUILessonViewController: UIViewController {
             }
         }
         
-        infoCircle.snp.makeConstraints {
+        aboutButton.snp.makeConstraints {
             $0.height.equalTo(40)
             $0.top.equalTo(antonPersonalInfo.snp.bottom).offset(614)
             $0.leading.equalToSuperview().inset(33)
             $0.trailing.equalToSuperview().inset(238)
-            infoCircle.backgroundColor = .white
+            aboutButton.backgroundColor = .white
         }
         
         buttonUpdate.snp.makeConstraints {
@@ -285,7 +297,6 @@ final class AntonUILessonViewController: UIViewController {
         case chevronMiddleTop: controller.view.backgroundColor = .gray
         case chevronMiddleBottom: controller.view.backgroundColor = .red
         case chevronBottom: controller.view.backgroundColor = .blue
-        case infoCircle: controller.view.backgroundColor = .purple
         default: break
         }
         present(controller, animated: true)
@@ -299,6 +310,11 @@ final class AntonUILessonViewController: UIViewController {
     
     private func personalInfoHandler() {
         let controller = AntonAuthViewController()
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
+    }
+    private func aboutAction() {
+        let controller = AntonNavBarController(rootViewController: AntonNavigationController())
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
