@@ -73,7 +73,7 @@ final class CustomSegmentedControl: UIControl {
         for i in 0..<items.count {
             let button = UIButton(backgroundColor: .clear, titleColor: .black, title: items[i])
             button.tag = i
-            button.titleLabel?.font = .poppinsSemiBold18
+            button.titleLabel?.font = .getPoppinsSemiBold(with: 18)
             button.titleLabel?.textAlignment = .center
             button.addTarget(self, action: #selector(buttonHandler(_:)), for: .touchUpInside)
             buttons.append(button)

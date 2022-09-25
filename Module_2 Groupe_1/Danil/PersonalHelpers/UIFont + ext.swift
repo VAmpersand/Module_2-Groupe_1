@@ -8,18 +8,20 @@
 import UIKit
 
 extension UIFont {
-    static let poppinsRegular14 = UIFont(name: "Poppins-Regular", size: 14)
-    static let poppinsRegular17 = UIFont(name: "Poppins-Regular", size: 17)
-    static let poppinsRegular18 = UIFont(name: "Poppins-Regular", size: 18)
-    
-    static let poppinsSemiBold17 = UIFont(name: "Poppins-SemiBold", size: 17)
-    static let poppinsSemiBold18 = UIFont(name: "Poppins-SemiBold", size: 18)
-    
-    static let metropolisRegular10 = UIFont(name: "Metropolis-Regular", size: 10)
-    static let metropolisRegular14 = UIFont(name: "Metropolis-Regular", size: 14)
-    static let metropolisRegular15 = UIFont(name: "Metropolis-Regular", size: 15)
-    
-    static let metropolisMedium21 = UIFont(name: "Metropolis-Regular", size: 21)
-    
+    static let metropolisMedium21 = UIFont(name: "Metropolis-Medium", size: 21)
     static let nunitoRegular16 = UIFont(name: "Nunito-Regular", size: 16)
+    static let robotoMedium17 = UIFont(name: "Roboto-Medium", size: 17)
+    static let poppinsMedium15 = UIFont(name: "Poppins-Medium", size: 15)
+    
+    static func getPoppinsRegular(with size: CGFloat) -> UIFont {
+        UIFont(name: "Poppins-Regular", size: size) ?? UIFont()
+    }
+
+    static func getPoppinsSemiBold(with size: CGFloat) -> UIFont {
+        UIFont(name: "Poppins-SemiBold", size: size) ?? UIFont()
+    }
+    
+    static func getMetropolisRegular(with size: CGFloat) -> UIFont {
+        UIFont(name: "Metropolis-Regular", size: size) ?? UIFont()
+    }
 }

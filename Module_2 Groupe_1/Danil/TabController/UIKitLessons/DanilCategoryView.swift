@@ -10,7 +10,7 @@ import UIKit
 final class DanilCategoryView: DanilBaseView {
     
     private let categoryImageView = UIImageView()
-    private let categoryLabel = UILabel(font: .metropolisRegular10)
+    private let categoryLabel = UILabel(font: .getMetropolisRegular(with: 10))
    
     init(categoryImage: UIImage, labelText: String) {
         categoryImageView.image = categoryImage

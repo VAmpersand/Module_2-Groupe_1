@@ -23,15 +23,15 @@ final class DanilPersonalInfoView: DanilBaseView {
     
     private let container = UIView()
     
-    private let nameLabel = UILabel(font: .poppinsRegular18)
+    private let nameLabel = UILabel(font: .getPoppinsRegular(with: 18))
     private let emailLabel: UILabel = {
-        let label = UILabel(font: .metropolisRegular15)
+        let label = UILabel(font: .getMetropolisRegular(with: 15))
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.7
         return label
     }()
-    private let phoneLabel = UILabel(font: .metropolisRegular15)
-    private let addressLabel = UILabel(font: .metropolisRegular15, numberOfLines: 3)
+    private let phoneLabel = UILabel(font: .getMetropolisRegular(with: 15))
+    private let addressLabel = UILabel(font: .getMetropolisRegular(with: 15), numberOfLines: 3)
     
     private let emailSeparator = UIView(backgroundColor: .black.withAlphaComponent(Constants.Multipliers.half))
     private let phoneSeparator = UIView(backgroundColor: .black.withAlphaComponent(Constants.Multipliers.half))
