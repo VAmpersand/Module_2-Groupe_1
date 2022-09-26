@@ -314,7 +314,7 @@ final class AntonUILessonViewController: UIViewController {
         present(controller, animated: true)
     }
     private func aboutAction() {
-        let controller = AntonNavBarController(rootViewController: AntonNavigationController())
+        let controller = UINavigationController(rootViewController: AntonNavigationController())
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }

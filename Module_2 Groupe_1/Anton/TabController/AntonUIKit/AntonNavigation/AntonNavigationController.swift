@@ -10,37 +10,24 @@ import SnapKit
 
 final class AntonNavigationController: UIViewController {
     
-    private let antonNavBarController: AntonNavBarController = {
-        let navBar = AntonNavBarController()
-        navBar.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navBar.navigationBar.shadowImage = UIImage()
-        navBar.navigationBar.isTranslucent = false
-        navBar.navigationBar.prefersLargeTitles = false
-        navBar.navigationBar.backgroundColor = .white
-        navBar.view.backgroundColor = .white
-        return navBar
-    }()
-    
-    private let antonSearchViewController = AntonSearchViewController()
-    private let navBar = UIView(backgroundColor: .white)
+    private let navBar = UIView()
     private let scrollView = UIScrollView(backgroundColor: .white)
     private let contentView = UIView(backgroundColor: .white)
-    
+    private let antonSearchView = AntonSearchView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureAppearance()
         addSubviews()
         addConstraints()
-        setupLeftItem()
-        setupRightItem()
     }
     
     private  func addSubviews() {
         view.addSubview(navBar)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        view.addSubview(antonSearchViewController)
+        view.addSubview(antonSearchView)
     }
     
     private func addConstraints() {
@@ -60,18 +47,23 @@ final class AntonNavigationController: UIViewController {
             $0.height.equalTo(1400)
         }
         
-        antonSearchViewController.snp.makeConstraints {
+        antonSearchView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(6)
         }
     }
     
-    private func configureAppearance() {}
-    
-    private func setupLeftItem() {
+    private func configureAppearance() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.view.backgroundColor = .white
+        
         let coolicon = UIImageView(image: UIImage(named: "antonCoolicon"))
-            coolicon.tintColor = (UIColor(hexString: "2E3A59"))
-            coolicon.contentMode = .center
+        coolicon.tintColor = (UIColor(hexString: "2E3A59"))
+        coolicon.contentMode = .center
         
         let homeLabel = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 17))
         homeLabel.text = "Home"
@@ -88,20 +80,24 @@ final class AntonNavigationController: UIViewController {
         let leftItemStack = UIStackView(arrangedSubviews: [coolicon, textStack])
         leftItemStack.spacing = 9
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftItemStack)
-    }
-
-    private func setupRightItem() {
-        let heartButton = UIButton()
-        heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        heartButton.tintColor = UIColor(hexString: "97D5C8")
-        let view = UIView()
-        let stackView = UIStackView(arrangedSubviews: [heartButton, view])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: stackView)
-
+        
+        let heartButton: UIButton = {
+            let button = UIButton()
+            button.setImage(UIImage(named: "antonHeart"), for: .normal)
+            button.imageView?.contentMode = .scaleAspectFill
+            button.tintColor = UIColor(hexString: "97D5C8")
+            return button
+        }()
+        
         heartButton.addTarget(self, action: #selector(heartAction), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: heartButton)
     }
-    
-    @objc func heartAction() {}
+}
+
+@objc extension AntonNavigationController {
+    private func heartAction() {
+        let controller = UIViewController()
+        controller.view.backgroundColor = .white
+        present(controller, animated: true)
+    }
 }

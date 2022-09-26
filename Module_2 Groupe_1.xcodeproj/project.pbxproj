@@ -39,6 +39,8 @@
 		2CE0E9C128BA81DC00987E1B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */; };
 		2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */; };
 		450F139F28E0C29B00B2599F /* AntonAboutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F139E28E0C29B00B2599F /* AntonAboutButton.swift */; };
+		4562093E28E170190039F10E /* AntonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562093B28E170190039F10E /* AntonNavigationController.swift */; };
+		4562093F28E170190039F10E /* AntonSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562093C28E170190039F10E /* AntonSearchView.swift */; };
 		457B1E2728C4B02500AEDC90 /* AntonButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B1E2628C4B02500AEDC90 /* AntonButtonCustomView.swift */; };
 		457B1E2928C4DFE200AEDC90 /* AntonTransferDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457B1E2828C4DFE200AEDC90 /* AntonTransferDataController.swift */; };
 		45A77C0828D9E438004181A8 /* AntonAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A77C0528D9E438004181A8 /* AntonAuthViewController.swift */; };
@@ -109,6 +111,8 @@
 		2CE0E9C028BA81DC00987E1B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		2CEACB9228B9086600E264BC /* DanilInCodeLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilInCodeLayoutController.swift; sourceTree = "<group>"; };
 		450F139E28E0C29B00B2599F /* AntonAboutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonAboutButton.swift; sourceTree = "<group>"; };
+		4562093B28E170190039F10E /* AntonNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonNavigationController.swift; sourceTree = "<group>"; };
+		4562093C28E170190039F10E /* AntonSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonSearchView.swift; sourceTree = "<group>"; };
 		457B1E2628C4B02500AEDC90 /* AntonButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonButtonCustomView.swift; sourceTree = "<group>"; };
 		457B1E2828C4DFE200AEDC90 /* AntonTransferDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonTransferDataController.swift; sourceTree = "<group>"; };
 		45A77C0528D9E438004181A8 /* AntonAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonAuthViewController.swift; sourceTree = "<group>"; };
@@ -261,12 +265,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		4562093928E170190039F10E /* AntonNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				4562093B28E170190039F10E /* AntonNavigationController.swift */,
+				4562093C28E170190039F10E /* AntonSearchView.swift */,
+			);
+			name = AntonNavigation;
+			path = "Module_2 Groupe_1/Anton/TabController/AntonUIKit/AntonNavigation";
+			sourceTree = SOURCE_ROOT;
+		};
 		45A77C0428D9E438004181A8 /* AntonAuth */ = {
 			isa = PBXGroup;
 			children = (
 				45A77C0528D9E438004181A8 /* AntonAuthViewController.swift */,
 				45A77C0628D9E438004181A8 /* AntonTextField.swift */,
 				45A77C0728D9E438004181A8 /* AntonAuthLogoView.swift */,
+				4562093928E170190039F10E /* AntonNavigation */,
 			);
 			path = AntonAuth;
 			sourceTree = "<group>";
@@ -569,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1CA0EA28C0FB8C0025F7FA /* UIViewController + ext.swift in Sources */,
+				4562093E28E170190039F10E /* AntonNavigationController.swift in Sources */,
 				45B7DABA28D9C9610067F391 /* AntonPersonalConnectionView.swift in Sources */,
 				77CD707128DCA85100241F55 /* NavigationDesignController.swift in Sources */,
 				2C67F75128D4BAA6005A3400 /* UIColor + ext.swift in Sources */,
@@ -605,6 +621,7 @@
 				45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */,
 				45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */,
 				450F139F28E0C29B00B2599F /* AntonAboutButton.swift in Sources */,
+				4562093F28E170190039F10E /* AntonSearchView.swift in Sources */,
 				2CA8869928DF48650081FCC4 /* DanilToolBar.swift in Sources */,
 				457B1E2928C4DFE200AEDC90 /* AntonTransferDataController.swift in Sources */,
 				45A77C0A28D9E438004181A8 /* AntonAuthLogoView.swift in Sources */,
