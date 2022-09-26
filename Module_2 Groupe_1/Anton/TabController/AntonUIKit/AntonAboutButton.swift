@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class AntonPersonalAboutView: UIView {
+final class AntonAboutButton: UIButton {
     
     private let colorView = UIView(backgroundColor: UIColor(hexString: "F5F5F8"))
     
-    private let imageView: UIImageView = {
+    private let image: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "info.circle"))
         imageView.tintColor = .black
         return imageView
@@ -47,7 +47,7 @@ final class AntonPersonalAboutView: UIView {
     private func addSubviews() {
         addSubview(colorView)
         addSubview(label)
-        colorView.addSubview(imageView)
+        colorView.addSubview(image)
     }
     
     private func addConstraints() {
@@ -58,7 +58,7 @@ final class AntonPersonalAboutView: UIView {
             $0.size.equalTo(25)
         }
         
-        imageView.snp.makeConstraints {
+        image.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(20)
         }
