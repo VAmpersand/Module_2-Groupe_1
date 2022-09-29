@@ -9,30 +9,41 @@ import UIKit
 
 final class DanilTabViewController: UIViewController {
 
+    @IBOutlet weak var interfaceBuilderButton: UIButton!
     @IBOutlet weak var inCodeLayoutButton: UIButton!
     private let transitionDemoButton = UIButton(title: "TransitionDemo controller")
-    private let transferDataButton = UIButton(backgroundColor: .lightGray, titleColor: .systemPurple, title: "TransferData controller")
+    private let transferDataButton = UIButton(backgroundColor: .lightGray,
+                                              titleColor: .systemPurple,
+                                              title: "TransferData controller")
     private let lessonButton = UIButton(backgroundColor: .systemYellow, titleColor: .black, title: "Lesson controller")
+    private let collectionButton = UIButton(backgroundColor: Constants.Color.primary,
+                                            titleColor: .systemGreen,
+                                            title: "CollectionDemoController")
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addSubviews()
         addConstraints()
-        congigure()
+        configureAppearance()
     }
     
-    private func congigure() {
+    private func configureAppearance() {
         view.backgroundColor = .orange
+        
         transitionDemoButton.addTarget(self, action: #selector(transitionDemoButtonHandler), for: .touchUpInside)
         transferDataButton.addTarget(self, action: #selector(transferDemoButtonHandler), for: .touchUpInside)
         lessonButton.addTarget(self, action: #selector(lessonButtonHandler), for: .touchUpInside)
+        collectionButton.addTarget(self, action: #selector(collectionButtonHandler), for: .touchUpInside)
     }
     
     private func addSubviews() {
-        [transitionDemoButton, transferDataButton, lessonButton].forEach {
-            view.addSubview($0)
-        }
+        [
+            transitionDemoButton,
+            transferDataButton,
+            lessonButton,
+            collectionButton
+        ].forEach(view.addSubview)
     }
     
     private func addConstraints() {
@@ -52,6 +63,12 @@ final class DanilTabViewController: UIViewController {
             $0.size.equalTo(transitionDemoButton)
             $0.centerX.equalToSuperview()
             $0.top.equalTo(transferDataButton.snp.bottom).offset(Constants.Paddings.basic)
+        }
+        
+        collectionButton.snp.makeConstraints {
+            $0.bottom.equalTo(interfaceBuilderButton.snp.top).offset(-Constants.Paddings.basic)
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(lessonButton)
         }
     }
     
@@ -80,5 +97,11 @@ final class DanilTabViewController: UIViewController {
         let danilUIViewController = DanilUILessonViewController()
         danilUIViewController.modalPresentationStyle = .overFullScreen
         present(danilUIViewController, animated: true)
+    }
+    
+    private func collectionButtonHandler() {
+        let danilCollectionDemoController = DanilCollectionDemoController()
+        danilCollectionDemoController.modalPresentationStyle = .overFullScreen
+        present(danilCollectionDemoController, animated: true)
     }
 }
