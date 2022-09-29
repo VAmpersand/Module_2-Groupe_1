@@ -27,29 +27,31 @@ final class DanilCollectionDemoController: UIViewController {
         frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()
     )
     private let dataSource: [SectionConfig] = [
-        .init(headerColor: Constants.CollectionDemoColor.header, footerColor: nil, items: [
-            .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-            .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-            .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-            .init(itemColor: Constants.CollectionDemoColor.mediumItem, itemWidth: Constants.CollectionDemoWidth.medium),
-            .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-            .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-            .init(itemColor: Constants.CollectionDemoColor.mediumItem, itemWidth: Constants.CollectionDemoWidth.medium),
-            .init(itemColor: Constants.CollectionDemoColor.largeItem, itemWidth: Constants.CollectionDemoWidth.large),
-        ]),
+        .init(headerColor: Constants.ViewColor.header,
+              footerColor: nil,
+              items: [
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
+                .init(itemColor: Constants.ViewColor.largeItem, itemWidth: Constants.Width.large),
+              ]),
         .init(
-            headerColor: Constants.CollectionDemoColor.header,
-            footerColor: Constants.CollectionDemoColor.footer,
+            headerColor: Constants.ViewColor.header,
+            footerColor: Constants.ViewColor.footer,
             items: [
-                .init(itemColor: Constants.CollectionDemoColor.largeItem, itemWidth: Constants.CollectionDemoWidth.large),
-                .init(itemColor: Constants.CollectionDemoColor.mediumItem, itemWidth: Constants.CollectionDemoWidth.medium),
-                .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-                .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-                .init(itemColor: Constants.CollectionDemoColor.mediumItem, itemWidth: Constants.CollectionDemoWidth.medium),
-                .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-                .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-                .init(itemColor: Constants.CollectionDemoColor.smallItem, itemWidth: Constants.CollectionDemoWidth.small),
-        ])
+                .init(itemColor: Constants.ViewColor.largeItem, itemWidth: Constants.Width.large),
+                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
+            ])
     ]
     
     override func viewDidLoad() {
@@ -103,49 +105,55 @@ extension DanilCollectionDemoController: UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         let identifier = kind == UICollectionView.elementKindSectionHeader ? headerId : footerId
         let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                            withReuseIdentifier: identifier,
                                                                            for: indexPath)
-        reusableView.backgroundColor = identifier == headerId ? Constants.CollectionDemoColor.header
-        : Constants.CollectionDemoColor.footer
+        reusableView.backgroundColor = identifier == headerId ? Constants.ViewColor.header
+        : Constants.ViewColor.footer
         return reusableView
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension DanilCollectionDemoController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = dataSource[indexPath.section].items[indexPath.item].itemWidth
-        return .init(width: width, height: (UIScreen.main.bounds.width - Constants.CollectionDemoOffset.basic * 2
-                                            - Constants.CollectionDemoOffset.basic * 2) / 3)
+        return .init(width: width,
+                     height: (Constants.Width.screen - Constants.Offset.basic * 4) / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: Constants.CollectionDemoOffset.basic, left: Constants.CollectionDemoOffset.basic,
-              bottom: Constants.CollectionDemoOffset.basic, right: Constants.CollectionDemoOffset.basic)
+        .init(top: Constants.Offset.basic, left: Constants.Offset.basic,
+              bottom: Constants.Offset.basic, right: Constants.Offset.basic)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        Constants.CollectionDemoOffset.basic
+        Constants.Offset.basic
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        Constants.CollectionDemoOffset.basic
+        Constants.Offset.basic
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         Constants.ReusableViewSize.header
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
         let footerColor = dataSource[section].footerColor
         let footerSize = footerColor != nil ?
@@ -155,7 +163,7 @@ extension DanilCollectionDemoController: UICollectionViewDelegateFlowLayout {
 }
 
 private extension Constants {
-    enum CollectionDemoColor {
+    enum ViewColor {
         static let header = UIColor(hexString: "#6FE9CC")
         static let footer = UIColor(hexString: "#0DBF0A")
         static let smallItem = UIColor(hexString: "#EE0909")
@@ -163,20 +171,20 @@ private extension Constants {
         static let largeItem = UIColor(hexString: "#0B15F9")
     }
     
-    enum CollectionDemoWidth {
+    enum Width {
         static let screen = UIScreen.main.bounds.width
-        static let small = (Constants.CollectionDemoWidth.screen - 21 * 2 - Constants.CollectionDemoOffset.basic * 2) / 3
+        static let small = (Constants.Width.screen - 21 * 2 - Constants.Offset.basic * 2) / 3
         static let medium =
-        Constants.CollectionDemoWidth.screen - Constants.CollectionDemoOffset.basic * 2 - Constants.CollectionDemoWidth.small - Constants.CollectionDemoOffset.basic
-        static let large = Constants.CollectionDemoWidth.screen - Constants.CollectionDemoOffset.basic * 2
+        Constants.Width.screen - Constants.Offset.basic * 2 - Constants.Width.small - Constants.Offset.basic
+        static let large = Constants.Width.screen - Constants.Offset.basic * 2
     }
     
     enum ReusableViewSize {
-        static let header = CGSize(width: Constants.CollectionDemoWidth.screen, height: 50)
-        static let footer = CGSize(width: Constants.CollectionDemoWidth.screen, height: 60)
+        static let header = CGSize(width: Constants.Width.screen, height: 50)
+        static let footer = CGSize(width: Constants.Width.screen, height: 60)
     }
     
-    enum CollectionDemoOffset {
+    enum Offset {
         static let basic: CGFloat = 20
     }
 }

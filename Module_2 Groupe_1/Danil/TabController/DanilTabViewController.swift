@@ -12,10 +12,12 @@ final class DanilTabViewController: UIViewController {
     @IBOutlet weak var interfaceBuilderButton: UIButton!
     @IBOutlet weak var inCodeLayoutButton: UIButton!
     private let transitionDemoButton = UIButton(title: "TransitionDemo controller")
-    private let transferDataButton = UIButton(backgroundColor: .lightGray, titleColor: .systemPurple,
+    private let transferDataButton = UIButton(backgroundColor: .lightGray,
+                                              titleColor: .systemPurple,
                                               title: "TransferData controller")
     private let lessonButton = UIButton(backgroundColor: .systemYellow, titleColor: .black, title: "Lesson controller")
-    private let collectionButton = UIButton(backgroundColor: Constants.Color.primary, titleColor: .systemGreen,
+    private let collectionButton = UIButton(backgroundColor: Constants.Color.primary,
+                                            titleColor: .systemGreen,
                                             title: "CollectionDemoController")
     
     override func viewDidLoad() {
@@ -41,9 +43,7 @@ final class DanilTabViewController: UIViewController {
             transferDataButton,
             lessonButton,
             collectionButton
-        ].forEach {
-            view.addSubview($0)
-        }
+        ].forEach(view.addSubview)
     }
     
     private func addConstraints() {
@@ -66,7 +66,7 @@ final class DanilTabViewController: UIViewController {
         }
         
         collectionButton.snp.makeConstraints {
-            $0.bottom.equalTo(interfaceBuilderButton.snp.top).inset(-Constants.Paddings.basic)
+            $0.bottom.equalTo(interfaceBuilderButton.snp.top).offset(-Constants.Paddings.basic)
             $0.centerX.equalToSuperview()
             $0.size.equalTo(lessonButton)
         }
