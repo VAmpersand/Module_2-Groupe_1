@@ -14,7 +14,8 @@ final class AntonNavigationController: UIViewController {
     private let scrollView = UIScrollView(backgroundColor: .white)
     private let contentView = UIView(backgroundColor: .white)
     private let antonSearchView = AntonSearchView()
-
+    private let slider = AntonDoubleSliderControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,7 @@ final class AntonNavigationController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         view.addSubview(antonSearchView)
+        scrollView.addSubview(slider)
     }
     
     private func addConstraints() {
@@ -50,6 +52,12 @@ final class AntonNavigationController: UIViewController {
         antonSearchView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(6)
+        }
+        
+        slider.snp.makeConstraints {
+            $0.top.equalTo(antonSearchView.snp.bottom).offset(50)
+            $0.left.equalToSuperview().inset(200)
+            $0.height.equalTo(300)
         }
     }
     
@@ -91,6 +99,9 @@ final class AntonNavigationController: UIViewController {
         
         heartButton.addTarget(self, action: #selector(heartAction), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: heartButton)
+        
+        slider.configure(lowerValue: 0.3, upperValue: 0.7)
+        slider.addTarget(self, action: #selector(sliderAction(_:)), for: .valueChanged)
     }
 }
 
@@ -99,5 +110,9 @@ final class AntonNavigationController: UIViewController {
         let controller = UIViewController()
         controller.view.backgroundColor = .white
         present(controller, animated: true)
+    }
+    
+    private func sliderAction(_ sender: Any) {
+        print((sender as! AntonDoubleSliderControl).lowerValue, (sender as! AntonDoubleSliderControl).upperValue)
     }
 }
