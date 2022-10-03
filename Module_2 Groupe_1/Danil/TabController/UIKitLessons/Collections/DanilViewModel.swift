@@ -17,30 +17,31 @@ final class DanilViewModel {
         case empty(height: CGFloat)
     }
     
-    struct MainHeaderConfig {
-        let title: String
-        let itemsInCart: UInt
+    enum HeaderType {
+        case main(item: DanilOrderMainHeader.CellConfig)
     }
-    
+        
     struct Section {
+        let header: HeaderType?
         let items: [CellType]
     }
     
     struct OrderConfig {
-        let mainHeaderConfig: MainHeaderConfig
         let sections: [Section]
     }
     
     let dataSource: OrderConfig = .init(
-        mainHeaderConfig: .init(title: "Your order", itemsInCart: 2),
         sections: [
-            .init(items: [
+            .init(header: .main(item: .init(amountOfItemsInCart: 2)), items: [
+                .empty(height: 16)
+            ]),
+            .init(header: nil, items: [
                 .address(item: .init(
                     place: "Satya Nilayam", address: "21-42-34, Banjara Hills, Hyderabad, 500072", scheduledTime: 30)),
                 .empty(height: 20)
             ]
             ),
-            .init(items: [
+            .init(header: nil, items: [
                 .position(item: .init(
                     imageName: "position-1",
                     dishName: "Fried Rice",
@@ -78,19 +79,19 @@ final class DanilViewModel {
                 ),
                 .empty(height: 40)
             ]),
-            .init(items: [
+            .init(header: nil, items: [
                 .promo,
                 .empty(height: 30)
             ]),
-            .init(items: [
+            .init(header: nil, items: [
                 .totalPrice(item: .init(deliveryPrice: 40, subtotalPrice: 500)),
                 .empty(height: 25)
             ]),
-            .init(items: [
+            .init(header: nil, items: [
                 .primaryButton(item: .init(title: "Payment")),
                 .empty(height: 30)
             ]),
-            .init(items: [
+            .init(header: nil, items: [
                 .primaryButton(item: .init(title: "Select User")),
                 .empty(height: 40)
             ])

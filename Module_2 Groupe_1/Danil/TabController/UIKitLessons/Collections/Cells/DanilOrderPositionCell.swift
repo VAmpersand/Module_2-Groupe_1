@@ -22,7 +22,6 @@ class DanilOrderPositionCell: UICollectionViewCell {
     
     static let id = "orderPositionId"
     static let size = CGSize(width: UIScreen.main.bounds.width, height: 72)
-    static let itemInset: CGFloat = 20
     
     private let mainContainer = UIView(backgroundColor: .clear)
     private let dishLabel = UILabel(font: .getPoppinsSemiBold(with: 14), text: "", numberOfLines: 1)

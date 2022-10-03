@@ -10,4 +10,7 @@ import UIKit
 final class DanilEmptyCell: UICollectionViewCell {
     
     static let id = "emptyId"
+    static func size(with height: CGFloat) -> CGSize {
+        return CGSize(width: 0, height: height)
+    }
 }

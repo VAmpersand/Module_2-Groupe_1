@@ -100,9 +100,8 @@ final class DanilTabViewController: UIViewController {
     }
     
     private func collectionButtonHandler() {
-        let tabBarController = DanilShopTabBarController()
-        tabBarController.selectedIndex = DanilTabs.cart.rawValue
-        tabBarController.modalPresentationStyle = .overFullScreen
-        present(tabBarController, animated: true)
+        let danilCollectionDemoController = DanilCollectionDemoController()
+        danilCollectionDemoController.modalPresentationStyle = .overFullScreen
+        present(danilCollectionDemoController, animated: true)
     }
 }

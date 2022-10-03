@@ -40,7 +40,6 @@
 		2C91D58628E9DEA500B8B0A8 /* DanilTotalPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58528E9DEA500B8B0A8 /* DanilTotalPriceCell.swift */; };
 		2C91D58828EA021600B8B0A8 /* DanilPrimaryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58728EA021600B8B0A8 /* DanilPrimaryButtonCell.swift */; };
 		2C91D58A28EA042C00B8B0A8 /* DanilPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58928EA042C00B8B0A8 /* DanilPrimaryButton.swift */; };
-		2C91D58C28EA354400B8B0A8 /* DanilShopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58B28EA354400B8B0A8 /* DanilShopTabBarController.swift */; };
 		2CA8869928DF48650081FCC4 /* DanilToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8869828DF48650081FCC4 /* DanilToolBar.swift */; };
 		2CADB0F828D5D449007EB8D5 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADB0F728D5D449007EB8D5 /* PickerTextField.swift */; };
 		2CAFD0E628D4B2580012F666 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAFD0E428D4B2580012F666 /* CustomSegmentedControl.swift */; };
@@ -124,7 +123,6 @@
 		2C91D58528E9DEA500B8B0A8 /* DanilTotalPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTotalPriceCell.swift; sourceTree = "<group>"; };
 		2C91D58728EA021600B8B0A8 /* DanilPrimaryButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPrimaryButtonCell.swift; sourceTree = "<group>"; };
 		2C91D58928EA042C00B8B0A8 /* DanilPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPrimaryButton.swift; sourceTree = "<group>"; };
-		2C91D58B28EA354400B8B0A8 /* DanilShopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilShopTabBarController.swift; sourceTree = "<group>"; };
 		2CA8869828DF48650081FCC4 /* DanilToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilToolBar.swift; sourceTree = "<group>"; };
 		2CADB0F728D5D449007EB8D5 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		2CAFD0E428D4B2580012F666 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 				2C35593428E771FC000C498A /* DanilViewModel.swift */,
 				2C35593728E77709000C498A /* DanilOrderMainHeader.swift */,
 				2C91D58928EA042C00B8B0A8 /* DanilPrimaryButton.swift */,
-				2C91D58B28EA354400B8B0A8 /* DanilShopTabBarController.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -637,7 +634,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C91D58C28EA354400B8B0A8 /* DanilShopTabBarController.swift in Sources */,
 				2C1CA0EA28C0FB8C0025F7FA /* UIViewController + ext.swift in Sources */,
 				45B7DABA28D9C9610067F391 /* AntonPersonalConnectionView.swift in Sources */,
 				77CD707128DCA85100241F55 /* NavigationDesignController.swift in Sources */,

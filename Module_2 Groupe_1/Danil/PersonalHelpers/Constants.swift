@@ -41,22 +41,4 @@ enum Constants {
         static let medium: CGFloat = 20
         static let large: CGFloat = 30
     }
-    
-    enum String {
-        enum TabBar {
-            static let discover = "Discover"
-            static let favourites = "Favourites"
-            static let cart = "Cart"
-            static let user = "User"
-        }
-    }
-    
-    enum Images {
-        enum TaBar {
-            static let discover = UIImage(named: "danilDiscoverTab")
-            static let favourites = UIImage(named: "danilFavTab")
-            static let cart = UIImage(named: "danilCartTab")
-            static let user = UIImage(named: "danilUserTab")
-        }
-    }
 }
