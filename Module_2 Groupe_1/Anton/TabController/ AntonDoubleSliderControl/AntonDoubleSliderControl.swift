@@ -24,13 +24,11 @@ final class AntonDoubleSliderControl: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-            
             makeUI()
         }
     
     required init?(coder: NSCoder) {
         super.init(frame: .zero)
-        
         makeUI()
     }
     
@@ -116,7 +114,7 @@ extension AntonDoubleSliderControl {
         
         previoseLocation = location
         
-        let thumbsHeight: CGFloat =  thumbsHeight * 2 / bounds.height
+        let thumbsHeight: CGFloat = thumbsHeight * 2 / bounds.height
         
         if lowerThumbView.isHighlighted {
             lowerValue += deltaValue
@@ -126,7 +124,7 @@ extension AntonDoubleSliderControl {
             
         } else if upperThumbView.isHighlighted {
             upperValue += deltaValue
-            lowerValue = boundValue(upperValue,
+            upperValue = boundValue(upperValue,
                                     lower: lowerValue + thumbsHeight,
                                     upper: maximumValue)
         }

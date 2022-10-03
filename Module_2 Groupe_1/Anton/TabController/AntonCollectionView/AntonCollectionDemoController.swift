@@ -10,69 +10,32 @@ import SnapKit
 
 final class AntonCollectionDemoController: UIViewController {
     
-    private let cellIdentifier = "cellIdentifier"
-    private let headerIdentifier = "headerIdentifier"
-    private let footerIdentifier = "footerIdentifier"
-    
-    private lazy var dataSource: [SectionConfig] = [
-        SectionConfig(headerColor: .cyan,
-                      footerColor: nil,
-                      items: [
-                        ItemConfig(color: .red, size: .small),
-                        ItemConfig(color: .red, size: .small),
-                        ItemConfig(color: .red, size: .small),
-                        ItemConfig(color: .purple, size: .medium),
-                        ItemConfig(color: .red, size: .small),
-                        ItemConfig(color: .red, size: .small),
-                        ItemConfig(color: .purple, size: .medium),
-                        ItemConfig(color: .blue, size: .large),
-                      ]),
-        SectionConfig(headerColor: .cyan,
-                      footerColor: nil,
-                      items: [
-                        ItemConfig(color: .blue, size: .large),
-                              ItemConfig(color: .purple, size: .medium),
-                              ItemConfig(color: .red, size: .small),
-                              ItemConfig(color: .red, size: .small),
-                              ItemConfig(color: .purple, size: .medium),
-                              ItemConfig(color: .red, size: .small),
-                              ItemConfig(color: .red, size: .small),
-                              ItemConfig(color: .red, size: .small),]),
-        SectionConfig(headerColor: nil,
-                      footerColor: .green,
-                      items: []),
-    ]
-                                       
+    private let viewModel = AntonViewModel()
+   
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 0, bottom: 20, right: 0)
+
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 111, height: 111)
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        layout.minimumLineSpacing = 20
-        layout.minimumInteritemSpacing = 20
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 50)
-        layout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
-        let collectionView = UICollectionView(frame: .zero,
-                                              collectionViewLayout: layout)
+
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.register(
-            UICollectionReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: headerIdentifier
-        )
-        collectionView.register(
-            UICollectionReusableView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-            withReuseIdentifier: footerIdentifier
-        )
-        
+        collectionView.register(AntonBannerCell.self, forCellWithReuseIdentifier: AntonBannerCell.id)
+        collectionView.register(AntonNavigationCell.self, forCellWithReuseIdentifier: AntonNavigationCell.id)
+        collectionView.register(AntonHeaderCell.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: AntonHeaderCell.id)
+
         view.addSubview(collectionView)
 
         collectionView.snp.makeConstraints {
@@ -85,12 +48,12 @@ final class AntonCollectionDemoController: UIViewController {
 // MARK: UICollectionViewDataSource
 extension AntonCollectionDemoController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        dataSource.count
+        viewModel.dataSource.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        dataSource[section].items.count
+        viewModel.dataSource[section].items.count
     }
 }
 
@@ -98,45 +61,49 @@ extension AntonCollectionDemoController: UICollectionViewDataSource {
 extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-        cell.backgroundColor = dataSource[indexPath.section].items[indexPath.row].color
-        print(indexPath)
+        let cell: UICollectionViewCell
+        let item = viewModel.dataSource[indexPath.section].items[indexPath.row]
+        
+        switch item {
+        case .banner(let items):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonBannerCell.id,
+                                                      for: indexPath)
+            (cell as? AntonBannerCell)?.configure(with: items)
+        case .navigation(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonNavigationCell.id,
+                                                      for: indexPath)
+            (cell as? AntonNavigationCell)?.configure(with: item)
+        default: cell = UICollectionViewCell()
+        }
         return cell
     }
-    
-    internal func collectionView(_ collectionView: UICollectionView,
+
+    func collectionView(_ collectionView: UICollectionView,
                                 layout collectionViewLayout: UICollectionViewLayout,
                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let height = (screenWidth - 20 * 2 - 20 * 2) / 3
-        let width = screenWidth - 20 * 2 - height - 20
-       
-        switch dataSource[indexPath.section].items[indexPath.row].size {
-        case .small: return CGSize(width: height, height: height)
-        case .medium: return CGSize(width: width, height: height)
-        case .large: return CGSize(width: screenWidth, height: height)
+        let item = viewModel.dataSource[indexPath.section].items[indexPath.row]
+        switch item {
+        case .banner: return AntonBannerCell.size
+        case .navigation: return AntonNavigationCell.size
+        default: return .zero
         }
     }
-   
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        let indentifier = kind == UICollectionView.elementKindSectionHeader ? headerIdentifier : footerIdentifier
- 
-        let view = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind, withReuseIdentifier: indentifier, for: indexPath
-        )
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: AntonHeaderCell.id,
+                                                                   for: indexPath)
         
-        let headerColor = dataSource[indexPath.section].headerColor
-        let footerColor = dataSource[indexPath.section].footerColor
-
-        view.backgroundColor = indentifier == headerIdentifier
-        ? dataSource[indexPath.section].headerColor
-        : dataSource[indexPath.section].footerColor
+        if let config = viewModel.dataSource[indexPath.section].headerConfig {
+            (view as? AntonHeaderCell)?.configure(with: config)
+            view.backgroundColor = .clear
+        }
         
         return view
     }
@@ -144,30 +111,11 @@ extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width,
-               height: dataSource[section].headerColor == nil ? 0 : 50)
+        if viewModel.dataSource[section].headerConfig != nil {
+            return  AntonHeaderCell.size
+        }
+        
+        return .zero
     }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width,
-               height: dataSource[section].footerColor == nil ? 0 : 60)
-    }
-}
-
-struct SectionConfig {
-    let headerColor: UIColor?
-    let footerColor: UIColor?
-    let items: [ItemConfig]
-}
-
-struct ItemConfig {
-    let color: UIColor
-    let size: FrameSize
-}
-
-enum FrameSize {
-case small, medium, large
 }
 
