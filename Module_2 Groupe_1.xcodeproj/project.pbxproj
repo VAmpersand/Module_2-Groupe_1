@@ -27,16 +27,16 @@
 		2C35593528E771FC000C498A /* DanilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35593428E771FC000C498A /* DanilViewModel.swift */; };
 		2C35593828E77709000C498A /* DanilOrderMainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35593728E77709000C498A /* DanilOrderMainHeader.swift */; };
 		2C35593A28E87738000C498A /* DanilMainOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35593928E87738000C498A /* DanilMainOrderInfoCell.swift */; };
-		2C35593E28E87BE9000C498A /* CeraPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C35593C28E87BE9000C498A /* CeraPro-Bold.ttf */; };
-		2C35593F28E87BE9000C498A /* CeraPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C35593D28E87BE9000C498A /* CeraPro-Medium.ttf */; };
 		2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4A28C79074005DE286 /* DanilMenuItemView.swift */; };
 		2C4E8D4F28C86D2C005DE286 /* DanilBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */; };
 		2C67F75128D4BAA6005A3400 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67F75028D4BAA6005A3400 /* UIColor + ext.swift */; };
 		2C7CFC9F28BB86F300DF3D32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CFC9E28BB86F300DF3D32 /* Constants.swift */; };
+		2C8D22A128EB7AA200EE2038 /* CeraPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C8D229F28EB7AA200EE2038 /* CeraPro-Medium.ttf */; };
+		2C8D22A228EB7AA200EE2038 /* CeraPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C8D22A028EB7AA200EE2038 /* CeraPro-Bold.ttf */; };
+		2C8D22A828EB7B2500EE2038 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C8D22A728EB7B2500EE2038 /* Poppins-Medium.ttf */; };
 		2C91D57E28E8BCFD00B8B0A8 /* DanilOrderPositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D57D28E8BCFD00B8B0A8 /* DanilOrderPositionCell.swift */; };
 		2C91D58028E9C7CE00B8B0A8 /* DanilEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D57F28E9C7CE00B8B0A8 /* DanilEmptyCell.swift */; };
 		2C91D58228E9D47C00B8B0A8 /* DanilPromoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58128E9D47C00B8B0A8 /* DanilPromoCell.swift */; };
-		2C91D58428E9DBD000B8B0A8 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C91D58328E9DBD000B8B0A8 /* Poppins-Medium.ttf */; };
 		2C91D58628E9DEA500B8B0A8 /* DanilTotalPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58528E9DEA500B8B0A8 /* DanilTotalPriceCell.swift */; };
 		2C91D58828EA021600B8B0A8 /* DanilPrimaryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58728EA021600B8B0A8 /* DanilPrimaryButtonCell.swift */; };
 		2C91D58A28EA042C00B8B0A8 /* DanilPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C91D58928EA042C00B8B0A8 /* DanilPrimaryButton.swift */; };
@@ -107,8 +107,6 @@
 		2C35593428E771FC000C498A /* DanilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilViewModel.swift; sourceTree = "<group>"; };
 		2C35593728E77709000C498A /* DanilOrderMainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilOrderMainHeader.swift; sourceTree = "<group>"; };
 		2C35593928E87738000C498A /* DanilMainOrderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilMainOrderInfoCell.swift; sourceTree = "<group>"; };
-		2C35593C28E87BE9000C498A /* CeraPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Bold.ttf"; path = "../../../../../../Downloads/CeraPro-Bold.ttf"; sourceTree = "<group>"; };
-		2C35593D28E87BE9000C498A /* CeraPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CeraPro-Medium.ttf"; path = "../../../../../../Downloads/CeraPro-Medium.ttf"; sourceTree = "<group>"; };
 		2C4B1BF328DC8E3100B0E23C /* DanilSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilSearchTextField.swift; sourceTree = "<group>"; };
 		2C4B1BF428DC8E3100B0E23C /* NavigationDesignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDesignController.swift; sourceTree = "<group>"; };
 		2C4B1BF528DC8E3100B0E23C /* NavigationLeftBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLeftBarItem.swift; sourceTree = "<group>"; };
@@ -116,10 +114,12 @@
 		2C4E8D4E28C86D2C005DE286 /* DanilBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilBaseView.swift; sourceTree = "<group>"; };
 		2C67F75028D4BAA6005A3400 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		2C7CFC9E28BB86F300DF3D32 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C8D229F28EB7AA200EE2038 /* CeraPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CeraPro-Medium.ttf"; sourceTree = "<group>"; };
+		2C8D22A028EB7AA200EE2038 /* CeraPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CeraPro-Bold.ttf"; sourceTree = "<group>"; };
+		2C8D22A728EB7B2500EE2038 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		2C91D57D28E8BCFD00B8B0A8 /* DanilOrderPositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilOrderPositionCell.swift; sourceTree = "<group>"; };
 		2C91D57F28E9C7CE00B8B0A8 /* DanilEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilEmptyCell.swift; sourceTree = "<group>"; };
 		2C91D58128E9D47C00B8B0A8 /* DanilPromoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPromoCell.swift; sourceTree = "<group>"; };
-		2C91D58328E9DBD000B8B0A8 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "../../../../../../Downloads/Poppins (1)/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		2C91D58528E9DEA500B8B0A8 /* DanilTotalPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilTotalPriceCell.swift; sourceTree = "<group>"; };
 		2C91D58728EA021600B8B0A8 /* DanilPrimaryButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPrimaryButtonCell.swift; sourceTree = "<group>"; };
 		2C91D58928EA042C00B8B0A8 /* DanilPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanilPrimaryButton.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 		2C0BCD3528CB97CD00BFC536 /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
+				2C8D22A728EB7B2500EE2038 /* Poppins-Medium.ttf */,
 				2C0BCD4128CB97CD00BFC536 /* Poppins-Regular.ttf */,
-				2C91D58328E9DBD000B8B0A8 /* Poppins-Medium.ttf */,
 				2C0BCD4628CB97CD00BFC536 /* Poppins-SemiBold.ttf */,
 			);
 			path = Poppins;
@@ -195,7 +195,7 @@
 		2C0BCD5C28CBAF2700BFC536 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2C35593B28E87BD7000C498A /* Cera Pro */,
+				2C8D22A328EB7AAA00EE2038 /* Cera-Pro */,
 				2C0BCD6B28CCB86D00BFC536 /* Nunito */,
 				2C0BCD5F28CBAF9600BFC536 /* Metropolis */,
 				2C0BCD3528CB97CD00BFC536 /* Poppins */,
@@ -244,15 +244,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		2C35593B28E87BD7000C498A /* Cera Pro */ = {
-			isa = PBXGroup;
-			children = (
-				2C35593C28E87BE9000C498A /* CeraPro-Bold.ttf */,
-				2C35593D28E87BE9000C498A /* CeraPro-Medium.ttf */,
-			);
-			path = "Cera Pro";
-			sourceTree = "<group>";
-		};
 		2C4B1BF228DC8E2B00B0E23C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +276,15 @@
 				2C0BCD6028CBB04B00BFC536 /* UIFont + ext.swift */,
 			);
 			path = PersonalHelpers;
+			sourceTree = "<group>";
+		};
+		2C8D22A328EB7AAA00EE2038 /* Cera-Pro */ = {
+			isa = PBXGroup;
+			children = (
+				2C8D22A028EB7AA200EE2038 /* CeraPro-Bold.ttf */,
+				2C8D229F28EB7AA200EE2038 /* CeraPro-Medium.ttf */,
+			);
+			path = "Cera-Pro";
 			sourceTree = "<group>";
 		};
 		2CAFD0E328D4B2580012F666 /* CustomComponents */ = {
@@ -588,16 +588,16 @@
 				2CAFD0EB28D4B2A30012F666 /* Metropolis-Medium.ttf in Resources */,
 				77A6182428B0F50C00D6DDD0 /* LaunchScreen.storyboard in Resources */,
 				77A6184628B0FE0200D6DDD0 /* ValeryTabStoryboard.storyboard in Resources */,
+				2C8D22A228EB7AA200EE2038 /* CeraPro-Bold.ttf in Resources */,
+				2C8D22A828EB7B2500EE2038 /* Poppins-Medium.ttf in Resources */,
 				77A6184C28B0FE3B00D6DDD0 /* DanilTabStoryboard.storyboard in Resources */,
-				2C35593E28E87BE9000C498A /* CeraPro-Bold.ttf in Resources */,
 				77A6182128B0F50C00D6DDD0 /* Assets.xcassets in Resources */,
 				77A6184E28B0FE8F00D6DDD0 /* AntonTabStoryboard.storyboard in Resources */,
 				2C0BCD5E28CBAF9000BFC536 /* Metropolis-Regular.ttf in Resources */,
-				2C91D58428E9DBD000B8B0A8 /* Poppins-Medium.ttf in Resources */,
 				77A6184A28B0FE2600D6DDD0 /* EvgenyTabStoryboard.storyboard in Resources */,
 				2C0BCD5928CB97CD00BFC536 /* Poppins-SemiBold.ttf in Resources */,
 				2C0BCD5428CB97CD00BFC536 /* Poppins-Regular.ttf in Resources */,
-				2C35593F28E87BE9000C498A /* CeraPro-Medium.ttf in Resources */,
+				2C8D22A128EB7AA200EE2038 /* CeraPro-Medium.ttf in Resources */,
 				77A6184828B0FE1200D6DDD0 /* DmitryTabStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
