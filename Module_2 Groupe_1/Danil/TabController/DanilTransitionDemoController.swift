@@ -8,11 +8,10 @@
 import UIKit
 
 class DanilTransitionDemoController: UIViewController {
-    
+
     private let seguePopoverButton = UIButton(backgroundColor: .darkGray, titleColor: .systemPink, title: "Popover")
     private let segueFullScreenButton = UIButton(backgroundColor: .systemIndigo, titleColor: .darkText, title: "FullScreen")
     private let segueOverFullScreenButton = UIButton(backgroundColor: .lightGray, titleColor: .magenta, title: "OverFullScreen")
-    
     private let navigationButton = UIButton(backgroundColor: .white, titleColor: .brown, title: "Navigation Button")
     private let navigationRootButton = UIButton(backgroundColor: .systemBlue, titleColor: .white, title: "Navigation Root Button")
     
