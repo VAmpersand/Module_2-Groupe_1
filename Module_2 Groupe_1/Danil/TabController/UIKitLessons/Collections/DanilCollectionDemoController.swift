@@ -2,57 +2,29 @@
 //  DanilCollectionDemoController.swift
 //  Module_2 Groupe_1
 //
-//  Created by Danil Demchenko on 27.09.2022.
+//  Created by Danil Demchenko on 30.09.2022.
 //
 
 import UIKit
 
-struct SectionConfig {
-    let headerColor: UIColor
-    let footerColor: UIColor?
-    let items: [ItemConfig]
-}
-
-struct ItemConfig {
-    let itemColor: UIColor
-    let itemWidth: CGFloat
-}
-
 final class DanilCollectionDemoController: UIViewController {
     
-    private let cellId = "cellId"
-    private let headerId = "headerId"
-    private let footerId = "footerId"
-    private let collectionView: UICollectionView = UICollectionView(
-        frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()
-    )
-    private let dataSource: [SectionConfig] = [
-        .init(headerColor: Constants.ViewColor.header,
-              footerColor: nil,
-              items: [
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
-                .init(itemColor: Constants.ViewColor.largeItem, itemWidth: Constants.Width.large),
-              ]),
-        .init(
-            headerColor: Constants.ViewColor.header,
-            footerColor: Constants.ViewColor.footer,
-            items: [
-                .init(itemColor: Constants.ViewColor.largeItem, itemWidth: Constants.Width.large),
-                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.mediumItem, itemWidth: Constants.Width.medium),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-                .init(itemColor: Constants.ViewColor.smallItem, itemWidth: Constants.Width.small),
-            ])
-    ]
+    private let viewModel = DanilViewModel()
+    private let backgroundImageView = UIImageView(image: UIImage(named: "danilTopImage"))
+    //private let orderMainHeader = DanilOrderMainHeader()
+    
+    private let collectionView: UICollectionView = {
+        let collectionFlowLayout = UICollectionViewFlowLayout()
+        collectionFlowLayout.minimumLineSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionFlowLayout)
+        return collectionView
+    }()
+    
+    private let mainContainer: UIView = {
+        let view = UIView(backgroundColor: .white)
+        view.layer.cornerRadius = 25
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,128 +35,159 @@ final class DanilCollectionDemoController: UIViewController {
     }
     
     private func configureAppearance() {
-        view.backgroundColor = .white
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(UICollectionReusableView.self,
+        //orderMainHeader.configure(with: viewModel.dataSource.mainHeaderConfig)
+        collectionView.register(DanilOrderMainHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: headerId)
-        collectionView.register(UICollectionReusableView.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-                                withReuseIdentifier: footerId)
+                                withReuseIdentifier: DanilOrderMainHeader.id)
+        collectionView.register(DanilMainOrderInfoCell.self, forCellWithReuseIdentifier: DanilMainOrderInfoCell.id)
+        collectionView.register(DanilOrderPositionCell.self, forCellWithReuseIdentifier: DanilOrderPositionCell.id)
+        collectionView.register(DanilEmptyCell.self, forCellWithReuseIdentifier: DanilEmptyCell.id)
+        collectionView.register(DanilPromoCell.self, forCellWithReuseIdentifier: DanilPromoCell.id)
+        collectionView.register(DanilTotalPriceCell.self, forCellWithReuseIdentifier: DanilTotalPriceCell.id)
+        collectionView.register(DanilPrimaryButtonCell.self, forCellWithReuseIdentifier: DanilPrimaryButtonCell.id)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShowHandler(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHideHandler)
+                                               , name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
     
     private func addSubviews() {
-        view.addSubview(collectionView)
+        view.addSubview(backgroundImageView)
+        view.addSubview(mainContainer)
+        
+        //mainContainer.addSubview(orderMainHeader)
+        mainContainer.addSubview(collectionView)
     }
     
     private func addConstraints() {
-        collectionView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(110)
+        backgroundImageView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+        }
+        
+        mainContainer.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalToSuperview().offset(140)
+        }
+        
+        //        orderMainHeader.snp.makeConstraints {
+        //            $0.top.equalToSuperview().offset(45)
+        //            $0.leading.trailing.equalToSuperview().inset(30)
+        //        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(45)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 }
 
 // MARK: UICollectionViewDataSource
 extension DanilCollectionDemoController: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        dataSource.count
+        return viewModel.dataSource.sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource[section].items.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = dataSource[indexPath.section].items[indexPath.item].itemColor
-        return cell
+        return viewModel.dataSource.sections[section].items.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        let identifier = kind == UICollectionView.elementKindSectionHeader ? headerId : footerId
-        let reusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                           withReuseIdentifier: identifier,
-                                                                           for: indexPath)
-        reusableView.backgroundColor = identifier == headerId ? Constants.ViewColor.header
-        : Constants.ViewColor.footer
-        return reusableView
+        let header: UICollectionReusableView
+        let itemHeader = viewModel.dataSource.sections[indexPath.section].header
+        
+        switch itemHeader {
+        case .main(let item):
+            header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                     withReuseIdentifier: DanilOrderMainHeader.id,
+                                                                     for: indexPath)
+            (header as? DanilOrderMainHeader)?.configure(with: item)
+        default:
+            header = UICollectionReusableView()
+        }
+        
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: UICollectionViewCell
+        let item = viewModel.dataSource.sections[indexPath.section].items[indexPath.item]
+        
+        switch item {
+        case .empty:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanilEmptyCell.id, for: indexPath)
+        case .address(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanilMainOrderInfoCell.id, for: indexPath)
+            (cell as? DanilMainOrderInfoCell)?.configure(with: item)
+        case .position(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanilOrderPositionCell.id, for: indexPath)
+            (cell as? DanilOrderPositionCell)?.configure(with: item)
+        case .promo:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanilPromoCell.id, for: indexPath)
+        case .totalPrice(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanilTotalPriceCell.id, for: indexPath)
+            (cell as? DanilTotalPriceCell)?.configure(with: item)
+        case .primaryButton(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: DanilPrimaryButtonCell.id, for: indexPath)
+            (cell as? DanilPrimaryButtonCell)?.configure(with: item)
+        default:
+            cell = UICollectionViewCell()
+        }
+        
+        return cell
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension DanilCollectionDemoController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = dataSource[indexPath.section].items[indexPath.item].itemWidth
-        return .init(width: width,
-                     height: (Constants.Width.screen - Constants.Offset.basic * 4) / 3)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: Constants.Offset.basic, left: Constants.Offset.basic,
-              bottom: Constants.Offset.basic, right: Constants.Offset.basic)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        Constants.Offset.basic
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        Constants.Offset.basic
-    }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        Constants.ReusableViewSize.header
+        let itemHeader = viewModel.dataSource.sections[section].header
+        
+        switch itemHeader {
+        case .main: return DanilOrderMainHeader.size
+        default: return .zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
-        let footerColor = dataSource[section].footerColor
-        let footerSize = footerColor != nil ?
-        Constants.ReusableViewSize.footer : CGSize(width: 0, height: 0)
-        return footerSize
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let item = viewModel.dataSource.sections[indexPath.section].items[indexPath.item]
+        switch item {
+        case .address: return DanilMainOrderInfoCell.size
+        case .position: return DanilOrderPositionCell.size
+        case .empty(let height): return DanilEmptyCell.size(with: height)
+        case .promo: return DanilPromoCell.size
+        case .totalPrice: return DanilTotalPriceCell.size
+        case .primaryButton: return DanilPrimaryButtonCell.size
+        default: return .zero
+        }
     }
 }
 
-private extension Constants {
-    enum ViewColor {
-        static let header = UIColor(hexString: "#6FE9CC")
-        static let footer = UIColor(hexString: "#0DBF0A")
-        static let smallItem = UIColor(hexString: "#EE0909")
-        static let mediumItem = UIColor(hexString: "#C50CC9")
-        static let largeItem = UIColor(hexString: "#0B15F9")
+@objc extension DanilCollectionDemoController {
+    @objc func keyboardWillShowHandler(_ notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            collectionView.contentInset.bottom = keyboardHeight
+        }
     }
     
-    enum Width {
-        static let screen = UIScreen.main.bounds.width
-        static let small = (Constants.Width.screen - 21 * 2 - Constants.Offset.basic * 2) / 3
-        static let medium =
-        Constants.Width.screen - Constants.Offset.basic * 2 - Constants.Width.small - Constants.Offset.basic
-        static let large = Constants.Width.screen - Constants.Offset.basic * 2
-    }
-    
-    enum ReusableViewSize {
-        static let header = CGSize(width: Constants.Width.screen, height: 50)
-        static let footer = CGSize(width: Constants.Width.screen, height: 60)
-    }
-    
-    enum Offset {
-        static let basic: CGFloat = 20
+    @objc func keyboardWillHideHandler() {
+        collectionView.contentInset.bottom = 0
     }
 }

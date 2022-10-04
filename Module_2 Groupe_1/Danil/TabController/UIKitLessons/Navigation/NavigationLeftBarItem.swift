@@ -18,7 +18,7 @@ final class NavigationLeftBarItem: UIStackView {
     private let titleLabel = UILabel(font: .getPoppinsSemiBold(with: 16), text: "Home")
     
     private let addressLabel: UILabel = {
-        let label = UILabel(font: .poppinsMedium15)
+        let label = UILabel(font: .getPoppinsMedium(with: 15))
         label.textColor = Constants.LeftBarItemColors.description
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
