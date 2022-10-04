@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,11 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkU-fY-FQb">
-                                <rect key="frame" x="57" y="428" width="300" height="50"/>
+                                <rect key="frame" x="57" y="80" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.14290196999999999" green="0.14589167820000001" blue="0.92201280590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="kVn-B9-fdg"/>
-                                    <constraint firstAttribute="height" constant="50" id="que-G0-AF4"/>
+                                    <constraint firstAttribute="height" constant="50" id="LVi-MY-HB4"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="AntonTab" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L39-zH-VmI">
-                                <rect key="frame" x="57" y="558" width="300" height="50"/>
+                                <rect key="frame" x="57" y="210" width="300" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="VNG-LB-jXz"/>
@@ -50,10 +50,12 @@
                         <viewLayoutGuide key="safeArea" id="WQS-ki-JNJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CkU-fY-FQb" firstAttribute="centerY" secondItem="WQS-ki-JNJ" secondAttribute="centerY" id="MkJ-mt-c7N"/>
-                            <constraint firstItem="L39-zH-VmI" firstAttribute="leading" secondItem="CkU-fY-FQb" secondAttribute="leading" id="Zqn-iB-v9D"/>
-                            <constraint firstItem="CkU-fY-FQb" firstAttribute="centerX" secondItem="WQS-ki-JNJ" secondAttribute="centerX" id="dId-SV-Ako"/>
+                            <constraint firstItem="CkU-fY-FQb" firstAttribute="leading" secondItem="WQS-ki-JNJ" secondAttribute="leading" constant="57" id="42I-n1-du0"/>
+                            <constraint firstItem="L39-zH-VmI" firstAttribute="trailing" secondItem="CkU-fY-FQb" secondAttribute="trailing" id="Zsq-ZL-eN1"/>
+                            <constraint firstItem="CkU-fY-FQb" firstAttribute="top" secondItem="WQS-ki-JNJ" secondAttribute="top" constant="32" id="dey-nE-NTj"/>
+                            <constraint firstItem="L39-zH-VmI" firstAttribute="leading" secondItem="CkU-fY-FQb" secondAttribute="leading" id="ub9-oa-vev"/>
                             <constraint firstItem="L39-zH-VmI" firstAttribute="top" secondItem="CkU-fY-FQb" secondAttribute="bottom" constant="80" id="udX-XH-eqT"/>
+                            <constraint firstItem="WQS-ki-JNJ" firstAttribute="trailing" secondItem="CkU-fY-FQb" secondAttribute="trailing" constant="57" id="zPG-TR-PWl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,10 +75,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="AntonTab" translatesAutoresizingMaskIntoConstraints="NO" id="wYu-1v-2dZ">
-                                <rect key="frame" x="16" y="44" width="382" height="820"/>
+                                <rect key="frame" x="16" y="48" width="382" height="816"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnC-pF-JgH">
-                                        <rect key="frame" x="116" y="260" width="150" height="300"/>
+                                        <rect key="frame" x="116" y="258" width="150" height="300"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RnC-pF-JgH" secondAttribute="height" multiplier="1:2" id="Da7-Df-q8D"/>
@@ -129,7 +131,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-Kg-a7h">
-                                        <rect key="frame" x="16" y="493" width="350" height="311"/>
+                                        <rect key="frame" x="16" y="489" width="350" height="311"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EH-rQ-mHZ">
                                                 <rect key="frame" x="0.0" y="106" width="200" height="100"/>
