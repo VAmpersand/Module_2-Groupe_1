@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import WebKit
 
 extension AntonHeaderCell {
     struct HeaderConfig {
@@ -88,7 +87,7 @@ final class AntonHeaderCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(titleLable.snp.right).inset(-10)
+            $0.left.equalTo(titleLable.snp.right).inset(-20)
         }
         
         subtitleLable.snp.makeConstraints {
@@ -97,7 +96,8 @@ final class AntonHeaderCell: UICollectionViewCell {
         }
         
         exitButton.snp.makeConstraints {
-            $0.centerY.right.equalToSuperview().inset(30)
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().inset(30)
         }
     }
 }

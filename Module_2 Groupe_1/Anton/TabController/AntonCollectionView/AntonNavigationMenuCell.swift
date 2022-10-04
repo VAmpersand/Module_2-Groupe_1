@@ -1,5 +1,5 @@
 //
-//  AntonNavigationCell.swift
+//  AntonNavigationMenuCell.swift
 //  Module_2 Groupe_1
 //
 //  Created by air on 03.10.2022.
@@ -7,9 +7,8 @@
 
 import UIKit
 import SnapKit
-import WebKit
 
-extension AntonNavigationCell {
+extension AntonNavigationMenuCell {
     struct CellConfig {
         let backgroundColor: UIColor
         let title: String
@@ -18,14 +17,14 @@ extension AntonNavigationCell {
         let imageNameFood: String
         let imageNameStepper: String
         let imageNamePrice: String
-        let emptyNameCell: String
+        
     }
 }
 
-final class AntonNavigationCell: UICollectionViewCell {
+final class AntonNavigationMenuCell: UICollectionViewCell {
 
-    static var id: String = "AntonNavigationCell"
-    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 75)
+    static var id: String = "AntonNavigationMenyCell"
+    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 72)
 
     private let titleLable: UILabel = {
         let lable = UILabel(font: UIFont(name: "Poppins-Medium", size: 14))
@@ -92,7 +91,6 @@ final class AntonNavigationCell: UICollectionViewCell {
         imageFood.image = UIImage(named: item.imageNameFood)
         imageStepper.image = UIImage(named: item.imageNameStepper)
         imagePrice.image = UIImage(named: item.imageNamePrice)
-        emptyCell.image = UIImage(named: item.emptyNameCell)
     }
 
     private func setupSubviews() {
@@ -133,10 +131,6 @@ final class AntonNavigationCell: UICollectionViewCell {
         imagePrice.snp.makeConstraints {
             $0.top.equalToSuperview().inset(25)
             $0.right.equalToSuperview().inset(5)
-        }
-        
-        emptyCell.snp.makeConstraints {
-            $0.top.equalTo(imageFood.snp.bottom).inset(20)
         }
     }
 

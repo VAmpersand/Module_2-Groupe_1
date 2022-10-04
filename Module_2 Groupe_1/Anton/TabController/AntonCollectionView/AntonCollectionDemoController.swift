@@ -11,16 +11,15 @@ import SnapKit
 final class AntonCollectionDemoController: UIViewController {
     
     private let viewModel = AntonViewModel()
-   
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 3
         layout.minimumInteritemSpacing = 3
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 0, bottom: 20, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.showsVerticalScrollIndicator = false
-        view.showsHorizontalScrollIndicator = false
         return view
     }()
 
@@ -31,13 +30,17 @@ final class AntonCollectionDemoController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(AntonBannerCell.self, forCellWithReuseIdentifier: AntonBannerCell.id)
-        collectionView.register(AntonNavigationCell.self, forCellWithReuseIdentifier: AntonNavigationCell.id)
+        collectionView.register(AntonNavigationMenuCell.self, forCellWithReuseIdentifier: AntonNavigationMenuCell.id)
+        collectionView.register(AntonEmptyCell.self, forCellWithReuseIdentifier: AntonEmptyCell.id)
+        collectionView.register(AntonPromoCodeCell.self, forCellWithReuseIdentifier: AntonPromoCodeCell.id)
+        collectionView.register(AntonPriceCell.self, forCellWithReuseIdentifier: AntonPriceCell.id)
+        
         collectionView.register(AntonHeaderCell.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: AntonHeaderCell.id)
 
         view.addSubview(collectionView)
-
+        
         collectionView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.right.left.bottom.equalToSuperview()
@@ -70,9 +73,19 @@ extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
                                                       for: indexPath)
             (cell as? AntonBannerCell)?.configure(with: items)
         case .navigation(let item):
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonNavigationCell.id,
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonNavigationMenuCell.id,
                                                       for: indexPath)
-            (cell as? AntonNavigationCell)?.configure(with: item)
+            (cell as? AntonNavigationMenuCell)?.configure(with: item)
+        case .empty:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonEmptyCell.id,
+                                                      for: indexPath)
+        case .promoCode:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonPromoCodeCell.id,
+                                                      for: indexPath)
+        case .shoppingCart(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonPriceCell.id,
+                                                      for: indexPath)
+            (cell as? AntonPriceCell)?.configure(with: item)
         default: cell = UICollectionViewCell()
         }
         return cell
@@ -84,7 +97,10 @@ extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
         let item = viewModel.dataSource[indexPath.section].items[indexPath.row]
         switch item {
         case .banner: return AntonBannerCell.size
-        case .navigation: return AntonNavigationCell.size
+        case .navigation: return AntonNavigationMenuCell.size
+        case .empty: return AntonEmptyCell.size(width: 15)
+        case .promoCode: return AntonPromoCodeCell.size
+        case .shoppingCart: return AntonPriceCell.size
         default: return .zero
         }
     }

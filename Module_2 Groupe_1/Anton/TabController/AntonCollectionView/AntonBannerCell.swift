@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import WebKit
 
 extension AntonBannerCell {
     struct CellConfig {
@@ -42,7 +41,7 @@ final class AntonBannerCell: UICollectionViewCell {
     }()
     
     private let titleLable: UILabel = {
-        let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 14))
+        let lable = UILabel(font: UIFont(name: "Poppins-Medium", size: 14))
         lable.textColor = .black
         return lable
     }()
@@ -55,20 +54,20 @@ final class AntonBannerCell: UICollectionViewCell {
     }()
     
     private let descriptionLable: UILabel = {
-        let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 14))
+        let lable = UILabel(font: UIFont(name: "Poppins-Medium", size: 14))
         lable.textColor = UIColor(hexString: "0A191E")
         return lable
     }()
     
     private let editButton: UIButton = {
         let button = UIButton(backgroundColor: .clear, titleColor: UIColor(hexString: "0A191E") ,title: "Edit Address")
-        button.titleLabel?.font = UIFont(name: "Poppins-Semibold", size: 12)
+        button.titleLabel?.font = UIFont(name: "Cera Pro-Medium", size: 12)
         return button
     }()
     
     private let timeButton: UIButton = {
         let button = UIButton(backgroundColor: .clear, titleColor: UIColor(hexString: "0A191E") ,title: "Schedule time")
-        button.titleLabel?.font = UIFont(name: "Poppins-Semibold", size: 11)
+        button.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 11)
         return button
     }()
     

@@ -1,5 +1,5 @@
 //
-//  AntonNavigationTransferCell.swift
+//  AntonNavigationMenuTransferCell.swift
 //  Module_2 Groupe_1
 //
 //  Created by air on 02.10.2022.
@@ -7,12 +7,11 @@
 
 import UIKit
 import SnapKit
-import WebKit
 
-final class AntonNavigationTransferCell: UICollectionViewCell {
+final class AntonNavigationMenuTransferCell: UICollectionViewCell {
     
-    static var id: String = "AntonNavigationTransferCell"
-    static var size = CGSize(width: UIScreen.main.bounds.width, height: 115)
+    static var id: String = "AntonNavigationMenuTransferCell"
+    static var size = CGSize(width: UIScreen.main.bounds.width, height: 104)
 
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,7 +25,7 @@ final class AntonNavigationTransferCell: UICollectionViewCell {
         return view
     }()
     
-    private var items: [AntonNavigationCell.CellConfig] = []
+    private var items: [AntonNavigationMenuCell.CellConfig] = []
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,7 +43,7 @@ final class AntonNavigationTransferCell: UICollectionViewCell {
         configureAppearance()
     }
 
-    func configure(with items: [AntonNavigationCell.CellConfig]) {
+    func configure(with items: [AntonNavigationMenuCell.CellConfig]) {
         self.items = items
         collectionView.reloadData()
     }
@@ -57,7 +56,7 @@ final class AntonNavigationTransferCell: UICollectionViewCell {
         collectionView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(240)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(75)
+            $0.height.equalTo(72)
         }
     }
 
@@ -65,12 +64,12 @@ final class AntonNavigationTransferCell: UICollectionViewCell {
         backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(AntonNavigationCell.self, forCellWithReuseIdentifier: AntonNavigationCell.id)
+        collectionView.register(AntonNavigationMenuCell.self, forCellWithReuseIdentifier: AntonNavigationMenuCell.id)
     }
 }
 
 // MARK: - UICollectionViewDataSource
-extension AntonNavigationTransferCell: UICollectionViewDataSource {
+extension AntonNavigationMenuTransferCell: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
@@ -82,11 +81,11 @@ extension AntonNavigationTransferCell: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension AntonNavigationTransferCell: UICollectionViewDelegateFlowLayout {
+extension AntonNavigationMenuTransferCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonNavigationCell.id,
-                                                            for: indexPath) as? AntonNavigationCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonNavigationMenuCell.id,
+                                                            for: indexPath) as? AntonNavigationMenuCell else {
             return UICollectionViewCell()
         }
         cell.configure(with: items[indexPath.row])
@@ -96,7 +95,7 @@ extension AntonNavigationTransferCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        AntonNavigationCell.size
+        AntonNavigationMenuCell.size
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
