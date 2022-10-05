@@ -105,9 +105,9 @@ final class AntonViewModel {
                     title: "Subtotal",
                     subtitle: "Delivery",
                     description: "Total",
-                    imageNameTop: "500price",
-                    imageNameMiddle: "45price",
-                    imageNameBottom: "545price")),
+                    imageNameTop: "500",
+                    imageNameMiddle: "45",
+                    imageNameBottom: "545")),
             ]),
         Section(
             headerConfig: nil,

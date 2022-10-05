@@ -16,8 +16,8 @@ final class AntonCollectionDemoController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         view.showsVerticalScrollIndicator = false
         return view
     }()

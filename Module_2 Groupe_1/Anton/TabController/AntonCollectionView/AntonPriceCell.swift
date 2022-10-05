@@ -23,7 +23,7 @@ extension AntonPriceCell {
 final class AntonPriceCell: UICollectionViewCell {
 
     static var id = "AntonPriceCell"
-    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 85)
+    static var size = CGSize(width: UIScreen.main.bounds.width - 16 * 2, height: 78)
     
     private let titleLable: UILabel = {
         let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 14))
@@ -43,45 +43,39 @@ final class AntonPriceCell: UICollectionViewCell {
         return lable
     }()
     
-    private let topImage: UIImageView = {
-        let view = UIImageView()
-        view.tintColor = UIColor(hexString: "0A191E")
-        view.contentMode = .scaleAspectFit
-        return view
+    private let topImage: UITextField = {
+        let textField = UITextField()
+        textField.font = UIFont(name: "Metropolis-Medium", size: 14)
+        return textField
     }()
     
-    private let middleImage: UIImageView = {
-        let view = UIImageView()
-        view.tintColor = UIColor(hexString: "0A191E")
-        view.contentMode = .scaleAspectFit
-        return view
+    private let middleImage: UITextField = {
+        let textField = UITextField()
+        textField.font = UIFont(name: "Metropolis-Medium", size: 14)
+        return textField
     }()
     
-    private let bottomImage: UIImageView = {
-        let view = UIImageView()
-        view.tintColor = UIColor(hexString: "0A191E")
-        view.contentMode = .scaleAspectFit
-        return view
+    private let bottomImage: UITextField = {
+        let textField = UITextField()
+        textField.font = UIFont(name: "Poppins-SemiBold", size: 20)
+        return textField
     }()
     
     private let stackViewTop: UIStackView = {
        let stack = UIStackView()
         stack.axis = .horizontal
-        stack.spacing = 240
        return stack
     }()
     
     private let stackViewMiddle: UIStackView = {
        let stack = UIStackView()
         stack.axis = .horizontal
-        stack.spacing = 240
        return stack
     }()
     
     private let stackViewBottom: UIStackView = {
        let stack = UIStackView()
         stack.axis = .horizontal
-        stack.spacing = 240
        return stack
     }()
     
@@ -114,9 +108,9 @@ final class AntonPriceCell: UICollectionViewCell {
         titleLable.text = item.title
         subtitleLable.text = item.subtitle
         descriptionLable.text = item.description
-        topImage.image = UIImage(named: item.imageNameTop)
-        middleImage.image = UIImage(named: item.imageNameMiddle)
-        bottomImage.image = UIImage(named: item.imageNameBottom)
+        topImage.text = item.imageNameTop
+        middleImage.text = item.imageNameMiddle
+        bottomImage.text = item.imageNameBottom
     }
 
     private func addSubviews() {
@@ -151,18 +145,21 @@ final class AntonPriceCell: UICollectionViewCell {
         }
         
         stackViewTop.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(10)
-            $0.left.equalToSuperview().inset(21)
+            $0.top.equalToSuperview().inset(6)
+            $0.right.equalToSuperview().inset(35)
+            $0.left.equalToSuperview().inset(20)
         }
         
         stackViewMiddle.snp.makeConstraints {
-            $0.top.equalTo(stackViewTop.snp.bottom).offset(2)
-            $0.left.equalToSuperview().inset(21)
+            $0.top.equalTo(stackViewTop.snp.bottom)
+            $0.right.equalToSuperview().inset(35)
+            $0.left.equalToSuperview().inset(20)
         }
         
         stackViewBottom.snp.makeConstraints {
-            $0.top.equalTo(stackViewMiddle.snp.bottom).offset(3)
-            $0.left.equalToSuperview().inset(21)
+            $0.top.equalTo(stackViewMiddle.snp.bottom)
+            $0.right.equalToSuperview().inset(35)
+            $0.left.equalToSuperview().inset(20)
         }
     }
 }
