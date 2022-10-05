@@ -2,7 +2,7 @@
 //  AntonButtonSetCell.swift
 //  Module_2 Groupe_1
 //
-//  Created by air on 04.10.2022.
+//  Created by air on 05.10.2022.
 //
 
 import UIKit
@@ -10,18 +10,24 @@ import SnapKit
 
 extension AntonButtonSetCell {
     struct CellConfig {
-        let backgroundColor: UIColor
+        let title: String
     }
 }
 
 final class AntonButtonSetCell: UICollectionViewCell {
-
-    static var id: String = "AntonButtonSetCell"
-    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 125)
+    
+    static var id = "AntonButtonSetCell"
+    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 44)
+   
+    private let buttonLabel: UILabel = {
+        let label = UILabel(font: UIFont(name: "Poppins-Regular", size: 14))
+        label.backgroundColor = .clear
+        label.textColor = .white
+        return label
+    }()
     
     private let buttonSet: UIButton = {
-        let button = UIButton(backgroundColor: .clear, titleColor: UIColor(hexString: "0A191E") ,title: "")
-        button.titleLabel?.font = UIFont(name: "Cera Pro-Medium", size: 12)
+        let button = UIButton(backgroundColor: UIColor(hexString: "F8774A"), titleColor: .clear, title: "")
         return button
     }()
     
@@ -30,7 +36,6 @@ final class AntonButtonSetCell: UICollectionViewCell {
 
         addSubviews()
         addConstraints()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -38,22 +43,32 @@ final class AntonButtonSetCell: UICollectionViewCell {
         
         addSubviews()
         addConstraints()
-        configureAppearance()
     }
     
     func configure(with item: CellConfig) {
-        backgroundColor = item.backgroundColor
+        buttonLabel.text = item.title
     }
 
     private func addSubviews() {
-       
+        addSubview(buttonSet)
+        buttonSet.addSubview(buttonLabel)
     }
 
     private func addConstraints() {
+        buttonLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(18)
+            $0.verticalEdges.equalToSuperview()
+        }
         
+        buttonSet.snp.makeConstraints {
+            $0.top.right.bottom.equalToSuperview()
+        }
     }
-
-    private func configureAppearance() {
-        backgroundColor = .clear
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        DispatchQueue.main.async {
+            self.buttonSet.layer.cornerRadius = self.buttonSet.frame.height / 2
+        }
     }
 }

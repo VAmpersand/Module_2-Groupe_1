@@ -17,13 +17,12 @@ extension AntonNavigationMenuCell {
         let imageNameFood: String
         let imageNameStepper: String
         let imageNamePrice: String
-        
     }
 }
 
 final class AntonNavigationMenuCell: UICollectionViewCell {
 
-    static var id: String = "AntonNavigationMenyCell"
+    static var id = "AntonNavigationMenuCell"
     static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 72)
 
     private let titleLable: UILabel = {

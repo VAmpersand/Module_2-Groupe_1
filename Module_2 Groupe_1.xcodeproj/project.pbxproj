@@ -57,10 +57,9 @@
 		450F4A1728EC09D3009CF7E6 /* AntonEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F4A1628EC09D3009CF7E6 /* AntonEmptyCell.swift */; };
 		450F4A1928EC1998009CF7E6 /* AntonPromoCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F4A1828EC1998009CF7E6 /* AntonPromoCodeCell.swift */; };
 		450F4A1B28EC19B7009CF7E6 /* AntonPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F4A1A28EC19B7009CF7E6 /* AntonPriceCell.swift */; };
-		450F4A1D28EC1A73009CF7E6 /* AntonButtonSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450F4A1C28EC1A73009CF7E6 /* AntonButtonSetCell.swift */; };
 		4532EA4628E9E5E50067FEF9 /* AntonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532EA4528E9E5E50067FEF9 /* AntonViewModel.swift */; };
 		4532EA4828E9E6010067FEF9 /* AntonBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532EA4728E9E6010067FEF9 /* AntonBannerCell.swift */; };
-		4532EA4A28E9E7070067FEF9 /* AntonNavigationMenuTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532EA4928E9E7070067FEF9 /* AntonNavigationMenuTransferCell.swift */; };
+		4536F72028ED7E6700545D93 /* AntonButtonSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536F71F28ED7E6700545D93 /* AntonButtonSetCell.swift */; };
 		4537525D28E5988100DAEEC1 /* AntonCollectionDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537525C28E5988100DAEEC1 /* AntonCollectionDemoController.swift */; };
 		4562093E28E170190039F10E /* AntonNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562093B28E170190039F10E /* AntonNavigationController.swift */; };
 		4562093F28E170190039F10E /* AntonSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562093C28E170190039F10E /* AntonSearchView.swift */; };
@@ -153,10 +152,9 @@
 		450F4A1628EC09D3009CF7E6 /* AntonEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonEmptyCell.swift; sourceTree = "<group>"; };
 		450F4A1828EC1998009CF7E6 /* AntonPromoCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonPromoCodeCell.swift; sourceTree = "<group>"; };
 		450F4A1A28EC19B7009CF7E6 /* AntonPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonPriceCell.swift; sourceTree = "<group>"; };
-		450F4A1C28EC1A73009CF7E6 /* AntonButtonSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonButtonSetCell.swift; sourceTree = "<group>"; };
 		4532EA4528E9E5E50067FEF9 /* AntonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonViewModel.swift; sourceTree = "<group>"; };
 		4532EA4728E9E6010067FEF9 /* AntonBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonBannerCell.swift; sourceTree = "<group>"; };
-		4532EA4928E9E7070067FEF9 /* AntonNavigationMenuTransferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonNavigationMenuTransferCell.swift; sourceTree = "<group>"; };
+		4536F71F28ED7E6700545D93 /* AntonButtonSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonButtonSetCell.swift; sourceTree = "<group>"; };
 		4537525C28E5988100DAEEC1 /* AntonCollectionDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonCollectionDemoController.swift; sourceTree = "<group>"; };
 		4562093B28E170190039F10E /* AntonNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonNavigationController.swift; sourceTree = "<group>"; };
 		4562093C28E170190039F10E /* AntonSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntonSearchView.swift; sourceTree = "<group>"; };
@@ -358,10 +356,9 @@
 				4532EA4728E9E6010067FEF9 /* AntonBannerCell.swift */,
 				450F4A1228EAE3B8009CF7E6 /* AntonHeaderCell.swift */,
 				450F4A1428EAFC7D009CF7E6 /* AntonNavigationMenuCell.swift */,
-				4532EA4928E9E7070067FEF9 /* AntonNavigationMenuTransferCell.swift */,
 				450F4A1828EC1998009CF7E6 /* AntonPromoCodeCell.swift */,
 				450F4A1A28EC19B7009CF7E6 /* AntonPriceCell.swift */,
-				450F4A1C28EC1A73009CF7E6 /* AntonButtonSetCell.swift */,
+				4536F71F28ED7E6700545D93 /* AntonButtonSetCell.swift */,
 				450F4A1628EC09D3009CF7E6 /* AntonEmptyCell.swift */,
 			);
 			path = AntonCollectionView;
@@ -727,7 +724,6 @@
 				77A6182C28B0F5A500D6DDD0 /* TabBarController.swift in Sources */,
 				45B7DAB828D9C95E0067F391 /* AntonPersonalSettingsView.swift in Sources */,
 				2CEACB9328B9086600E264BC /* DanilInCodeLayoutController.swift in Sources */,
-				4532EA4A28E9E7070067FEF9 /* AntonNavigationMenuTransferCell.swift in Sources */,
 				2CAFD0E628D4B2580012F666 /* CustomSegmentedControl.swift in Sources */,
 				2C17158C28C227D600736E72 /* DanilTransferDataController.swift in Sources */,
 				2C348A0A28BD67E8006B7003 /* DanilTransitionDemoController.swift in Sources */,
@@ -744,7 +740,7 @@
 				450F4A1728EC09D3009CF7E6 /* AntonEmptyCell.swift in Sources */,
 				45D6283128C3666C000A5D3A /* AntonTransitionDemoController.swift in Sources */,
 				77A6184228B0FDC900D6DDD0 /* DanilTabViewController.swift in Sources */,
-				450F4A1D28EC1A73009CF7E6 /* AntonButtonSetCell.swift in Sources */,
+				4536F72028ED7E6700545D93 /* AntonButtonSetCell.swift in Sources */,
 				2C4E8D4B28C79074005DE286 /* DanilMenuItemView.swift in Sources */,
 				45D6282F28C36652000A5D3A /* AntonTestViewController.swift in Sources */,
 				45D6283328C36684000A5D3A /* AntonInCodeLayoutController.swift in Sources */,

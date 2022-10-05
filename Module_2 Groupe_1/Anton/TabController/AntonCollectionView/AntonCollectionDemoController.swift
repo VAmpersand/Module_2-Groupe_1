@@ -14,11 +14,10 @@ final class AntonCollectionDemoController: UIViewController {
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 3
-        layout.minimumInteritemSpacing = 3
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         view.showsVerticalScrollIndicator = false
         return view
     }()
@@ -34,6 +33,7 @@ final class AntonCollectionDemoController: UIViewController {
         collectionView.register(AntonEmptyCell.self, forCellWithReuseIdentifier: AntonEmptyCell.id)
         collectionView.register(AntonPromoCodeCell.self, forCellWithReuseIdentifier: AntonPromoCodeCell.id)
         collectionView.register(AntonPriceCell.self, forCellWithReuseIdentifier: AntonPriceCell.id)
+        collectionView.register(AntonButtonSetCell.self, forCellWithReuseIdentifier: AntonButtonSetCell.id)
         
         collectionView.register(AntonHeaderCell.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -80,14 +80,17 @@ extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonEmptyCell.id,
                                                       for: indexPath)
         case .promoCode:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonPromoCodeCell.id,
-                                                      for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonPromoCodeCell.id,                                                                           for: indexPath)
         case .shoppingCart(let item):
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonPriceCell.id,
                                                       for: indexPath)
             (cell as? AntonPriceCell)?.configure(with: item)
-        default: cell = UICollectionViewCell()
+        case .buttons(let item):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: AntonButtonSetCell.id,
+                                                      for: indexPath)
+            (cell as? AntonButtonSetCell)?.configure(with: item)
         }
+        
         return cell
     }
 
@@ -95,13 +98,14 @@ extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
                                 layout collectionViewLayout: UICollectionViewLayout,
                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = viewModel.dataSource[indexPath.section].items[indexPath.row]
+       
         switch item {
         case .banner: return AntonBannerCell.size
         case .navigation: return AntonNavigationMenuCell.size
         case .empty: return AntonEmptyCell.size(width: 15)
         case .promoCode: return AntonPromoCodeCell.size
         case .shoppingCart: return AntonPriceCell.size
-        default: return .zero
+        case .buttons: return AntonButtonSetCell.size
         }
     }
 
@@ -115,7 +119,6 @@ extension AntonCollectionDemoController: UICollectionViewDelegateFlowLayout {
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                    withReuseIdentifier: AntonHeaderCell.id,
                                                                    for: indexPath)
-        
         if let config = viewModel.dataSource[indexPath.section].headerConfig {
             (view as? AntonHeaderCell)?.configure(with: config)
             view.backgroundColor = .clear
