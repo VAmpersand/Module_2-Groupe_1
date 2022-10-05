@@ -114,8 +114,6 @@ final class CustomStepper: UIControl {
     private func addConstraints() {
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.width.equalTo(100)
-            $0.height.equalTo(30)
         }
     }
 }
