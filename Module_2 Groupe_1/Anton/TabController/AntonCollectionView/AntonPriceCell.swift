@@ -22,23 +22,23 @@ extension AntonPriceCell {
 
 final class AntonPriceCell: UICollectionViewCell {
 
-    static var id: String = "AntonPriceCell"
-    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 78)
+    static var id = "AntonPriceCell"
+    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 85)
     
     private let titleLable: UILabel = {
-        let lable = UILabel(font: UIFont(name: "Poppins-Bold", size: 14))
+        let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 14))
         lable.textColor = UIColor(hexString: "0A191E")
         return lable
     }()
     
     private let subtitleLable: UILabel = {
-        let lable = UILabel(font: UIFont(name: "Poppins-Bold", size: 14))
+        let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 14))
         lable.textColor = UIColor(hexString: "0A191E")
         return lable
     }()
     
     private let descriptionLable: UILabel = {
-        let lable = UILabel(font: UIFont(name: "Poppins-Bold", size: 16))
+        let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 16))
         lable.textColor = UIColor(hexString: "0A191E")
         return lable
     }()
@@ -46,30 +46,42 @@ final class AntonPriceCell: UICollectionViewCell {
     private let topImage: UIImageView = {
         let view = UIImageView()
         view.tintColor = UIColor(hexString: "0A191E")
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
     private let middleImage: UIImageView = {
         let view = UIImageView()
         view.tintColor = UIColor(hexString: "0A191E")
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
     private let bottomImage: UIImageView = {
         let view = UIImageView()
         view.tintColor = UIColor(hexString: "0A191E")
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
-    private let stackViewText: UIStackView = {
+    private let stackViewTop: UIStackView = {
        let stack = UIStackView()
-        stack.axis = .vertical
+        stack.axis = .horizontal
+        stack.spacing = 240
        return stack
     }()
     
-    private let stackViewImage: UIStackView = {
+    private let stackViewMiddle: UIStackView = {
        let stack = UIStackView()
-        stack.axis = .vertical
+        stack.axis = .horizontal
+        stack.spacing = 240
+       return stack
+    }()
+    
+    private let stackViewBottom: UIStackView = {
+       let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 240
        return stack
     }()
     
@@ -79,6 +91,7 @@ final class AntonPriceCell: UICollectionViewCell {
         view.layer.shadowOpacity = 0.1
         view.layer.shadowRadius = 7
         view.layer.shadowOffset = .zero
+        view.layer.cornerRadius = 25
         return view
     }()
     
@@ -87,7 +100,6 @@ final class AntonPriceCell: UICollectionViewCell {
 
         addSubviews()
         addConstraints()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -95,7 +107,6 @@ final class AntonPriceCell: UICollectionViewCell {
         
         addSubviews()
         addConstraints()
-        configureAppearance()
     }
     
     func configure(with item: CellConfig) {
@@ -109,23 +120,27 @@ final class AntonPriceCell: UICollectionViewCell {
     }
 
     private func addSubviews() {
-       addSubview(shadowCell)
+        addSubview(shadowCell)
         
         [
-        titleLable,
-        subtitleLable,
-        descriptionLable
-        ].forEach(stackViewText.addSubview)
+            titleLable,
+            topImage
+        ].forEach(stackViewTop.addArrangedSubview)
         
         [
-        topImage,
-        middleImage,
-        bottomImage
-        ].forEach(stackViewImage.addSubview)
+            subtitleLable,
+            middleImage
+        ].forEach(stackViewMiddle.addArrangedSubview)
         
         [
-            stackViewText,
-            stackViewImage
+            descriptionLable,
+            bottomImage
+        ].forEach(stackViewBottom.addArrangedSubview)
+        
+        [
+            stackViewTop,
+            stackViewMiddle,
+            stackViewBottom
         ].forEach(shadowCell.addSubview)
     }
 
@@ -135,19 +150,19 @@ final class AntonPriceCell: UICollectionViewCell {
             $0.verticalEdges.equalToSuperview()
         }
         
-        stackViewText.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(6)
+        stackViewTop.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(10)
             $0.left.equalToSuperview().inset(21)
         }
         
-        stackViewImage.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(9)
-            $0.right.equalToSuperview().inset(35)
+        stackViewMiddle.snp.makeConstraints {
+            $0.top.equalTo(stackViewTop.snp.bottom).offset(2)
+            $0.left.equalToSuperview().inset(21)
         }
-    }
-
-    private func configureAppearance() {
-        backgroundColor = .clear
-        layer.cornerRadius = 25
+        
+        stackViewBottom.snp.makeConstraints {
+            $0.top.equalTo(stackViewMiddle.snp.bottom).offset(3)
+            $0.left.equalToSuperview().inset(21)
+        }
     }
 }

@@ -10,13 +10,13 @@ import SnapKit
 
 final class AntonPromoCodeCell: UICollectionViewCell {
 
-    static var id: String = "AntonPromoCodeCell"
+    static var id = "AntonPromoCodeCell"
     static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 40)
     
     let promoText: UITextField = {
         let textField = UITextField()
-        textField.font = UIFont(name: "Poppins-Regular", size: 14)
-        textField.placeholder = "Entter Promo Code"
+        textField.font = UIFont(name: "Poppins-SemiBold", size: 14)
+        textField.placeholder = "Enter Promo Code"
         textField.attributedText = NSAttributedString(
             string: "Enter Promo Code",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor(hexString: "838383")]
@@ -39,7 +39,7 @@ final class AntonPromoCodeCell: UICollectionViewCell {
             titleColor: .white,
             title: "Apply"
         )
-        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 14)
+        button.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 14)
         return button
     }()
    
@@ -48,7 +48,6 @@ final class AntonPromoCodeCell: UICollectionViewCell {
 
         addSubviews()
         addConstraints()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -56,11 +55,11 @@ final class AntonPromoCodeCell: UICollectionViewCell {
         
         addSubviews()
         addConstraints()
-        configureAppearance()
     }
     
     private func addSubviews() {
        addSubview(shadowCell)
+        
         [
         promoText,
         applyButton
@@ -82,10 +81,6 @@ final class AntonPromoCodeCell: UICollectionViewCell {
             $0.top.right.bottom.equalToSuperview()
             $0.width.equalTo(104)
         }
-    }
-
-    private func configureAppearance() {
-        backgroundColor = .clear
     }
     
     override func layoutSubviews() {

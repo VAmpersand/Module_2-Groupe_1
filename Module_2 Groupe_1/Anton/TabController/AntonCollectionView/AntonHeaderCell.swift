@@ -19,9 +19,8 @@ extension AntonHeaderCell {
 
 final class AntonHeaderCell: UICollectionViewCell {
 
-    static var id: String = "AntonHeaderCell"
+    static var id = "AntonHeaderCell"
     static var size = CGSize(width: UIScreen.main.bounds.width - 30 * 2, height: 35)
-
 
     private let titleLable: UILabel = {
         let lable = UILabel(font: UIFont(name: "Poppins-SemiBold", size: 20))
@@ -50,28 +49,24 @@ final class AntonHeaderCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-
-        configure()
+        
         addSubviews()
         addConstrains()
     }
 
     required init?(coder: NSCoder) {
         super.init(frame: .zero)
-
-        configure()
+        
         addSubviews()
         addConstrains()
     }
 
-    func configure(with item: HeaderConfig) {
+   func configure(with item: HeaderConfig) {
         backgroundColor = item.backgroundColor
         titleLable.text = item.title
         subtitleLable.text = item.subtitle
         imageView.image = UIImage(named: item.imageName)
     }
-    
-    private func configure() {}
 
     private func addSubviews() {
         addSubview(titleLable)

@@ -19,7 +19,7 @@ extension AntonBannerCell {
 
 final class AntonBannerCell: UICollectionViewCell {
 
-    static var id: String = "AntonBannerCell"
+    static var id = "AntonBannerCell"
     static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 125)
     
     private let upperImage: UIImageView = {

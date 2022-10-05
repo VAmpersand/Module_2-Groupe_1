@@ -13,7 +13,7 @@ final class AntonViewModel {
         case navigation(items: AntonNavigationMenuCell.CellConfig)
         case promoCode(AntonPromoCodeCell)
         case shoppingCart(items: AntonPriceCell.CellConfig)
-        case buttons
+        case buttons(items: AntonButtonSetCell.CellConfig)
         case empty(height: CGFloat)
     }
     
@@ -92,15 +92,14 @@ final class AntonViewModel {
                     description: "User 4",
                     imageNameFood: "antonFood_1",
                     imageNameStepper: "antonStepper",
-                    imageNamePrice: "125price")
-                ),
-                .empty(height: 15),
+                    imageNamePrice: "125price")),
+                .empty(height: 40),
                 .promoCode(AntonPromoCodeCell.init()),
-                .empty(height: 15),
             ]),
         Section(
             headerConfig: nil,
             items: [
+                .empty(height: 30),
                 .shoppingCart(items: .init(
                     backgroundColor: .clear,
                     title: "Subtotal",
@@ -108,8 +107,15 @@ final class AntonViewModel {
                     description: "Total",
                     imageNameTop: "500price",
                     imageNameMiddle: "45price",
-                    imageNameBottom: "545price")
-                ),
+                    imageNameBottom: "545price")),
+            ]),
+        Section(
+            headerConfig: nil,
+            items: [
+                .empty(height: 30),
+                .buttons(items: .init(title: "Payment")),
+                .empty(height: 30),
+                .buttons(items: .init(title: "Select User"))
             ]),
     ]
 }
