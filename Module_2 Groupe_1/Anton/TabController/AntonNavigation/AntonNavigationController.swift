@@ -56,7 +56,7 @@ final class AntonNavigationController: UIViewController {
         
         slider.snp.makeConstraints {
             $0.top.equalTo(antonSearchView.snp.bottom).offset(50)
-            $0.left.equalToSuperview().inset(200)
+            $0.centerX.equalToSuperview()
             $0.height.equalTo(300)
         }
     }

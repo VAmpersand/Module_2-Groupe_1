@@ -1,5 +1,5 @@
 //
-//  AntonNavigationCell.swift
+//  AntonNavigationMenuCell.swift
 //  Module_2 Groupe_1
 //
 //  Created by air on 03.10.2022.
@@ -7,9 +7,8 @@
 
 import UIKit
 import SnapKit
-import WebKit
 
-extension AntonNavigationCell {
+extension AntonNavigationMenuCell {
     struct CellConfig {
         let backgroundColor: UIColor
         let title: String
@@ -18,15 +17,20 @@ extension AntonNavigationCell {
         let imageNameFood: String
         let imageNameStepper: String
         let imageNamePrice: String
-        let emptyNameCell: String
     }
 }
 
-final class AntonNavigationCell: UICollectionViewCell {
+final class AntonNavigationMenuCell: UICollectionViewCell {
 
-    static var id: String = "AntonNavigationCell"
-    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 75)
+    static var id = "AntonNavigationMenuCell"
+    static var size = CGSize(width: UIScreen.main.bounds.width - 18 * 2, height: 72)
 
+    private let imageFood: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
     private let titleLable: UILabel = {
         let lable = UILabel(font: UIFont(name: "Poppins-Medium", size: 14))
         lable.textColor = UIColor(hexString: "0A191E")
@@ -44,13 +48,14 @@ final class AntonNavigationCell: UICollectionViewCell {
         lable.textColor = .black
         return lable
     }()
-
-    private let imageFood: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFit
-        return view
+    
+    private let stackView: UIStackView = {
+       let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 1
+       return stack
     }()
-
+    
     private let imageStepper: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
@@ -63,9 +68,11 @@ final class AntonNavigationCell: UICollectionViewCell {
         return view
     }()
     
-    private let emptyCell: UIImageView = {
-        let view = UIImageView()
-        return view
+    private let stackViewImage: UIStackView = {
+       let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 10
+       return stack
     }()
     
     override init(frame: CGRect) {
@@ -92,51 +99,39 @@ final class AntonNavigationCell: UICollectionViewCell {
         imageFood.image = UIImage(named: item.imageNameFood)
         imageStepper.image = UIImage(named: item.imageNameStepper)
         imagePrice.image = UIImage(named: item.imageNamePrice)
-        emptyCell.image = UIImage(named: item.emptyNameCell)
     }
 
     private func setupSubviews() {
-        addSubview(titleLable)
-        addSubview(subtitleLable)
-        addSubview(descriptionLable)
         addSubview(imageFood)
-        addSubview(imageStepper)
-        addSubview(imagePrice)
-        addSubview(emptyCell)
+        addSubview(stackView)
+        addSubview(stackViewImage)
+        
+        [
+            titleLable,
+            subtitleLable,
+            descriptionLable
+        ].forEach(stackView.addArrangedSubview)
+        
+        [
+            imageStepper,
+            imagePrice
+        ].forEach(stackViewImage.addArrangedSubview)
     }
 
     private func constrainSubviews() {
         imageFood.snp.makeConstraints {
-            $0.left.equalToSuperview()
+            $0.left.top.bottom.equalToSuperview()
         }
         
-        titleLable.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(5)
-            $0.left.equalToSuperview().inset(95)
+        stackView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalTo(imageFood.snp.right).offset(15)
         }
         
-        subtitleLable.snp.makeConstraints {
-            $0.top.equalTo(titleLable.snp.bottom)
-            $0.left.equalToSuperview().inset(95)
-        }
-        
-        descriptionLable.snp.makeConstraints {
-            $0.top.equalTo(subtitleLable.snp.bottom).inset(5)
-            $0.left.equalToSuperview().inset(95)
-        }
-        
-        imageStepper.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(15)
-            $0.right.equalToSuperview().inset(42)
-        }
-        
-        imagePrice.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(25)
-            $0.right.equalToSuperview().inset(5)
-        }
-        
-        emptyCell.snp.makeConstraints {
-            $0.top.equalTo(imageFood.snp.bottom).inset(20)
+        stackViewImage.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().inset(3)
+            $0.left.greaterThanOrEqualTo(stackView.snp.right).offset(-15)
         }
     }
 
